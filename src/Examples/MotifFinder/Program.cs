@@ -11,6 +11,7 @@ namespace MotifFinder
     using Microsoft.ML.Probabilistic.Math;
     using Microsoft.ML.Probabilistic.Models;
     using Microsoft.ML.Probabilistic.Utilities;
+    using Range = Microsoft.ML.Probabilistic.Models.Range;
 
     /// <summary>
     /// The motif finder program.
@@ -118,7 +119,7 @@ namespace MotifFinder
                 motifPositionPosterior);
 
             //// Keep the application alive until the user enters a keystroke
-            
+            Console.WriteLine("Done.  Press enter to exit.");
             Console.ReadKey();
         }
 

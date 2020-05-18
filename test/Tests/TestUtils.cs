@@ -25,9 +25,16 @@ namespace Microsoft.ML.Probabilistic.Tests
     using Microsoft.ML.Probabilistic.Math;
     using Xunit.Sdk;
     using Microsoft.ML.Probabilistic.Models;
+    using Microsoft.ML.Probabilistic.Factors;
 
     public static class TestUtils
     {
+        public static string DataFolderPath { get; } = Path.GetFullPath(Path.Combine(
+#if NETCORE
+                Path.GetDirectoryName(typeof(ClickTest).Assembly.Location), // work dir is not the one with Microsoft.ML.Probabilistic.Tests.dll on netcore and neither is .Location on netfull
+#endif
+                "Data"));
+
         public static void SetDebugOptions()
         {
             //MessageTransform.debug = true;
@@ -814,6 +821,14 @@ namespace Microsoft.ML.Probabilistic.Tests
             }
         }
 
+        /// <summary>
+        /// A test that uses this property must have Trait("Category", "ModifiesGlobals")
+        /// </summary>
+        public static IDisposable TemporarilyAllowGammaImproperProducts
+        {
+            get { return new TemporaryHelper(() => GammaProductOp_Laplace.ForceProper = false, () => GammaProductOp_Laplace.ForceProper = true); }
+        }
+
         public static IDisposable TemporarilyAllowBetaImproperSums
         {
             get { return new TemporaryHelper(() => Beta.AllowImproperSum = true, () => Beta.AllowImproperSum = false); }
@@ -910,13 +925,13 @@ namespace Microsoft.ML.Probabilistic.Tests
         /// <param name="eps">Precision.</param>
         public static void Equal(double expected, double observed, double eps)
         {
-            // Infinty check
+            // Infinity check
             if (expected == observed)
             {
                 return;
             }
 
-            Assert.True(Math.Abs(expected - observed) < eps, $"Equality failure\n. Expected: {expected}\nActual:   {observed}");
+            Assert.True(Math.Abs(expected - observed) < eps, $"Equality failure.\nExpected: {expected}\nActual:   {observed}");
         }
 
         /// <summary>

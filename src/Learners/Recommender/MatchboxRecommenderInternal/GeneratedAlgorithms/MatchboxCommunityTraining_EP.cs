@@ -27,28 +27,28 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 		public bool Changed_ItemBiasFeatureWeightPriorVariance_ItemFeatureCount_isDone;
 		/// <summary>True if Changed_ItemBiasInitializer_ItemCount has executed. Set this to false to force re-execution of Changed_ItemBiasInitializer_ItemCount</summary>
 		public bool Changed_ItemBiasInitializer_ItemCount_isDone;
-		/// <summary>True if Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18 has executed. Set this to false to force re-execution of Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18</summary>
-		public bool Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isDone;
-		/// <summary>True if Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18 has performed initialisation. Set this to false to force re-execution of Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18</summary>
-		public bool Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised;
+		/// <summary>True if Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19 has executed. Set this to false to force re-execution of Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19</summary>
+		public bool Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isDone;
+		/// <summary>True if Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19 has performed initialisation. Set this to false to force re-execution of Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19</summary>
+		public bool Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised;
 		/// <summary>True if Changed_ItemBiasMessage_ItemCount has executed. Set this to false to force re-execution of Changed_ItemBiasMessage_ItemCount</summary>
 		public bool Changed_ItemBiasMessage_ItemCount_isDone;
 		/// <summary>True if Changed_ItemCount has executed. Set this to false to force re-execution of Changed_ItemCount</summary>
 		public bool Changed_ItemCount_isDone;
-		/// <summary>True if Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13 has executed. Set this to false to force re-execution of Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13</summary>
-		public bool Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isDone;
-		/// <summary>True if Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13 has performed initialisation. Set this to false to force re-execution of Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13</summary>
-		public bool Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised;
+		/// <summary>True if Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14 has executed. Set this to false to force re-execution of Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14</summary>
+		public bool Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isDone;
+		/// <summary>True if Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14 has performed initialisation. Set this to false to force re-execution of Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14</summary>
+		public bool Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised;
 		/// <summary>True if Changed_ItemCount_ItemTraitsInitializer_TraitCount has executed. Set this to false to force re-execution of Changed_ItemCount_ItemTraitsInitializer_TraitCount</summary>
 		public bool Changed_ItemCount_ItemTraitsInitializer_TraitCount_isDone;
 		/// <summary>True if Changed_ItemCount_ItemTraitsMessage_TraitCount has executed. Set this to false to force re-execution of Changed_ItemCount_ItemTraitsMessage_TraitCount</summary>
 		public bool Changed_ItemCount_ItemTraitsMessage_TraitCount_isDone;
 		/// <summary>True if Changed_ItemCount_NonZeroItemFeatureCounts has executed. Set this to false to force re-execution of Changed_ItemCount_NonZeroItemFeatureCounts</summary>
 		public bool Changed_ItemCount_NonZeroItemFeatureCounts_isDone;
-		/// <summary>True if Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53 has executed. Set this to false to force re-execution of Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53</summary>
-		public bool Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isDone;
-		/// <summary>True if Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53 has performed initialisation. Set this to false to force re-execution of Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53</summary>
-		public bool Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised;
+		/// <summary>True if Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52 has executed. Set this to false to force re-execution of Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52</summary>
+		public bool Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isDone;
+		/// <summary>True if Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52 has performed initialisation. Set this to false to force re-execution of Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52</summary>
+		public bool Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised;
 		/// <summary>True if Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50 has executed. Set this to false to force re-execution of Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50</summary>
 		public bool Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isDone;
 		/// <summary>True if Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50 has performed initialisation. Set this to false to force re-execution of Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50</summary>
@@ -85,66 +85,66 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 		public bool Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isDone;
 		/// <summary>True if Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45 has performed initialisation. Set this to false to force re-execution of Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45</summary>
 		public bool Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised;
-		/// <summary>True if Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41 has executed. Set this to false to force re-execution of Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41</summary>
-		public bool Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isDone;
-		/// <summary>True if Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41 has performed initialisation. Set this to false to force re-execution of Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41</summary>
-		public bool Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised;
-		/// <summary>True if Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43 has executed. Set this to false to force re-execution of Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43</summary>
-		public bool Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isDone;
-		/// <summary>True if Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43 has performed initialisation. Set this to false to force re-execution of Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43</summary>
-		public bool Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised;
+		/// <summary>True if Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42 has executed. Set this to false to force re-execution of Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42</summary>
+		public bool Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isDone;
+		/// <summary>True if Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42 has performed initialisation. Set this to false to force re-execution of Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42</summary>
+		public bool Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised;
+		/// <summary>True if Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44 has executed. Set this to false to force re-execution of Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44</summary>
+		public bool Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isDone;
+		/// <summary>True if Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44 has performed initialisation. Set this to false to force re-execution of Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44</summary>
+		public bool Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised;
 		/// <summary>True if Changed_NonZeroUserFeatureCounts_TraitCount_UserCount has executed. Set this to false to force re-execution of Changed_NonZeroUserFeatureCounts_TraitCount_UserCount</summary>
 		public bool Changed_NonZeroUserFeatureCounts_TraitCount_UserCount_isDone;
 		/// <summary>True if Changed_NonZeroUserFeatureCounts_UserCount has executed. Set this to false to force re-execution of Changed_NonZeroUserFeatureCounts_UserCount</summary>
 		public bool Changed_NonZeroUserFeatureCounts_UserCount_isDone;
-		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30</summary>
-		public bool Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isDone;
-		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30</summary>
-		public bool Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised;
-		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37</summary>
-		public bool Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isDone;
-		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37</summary>
-		public bool Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised;
-		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29</summary>
-		public bool Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isDone;
-		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29</summary>
-		public bool Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised;
-		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34</summary>
-		public bool Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isDone;
-		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34</summary>
-		public bool Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised;
-		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32</summary>
-		public bool Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isDone;
-		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32</summary>
-		public bool Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised;
+		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31</summary>
+		public bool Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isDone;
+		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31</summary>
+		public bool Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised;
+		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38</summary>
+		public bool Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isDone;
+		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38</summary>
+		public bool Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised;
+		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30</summary>
+		public bool Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isDone;
+		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30</summary>
+		public bool Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised;
+		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35</summary>
+		public bool Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isDone;
+		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35</summary>
+		public bool Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised;
+		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33</summary>
+		public bool Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isDone;
+		/// <summary>True if Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33</summary>
+		public bool Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised;
 		/// <summary>True if Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3</summary>
 		public bool Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isDone;
 		/// <summary>True if Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3</summary>
 		public bool Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised;
-		/// <summary>True if Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26</summary>
-		public bool Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isDone;
-		/// <summary>True if Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26</summary>
-		public bool Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised;
-		/// <summary>True if Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38</summary>
-		public bool Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isDone;
-		/// <summary>True if Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38</summary>
-		public bool Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised;
-		/// <summary>True if Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16</summary>
-		public bool Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isDone;
-		/// <summary>True if Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16</summary>
-		public bool Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised;
+		/// <summary>True if Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27</summary>
+		public bool Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isDone;
+		/// <summary>True if Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27</summary>
+		public bool Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised;
+		/// <summary>True if Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39</summary>
+		public bool Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isDone;
+		/// <summary>True if Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39</summary>
+		public bool Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised;
+		/// <summary>True if Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17</summary>
+		public bool Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isDone;
+		/// <summary>True if Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17</summary>
+		public bool Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised;
 		/// <summary>True if Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7</summary>
 		public bool Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isDone;
 		/// <summary>True if Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7</summary>
 		public bool Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised;
-		/// <summary>True if Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19</summary>
-		public bool Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isDone;
-		/// <summary>True if Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19</summary>
-		public bool Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised;
-		/// <summary>True if Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22</summary>
-		public bool Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isDone;
-		/// <summary>True if Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22</summary>
-		public bool Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised;
+		/// <summary>True if Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20</summary>
+		public bool Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isDone;
+		/// <summary>True if Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20</summary>
+		public bool Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised;
+		/// <summary>True if Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23</summary>
+		public bool Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isDone;
+		/// <summary>True if Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23</summary>
+		public bool Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised;
 		/// <summary>True if Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21 has executed. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21</summary>
 		public bool Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isDone;
 		/// <summary>True if Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21 has performed initialisation. Set this to false to force re-execution of Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21</summary>
@@ -205,11 +205,11 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 		public DistributionStructArray<Gaussian,double> ItemBias_use_B;
 		/// <summary>Message to use of 'ItemBias'</summary>
 		public DistributionStructArray<Gaussian,double> ItemBias_use_F;
-		/// <summary>Messages from use of 'ItemBias'</summary>
+		/// <summary>Messages from uses of 'ItemBias_use'</summary>
 		public DistributionStructArray<Gaussian,double>[] ItemBias_uses_B;
-		/// <summary>Messages to use of 'ItemBias'</summary>
+		/// <summary>Messages to uses of 'ItemBias_use'</summary>
 		public DistributionStructArray<Gaussian,double>[] ItemBias_uses_F;
-		/// <summary>Buffer for GetItemsOp<double>.ItemsAverageConditional<DistributionStructArray<Gaussian, double>, Gaussian></summary>
+		/// <summary>Buffer for GetItemsOp&lt;double&gt;.ItemsAverageConditional&lt;DistributionStructArray&lt;Gaussian, double&gt;, Gaussian&gt;</summary>
 		public DistributionStructArray<Gaussian,double> ItemBias_uses_F_1__marginal;
 		/// <summary>Field backing the ItemBiasFeatureWeightPriorVariance property</summary>
 		private double itemBiasFeatureWeightPriorVariance;
@@ -244,15 +244,17 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 		public DistributionRefArray<DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]>,double[][]> ItemTraitFeatureWeights_NonZeroItemFeatureIndices_F;
 		/// <summary>Message from use of 'ItemTraitFeatureWeights'</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> ItemTraitFeatureWeights_use_B;
-		/// <summary>Buffer for JaggedSubarrayOp<double>.ItemsAverageConditional<DistributionStructArray<Gaussian, double>, Gaussian, DistributionStructArray<Gaussian, double>></summary>
+		/// <summary>Buffer for JaggedSubarrayOp&lt;double&gt;.ItemsAverageConditional&lt;DistributionStructArray&lt;Gaussian, double&gt;, Gaussian, DistributionStructArray&lt;Gaussian, double&gt;&gt;</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> ItemTraitFeatureWeights_use_F_trait__marginal;
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> itemTraitMean_B;
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> itemTraitMean_F;
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> ItemTraits_depth0_B;
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> ItemTraits_depth0_F;
+		/// <summary>Messages from uses of 'ItemTraits_depth0'</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]>[] ItemTraits_depth0_uses_B;
+		/// <summary>Messages to uses of 'ItemTraits_depth0'</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]>[] ItemTraits_depth0_uses_F;
-		/// <summary>Buffer for GetItemsOp<double[]>.ItemsAverageConditional<DistributionRefArray<DistributionStructArray<Gaussian, double>, double[]>, DistributionStructArray<Gaussian, double>></summary>
+		/// <summary>Buffer for GetItemsOp&lt;double[]&gt;.ItemsAverageConditional&lt;DistributionRefArray&lt;DistributionStructArray&lt;Gaussian, double&gt;, double[]&gt;, DistributionStructArray&lt;Gaussian, double&gt;&gt;</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> ItemTraits_depth0_uses_F_1__marginal;
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> ItemTraits_F;
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> ItemTraits_index10_index10_0__index10__B;
@@ -264,9 +266,9 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> ItemTraits_use_B;
 		/// <summary>Message to use of 'ItemTraits'</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> ItemTraits_use_F;
-		/// <summary>Messages from use of 'ItemTraits'</summary>
+		/// <summary>Messages from uses of 'ItemTraits_use'</summary>
 		public Gaussian[][][] ItemTraits_uses_B;
-		/// <summary>Messages to use of 'ItemTraits'</summary>
+		/// <summary>Messages to uses of 'ItemTraits_use'</summary>
 		public Gaussian[][][] ItemTraits_uses_F;
 		/// <summary>Field backing the ItemTraitsInitializer property</summary>
 		private DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> itemTraitsInitializer;
@@ -319,11 +321,11 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 		public DistributionStructArray<Gaussian,double> UserBias_use_B;
 		/// <summary>Message to use of 'UserBias'</summary>
 		public DistributionStructArray<Gaussian,double> UserBias_use_F;
-		/// <summary>Messages from use of 'UserBias'</summary>
+		/// <summary>Messages from uses of 'UserBias_use'</summary>
 		public DistributionStructArray<Gaussian,double>[] UserBias_uses_B;
-		/// <summary>Messages to use of 'UserBias'</summary>
+		/// <summary>Messages to uses of 'UserBias_use'</summary>
 		public DistributionStructArray<Gaussian,double>[] UserBias_uses_F;
-		/// <summary>Buffer for GetItemsOp<double>.ItemsAverageConditional<DistributionStructArray<Gaussian, double>, Gaussian></summary>
+		/// <summary>Buffer for GetItemsOp&lt;double&gt;.ItemsAverageConditional&lt;DistributionStructArray&lt;Gaussian, double&gt;, Gaussian&gt;</summary>
 		public DistributionStructArray<Gaussian,double> UserBias_uses_F_1__marginal;
 		/// <summary>Field backing the UserBiasFeatureWeightPriorVariance property</summary>
 		private double userBiasFeatureWeightPriorVariance;
@@ -359,27 +361,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 		public double[] UserThresholdPriorVarianceForThreshold;
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> UserThresholds_depth0_B;
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> UserThresholds_depth0_F;
+		/// <summary>Messages from uses of 'UserThresholds_depth0'</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]>[] UserThresholds_depth0_uses_B;
+		/// <summary>Messages to uses of 'UserThresholds_depth0'</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]>[] UserThresholds_depth0_uses_F;
-		/// <summary>Buffer for GetItemsOp<double[]>.ItemsAverageConditional<DistributionRefArray<DistributionStructArray<Gaussian, double>, double[]>, DistributionStructArray<Gaussian, double>></summary>
+		/// <summary>Buffer for GetItemsOp&lt;double[]&gt;.ItemsAverageConditional&lt;DistributionRefArray&lt;DistributionStructArray&lt;Gaussian, double&gt;, double[]&gt;, DistributionStructArray&lt;Gaussian, double&gt;&gt;</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> UserThresholds_depth0_uses_F_1__marginal;
 		public DistributionStructArray<Gaussian,double> UserThresholds_F_reduced;
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> UserThresholds_itemUserIds_observation__F;
 		/// <summary>Message to marginal of 'UserThresholds'</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> UserThresholds_marginal_F;
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> UserThresholds_rep_B;
-		/// <summary>Buffer for ReplicateOp_Divide.Marginal<Gaussian></summary>
+		/// <summary>Buffer for ReplicateOp_Divide.Marginal&lt;Gaussian&gt;</summary>
 		public DistributionStructArray<Gaussian,double> UserThresholds_rep_B_toDef;
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> UserThresholds_rep_F;
-		/// <summary>Buffer for ReplicateOp_Divide.UsesAverageConditional<Gaussian></summary>
+		/// <summary>Buffer for ReplicateOp_Divide.UsesAverageConditional&lt;Gaussian&gt;</summary>
 		public DistributionStructArray<Gaussian,double> UserThresholds_rep_F_marginal;
 		/// <summary>Message from use of 'UserThresholds'</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> UserThresholds_use_B;
 		/// <summary>Message to use of 'UserThresholds'</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> UserThresholds_use_F;
-		/// <summary>Messages from use of 'UserThresholds'</summary>
+		/// <summary>Messages from uses of 'UserThresholds_use'</summary>
 		public Gaussian[][][] UserThresholds_uses_B;
-		/// <summary>Messages to use of 'UserThresholds'</summary>
+		/// <summary>Messages to uses of 'UserThresholds_use'</summary>
 		public Gaussian[][][] UserThresholds_uses_F;
 		/// <summary>Field backing the UserThresholdsInitializer property</summary>
 		private DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> userThresholdsInitializer;
@@ -399,7 +403,7 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 		public DistributionRefArray<DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]>,double[][]> UserTraitFeatureWeights_NonZeroUserFeatureIndices_F;
 		/// <summary>Message from use of 'UserTraitFeatureWeights'</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> UserTraitFeatureWeights_use_B;
-		/// <summary>Buffer for JaggedSubarrayOp<double>.ItemsAverageConditional<DistributionStructArray<Gaussian, double>, Gaussian, DistributionStructArray<Gaussian, double>></summary>
+		/// <summary>Buffer for JaggedSubarrayOp&lt;double&gt;.ItemsAverageConditional&lt;DistributionStructArray&lt;Gaussian, double&gt;, Gaussian, DistributionStructArray&lt;Gaussian, double&gt;&gt;</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> UserTraitFeatureWeights_use_F_trait__marginal;
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> userTraitMean_B;
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> userTraitMean_F;
@@ -411,11 +415,11 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> UserTraits_use_B;
 		/// <summary>Message to use of 'UserTraits'</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> UserTraits_use_F;
-		/// <summary>Messages from use of 'UserTraits'</summary>
+		/// <summary>Messages from uses of 'UserTraits_use'</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]>[] UserTraits_uses_B;
-		/// <summary>Messages to use of 'UserTraits'</summary>
+		/// <summary>Messages to uses of 'UserTraits_use'</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]>[] UserTraits_uses_F;
-		/// <summary>Buffer for GetItemsOp<double[]>.ItemsAverageConditional<DistributionRefArray<DistributionStructArray<Gaussian, double>, double[]>, DistributionStructArray<Gaussian, double>></summary>
+		/// <summary>Buffer for GetItemsOp&lt;double[]&gt;.ItemsAverageConditional&lt;DistributionRefArray&lt;DistributionStructArray&lt;Gaussian, double&gt;, double[]&gt;, DistributionStructArray&lt;Gaussian, double&gt;&gt;</summary>
 		public DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> UserTraits_uses_F_1__marginal;
 		/// <summary>Field backing the UserTraitsInitializer property</summary>
 		private DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]> userTraitsInitializer;
@@ -462,29 +466,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				if (this.affinityNoiseVariance!=value) {
 					this.affinityNoiseVariance = value;
 					this.numberOfIterationsDone = 0;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -503,29 +507,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.itemBiasFeatureWeightPriorVariance = value;
 					this.numberOfIterationsDone = 0;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemFeatureCount_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isDone = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -542,30 +546,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			set {
 				this.itemBiasInitializer = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
 				this.Changed_ItemBiasInitializer_ItemCount_isDone = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isDone = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isDone = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -581,30 +585,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			set {
 				this.itemBiasMessage = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemBiasMessage_ItemCount_isDone = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -621,29 +625,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				if (this.itemBiasVariance!=value) {
 					this.itemBiasVariance = value;
 					this.numberOfIterationsDone = 0;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -661,19 +665,19 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				if (this.itemCount!=value) {
 					this.itemCount = value;
 					this.numberOfIterationsDone = 0;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
 					this.Changed_ItemCount_isDone = false;
 					this.Changed_ItemBiasInitializer_ItemCount_isDone = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_isDone = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isDone = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isDone = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isDone = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isDone = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isDone = false;
 					this.Changed_ItemBiasMessage_ItemCount_isDone = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isDone = false;
 					this.Changed_ItemCount_TraitCount_isDone = false;
@@ -681,17 +685,17 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_TraitCount_isDone = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isDone = false;
 					this.Changed_ItemCount_ItemTraitsMessage_TraitCount_isDone = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isDone = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isDone = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isDone = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -711,31 +715,31 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.numberOfIterationsDone = 0;
 					this.Changed_ItemFeatureCount_isDone = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemFeatureCount_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_TraitCount_isDone = false;
 					this.Changed_ItemFeatureCount_ItemTraitFeatureWeightPriorVariance_TraitCount_isDone = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isDone = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isDone = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -755,29 +759,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				}
 				this.itemIds = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -794,30 +798,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				if (this.itemTraitFeatureWeightPriorVariance!=value) {
 					this.itemTraitFeatureWeightPriorVariance = value;
 					this.numberOfIterationsDone = 0;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_ItemTraitFeatureWeightPriorVariance_TraitCount_isDone = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -834,30 +838,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			set {
 				this.itemTraitsInitializer = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_ItemTraitsInitializer_TraitCount_isDone = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isDone = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isDone = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -873,30 +877,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			set {
 				this.itemTraitsMessage = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
 				this.Changed_ItemCount_ItemTraitsMessage_TraitCount_isDone = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -913,29 +917,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				if (this.itemTraitVariance!=value) {
 					this.itemTraitVariance = value;
 					this.numberOfIterationsDone = 0;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -955,30 +959,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.numberOfIterationsDone = 0;
 					this.Changed_MiddleUserThresholdIndex_UserThresholdCount_isDone = false;
 					this.Changed_MiddleUserThresholdIndex_UserThresholdCount_UserThresholdPriorVariance_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
 					this.Changed_MiddleUserThresholdIndex_UserCount_UserThresholdCount_UserThresholdPriorMean_UserThresholdPr58_isDone = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -998,31 +1002,31 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				}
 				this.nonZeroItemFeatureCounts = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_isDone = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isDone = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isDone = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isDone = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_TraitCount_isDone = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isDone = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1041,29 +1045,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				}
 				this.nonZeroItemFeatureIndices = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isDone = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1082,29 +1086,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				}
 				this.nonZeroItemFeatureValues = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1123,31 +1127,31 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				}
 				this.nonZeroUserFeatureCounts = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_UserCount_isDone = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isDone = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isDone = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isDone = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_TraitCount_UserCount_isDone = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isDone = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isDone = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1166,29 +1170,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				}
 				this.nonZeroUserFeatureIndices = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isDone = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1207,29 +1211,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				}
 				this.nonZeroUserFeatureValues = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1259,30 +1263,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.Changed_ObservationCount_isDone = false;
 					this.Changed_ObservationCount_Ratings_isDone = false;
 					this.Changed_ObservationCount_UserThresholdCount_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isDone = false;
 					this.Changed_ObservationCount_TraitCount_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isDone = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1303,29 +1307,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				this.ratings = value;
 				this.numberOfIterationsDone = 0;
 				this.Changed_ObservationCount_Ratings_isDone = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isDone = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isDone = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1342,42 +1346,42 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				if (this.traitCount!=value) {
 					this.traitCount = value;
 					this.numberOfIterationsDone = 0;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
 					this.Changed_ObservationCount_TraitCount_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isDone = false;
 					this.Changed_TraitCount_isDone = false;
 					this.Changed_ItemFeatureCount_TraitCount_isDone = false;
 					this.Changed_ItemFeatureCount_ItemTraitFeatureWeightPriorVariance_TraitCount_isDone = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isDone = false;
 					this.Changed_TraitCount_UserFeatureCount_isDone = false;
 					this.Changed_TraitCount_UserFeatureCount_UserTraitFeatureWeightPriorVariance_isDone = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isDone = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isDone = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_TraitCount_isDone = false;
 					this.Changed_ItemCount_ItemTraitsInitializer_TraitCount_isDone = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_TraitCount_isDone = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isDone = false;
 					this.Changed_ItemCount_ItemTraitsMessage_TraitCount_isDone = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isDone = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isDone = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isDone = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
 					this.Changed_TraitCount_UserCount_isDone = false;
 					this.Changed_TraitCount_UserCount_UserTraitsInitializer_isDone = false;
 					this.Changed_NonZeroUserFeatureCounts_TraitCount_UserCount_isDone = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isDone = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isDone = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isDone = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isDone = false;
 					this.Changed_TraitCount_UserCount_UserTraitsMessage_isDone = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
@@ -1396,30 +1400,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				if (this.userBiasFeatureWeightPriorVariance!=value) {
 					this.userBiasFeatureWeightPriorVariance = value;
 					this.numberOfIterationsDone = 0;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_UserBiasFeatureWeightPriorVariance_UserFeatureCount_isDone = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isDone = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1436,30 +1440,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			set {
 				this.userBiasInitializer = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
 				this.Changed_UserBiasInitializer_UserCount_isDone = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isDone = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isDone = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1475,30 +1479,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			set {
 				this.userBiasMessage = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
 				this.Changed_UserBiasMessage_UserCount_isDone = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1515,29 +1519,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				if (this.userBiasVariance!=value) {
 					this.userBiasVariance = value;
 					this.numberOfIterationsDone = 0;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1555,40 +1559,40 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				if (this.userCount!=value) {
 					this.userCount = value;
 					this.numberOfIterationsDone = 0;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
 					this.Changed_UserCount_isDone = false;
 					this.Changed_UserBiasInitializer_UserCount_isDone = false;
 					this.Changed_NonZeroUserFeatureCounts_UserCount_isDone = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isDone = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isDone = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isDone = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isDone = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isDone = false;
 					this.Changed_UserBiasMessage_UserCount_isDone = false;
 					this.Changed_UserCount_UserThresholdCount_isDone = false;
 					this.Changed_UserCount_UserThresholdCount_UserThresholdsInitializer_isDone = false;
 					this.Changed_MiddleUserThresholdIndex_UserCount_UserThresholdCount_UserThresholdPriorMean_UserThresholdPr58_isDone = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isDone = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isDone = false;
 					this.Changed_UserCount_UserThresholdCount_UserThresholdsMessage_isDone = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isDone = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isDone = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isDone = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isDone = false;
 					this.Changed_TraitCount_UserCount_isDone = false;
 					this.Changed_TraitCount_UserCount_UserTraitsInitializer_isDone = false;
 					this.Changed_NonZeroUserFeatureCounts_TraitCount_UserCount_isDone = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isDone = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isDone = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isDone = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isDone = false;
 					this.Changed_TraitCount_UserCount_UserTraitsMessage_isDone = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
@@ -1607,33 +1611,33 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				if (this.userFeatureCount!=value) {
 					this.userFeatureCount = value;
 					this.numberOfIterationsDone = 0;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_UserFeatureCount_isDone = false;
 					this.Changed_UserBiasFeatureWeightPriorVariance_UserFeatureCount_isDone = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
 					this.Changed_TraitCount_UserFeatureCount_isDone = false;
 					this.Changed_TraitCount_UserFeatureCount_UserTraitFeatureWeightPriorVariance_isDone = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isDone = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isDone = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isDone = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1653,29 +1657,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				}
 				this.userIds = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1697,33 +1701,33 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.Changed_UserThresholdCount_UseSharedUserThresholds_isDone = false;
 					this.Changed_ObservationCount_UserThresholdCount_UseSharedUserThresholds_isDone = false;
 					this.Changed_ObservationCount_UserThresholdCount_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
 					this.Changed_UserCount_UserThresholdCount_isDone = false;
 					this.Changed_UserCount_UserThresholdCount_UserThresholdsInitializer_isDone = false;
 					this.Changed_MiddleUserThresholdIndex_UserCount_UserThresholdCount_UserThresholdPriorMean_UserThresholdPr58_isDone = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isDone = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isDone = false;
 					this.Changed_UserCount_UserThresholdCount_UserThresholdsMessage_isDone = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isDone = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isDone = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isDone = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1741,29 +1745,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				if (this.userThresholdNoiseVariance!=value) {
 					this.userThresholdNoiseVariance = value;
 					this.numberOfIterationsDone = 0;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1783,30 +1787,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				}
 				this.userThresholdPriorMean = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
 				this.Changed_MiddleUserThresholdIndex_UserCount_UserThresholdCount_UserThresholdPriorMean_UserThresholdPr58_isDone = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1824,30 +1828,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.userThresholdPriorVariance = value;
 					this.numberOfIterationsDone = 0;
 					this.Changed_MiddleUserThresholdIndex_UserThresholdCount_UserThresholdPriorVariance_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
 					this.Changed_MiddleUserThresholdIndex_UserCount_UserThresholdCount_UserThresholdPriorMean_UserThresholdPr58_isDone = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1864,30 +1868,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			set {
 				this.userThresholdsInitializer = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
 				this.Changed_UserCount_UserThresholdCount_UserThresholdsInitializer_isDone = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isDone = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isDone = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1903,30 +1907,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			set {
 				this.userThresholdsMessage = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
 				this.Changed_UserCount_UserThresholdCount_UserThresholdsMessage_isDone = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1943,30 +1947,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				if (this.userTraitFeatureWeightPriorVariance!=value) {
 					this.userTraitFeatureWeightPriorVariance = value;
 					this.numberOfIterationsDone = 0;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
 					this.Changed_TraitCount_UserFeatureCount_UserTraitFeatureWeightPriorVariance_isDone = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -1983,30 +1987,30 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			set {
 				this.userTraitsInitializer = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
 				this.Changed_TraitCount_UserCount_UserTraitsInitializer_isDone = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isDone = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isDone = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -2022,29 +2026,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			set {
 				this.userTraitsMessage = value;
 				this.numberOfIterationsDone = 0;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 				this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 				this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+				this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 				this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+				this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 				this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 				this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 				this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+				this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 				this.Changed_TraitCount_UserCount_UserTraitsMessage_isDone = false;
 				this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 				this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
@@ -2062,29 +2066,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				if (this.userTraitVariance!=value) {
 					this.userTraitVariance = value;
 					this.numberOfIterationsDone = 0;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -2106,29 +2110,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.Changed_ObservationCount_UseSharedUserThresholds_isDone = false;
 					this.Changed_UserThresholdCount_UseSharedUserThresholds_isDone = false;
 					this.Changed_ObservationCount_UserThresholdCount_UseSharedUserThresholds_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isInitialised = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isInitialised = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isInitialised = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isDone = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isInitialised = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isInitialised = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage60_isDone = false;
@@ -2675,16 +2679,16 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 
 		/// <summary>Computations that depend on the observed value of ItemBiasInitializer and ItemCount and numberOfIterationsDecreased and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasMessage and ItemBiasVariance and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and ObservationCount and Ratings and TraitCount and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserCount and UserFeatureCount and UserIds and UserThresholdCount and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18(bool initialise)
+		private void Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19(bool initialise)
 		{
-			if (this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isDone&&((!initialise)||this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised)) {
+			if (this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isDone&&((!initialise)||this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised)) {
 				return ;
 			}
 			for(int item = 0; item<this.itemCount; item++) {
 				this.ItemBias_use_F[item] = ArrayHelper.MakeCopy<Gaussian>(this.itemBiasInitializer[item]);
 			}
-			this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isDone = true;
-			this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isInitialised = true;
+			this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isDone = true;
+			this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of ItemBiasMessage and ItemCount</summary>
@@ -2740,9 +2744,9 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 
 		/// <summary>Computations that depend on the observed value of ItemCount and ItemTraitsInitializer and numberOfIterationsDecreased and TraitCount and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and ObservationCount and Ratings and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserCount and UserFeatureCount and UserIds and UserThresholdCount and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13(bool initialise)
+		private void Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14(bool initialise)
 		{
-			if (this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isDone&&((!initialise)||this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised)) {
+			if (this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isDone&&((!initialise)||this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised)) {
 				return ;
 			}
 			for(int item = 0; item<this.itemCount; item++) {
@@ -2750,8 +2754,8 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.ItemTraits_use_F[item][trait] = ArrayHelper.MakeCopy<Gaussian>(this.itemTraitsInitializer[item][trait]);
 				}
 			}
-			this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isDone = true;
-			this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isInitialised = true;
+			this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isDone = true;
+			this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of ItemCount and ItemTraitsInitializer and TraitCount</summary>
@@ -2795,9 +2799,9 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 
 		/// <summary>Computations that depend on the observed value of ItemCount and NonZeroItemFeatureCounts and numberOfIterationsDecreased and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and ObservationCount and Ratings and TraitCount and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserCount and UserFeatureCount and UserIds and UserThresholdCount and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53(bool initialise)
+		private void Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52(bool initialise)
 		{
-			if (this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isDone&&((!initialise)||this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised)) {
+			if (this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isDone&&((!initialise)||this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised)) {
 				return ;
 			}
 			for(int item = 0; item<this.itemCount; item++) {
@@ -2808,8 +2812,8 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.vdouble__44_B[item][nonZeroItemFeature] = Gaussian.Uniform();
 				}
 			}
-			this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isDone = true;
-			this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isInitialised = true;
+			this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isDone = true;
+			this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of ItemCount and NonZeroItemFeatureCounts and numberOfIterationsDecreased and TraitCount and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and ObservationCount and Ratings and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserCount and UserFeatureCount and UserIds and UserThresholdCount and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
@@ -2978,6 +2982,10 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			if (this.Changed_ItemFeatureCount_isDone) {
 				return ;
 			}
+			this.ItemBiasFeatureWeights_marginal_F = new DistributionStructArray<Gaussian,double>(this.itemFeatureCount);
+			for(int itemFeature = 0; itemFeature<this.itemFeatureCount; itemFeature++) {
+				this.ItemBiasFeatureWeights_marginal_F[itemFeature] = Gaussian.Uniform();
+			}
 			this.ItemBiasFeatureWeights_F = new DistributionStructArray<Gaussian,double>(this.itemFeatureCount);
 			this.ItemBiasFeatureWeights_F_reduced = default(Gaussian);
 			if (this.itemFeatureCount>0) {
@@ -2985,10 +2993,6 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			}
 			for(int itemFeature = 0; itemFeature<this.itemFeatureCount; itemFeature++) {
 				this.ItemBiasFeatureWeights_F[itemFeature] = this.ItemBiasFeatureWeights_F_reduced;
-			}
-			this.ItemBiasFeatureWeights_marginal_F = new DistributionStructArray<Gaussian,double>(this.itemFeatureCount);
-			for(int itemFeature = 0; itemFeature<this.itemFeatureCount; itemFeature++) {
-				this.ItemBiasFeatureWeights_marginal_F[itemFeature] = Gaussian.Uniform();
 			}
 			this.Changed_ItemFeatureCount_isDone = true;
 		}
@@ -3110,9 +3114,9 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 
 		/// <summary>Computations that depend on the observed value of NonZeroUserFeatureCounts and numberOfIterationsDecreased and TraitCount and UserCount and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and ObservationCount and Ratings and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserFeatureCount and UserIds and UserThresholdCount and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41(bool initialise)
+		private void Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42(bool initialise)
 		{
-			if (this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isDone&&((!initialise)||this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised)) {
+			if (this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isDone&&((!initialise)||this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised)) {
 				return ;
 			}
 			for(int user = 0; user<this.userCount; user++) {
@@ -3126,15 +3130,15 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					}
 				}
 			}
-			this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isDone = true;
-			this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isInitialised = true;
+			this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isDone = true;
+			this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of NonZeroUserFeatureCounts and numberOfIterationsDecreased and UserCount and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and ObservationCount and Ratings and TraitCount and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserFeatureCount and UserIds and UserThresholdCount and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43(bool initialise)
+		private void Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44(bool initialise)
 		{
-			if (this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isDone&&((!initialise)||this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised)) {
+			if (this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isDone&&((!initialise)||this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised)) {
 				return ;
 			}
 			for(int user = 0; user<this.userCount; user++) {
@@ -3145,8 +3149,8 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.nonZeroUserBiasFeatureWeightProducts_B[user][nonZeroUserFeature] = Gaussian.Uniform();
 				}
 			}
-			this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isDone = true;
-			this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isInitialised = true;
+			this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isDone = true;
+			this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of NonZeroUserFeatureCounts and TraitCount and UserCount</summary>
@@ -3184,9 +3188,9 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 
 		/// <summary>Computations that depend on the observed value of numberOfIterationsDecreased and ObservationCount and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and Ratings and TraitCount and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserCount and UserFeatureCount and UserIds and UserThresholdCount and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30(bool initialise)
+		private void Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31(bool initialise)
 		{
-			if (this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised)) {
+			if (this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised)) {
 				return ;
 			}
 			for(int observation = 0; observation<this.observationCount; observation++) {
@@ -3208,15 +3212,15 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				this.vdouble109_B[observation] = Gaussian.Uniform();
 				this.vdouble111_B[observation] = Gaussian.Uniform();
 			}
-			this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isDone = true;
-			this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isInitialised = true;
+			this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isDone = true;
+			this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of numberOfIterationsDecreased and ObservationCount and Ratings and UserThresholdCount and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and TraitCount and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserCount and UserFeatureCount and UserIds and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37(bool initialise)
+		private void Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38(bool initialise)
 		{
-			if (this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised)) {
+			if (this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised)) {
 				return ;
 			}
 			for(int observation = 0; observation<this.observationCount; observation++) {
@@ -3224,15 +3228,15 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.NoisyUserThresholds_use_B[observation][userThreshold] = Gaussian.Uniform();
 				}
 			}
-			this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isDone = true;
-			this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isInitialised = true;
+			this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isDone = true;
+			this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of numberOfIterationsDecreased and ObservationCount and TraitCount and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and Ratings and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserCount and UserFeatureCount and UserIds and UserThresholdCount and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29(bool initialise)
+		private void Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30(bool initialise)
 		{
-			if (this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised)) {
+			if (this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised)) {
 				return ;
 			}
 			for(int observation = 0; observation<this.observationCount; observation++) {
@@ -3246,15 +3250,15 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 				}
 			}
 			this.userTrait_B_new = ArrayHelper.CopyStorage<DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]>>(this.userTrait_B);
-			this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isDone = true;
-			this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isInitialised = true;
+			this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isDone = true;
+			this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of numberOfIterationsDecreased and ObservationCount and UserThresholdCount and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and Ratings and TraitCount and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserCount and UserFeatureCount and UserIds and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34(bool initialise)
+		private void Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35(bool initialise)
 		{
-			if (this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised)) {
+			if (this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised)) {
 				return ;
 			}
 			for(int observation = 0; observation<this.observationCount; observation++) {
@@ -3265,15 +3269,15 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.vdouble__61_B[observation][userThreshold] = Gaussian.Uniform();
 				}
 			}
-			this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isDone = true;
-			this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isInitialised = true;
+			this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isDone = true;
+			this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of numberOfIterationsDecreased and ObservationCount and UserThresholdCount and UseSharedUserThresholds and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and Ratings and TraitCount and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserCount and UserFeatureCount and UserIds and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32(bool initialise)
+		private void Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33(bool initialise)
 		{
-			if (this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised)) {
+			if (this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised)) {
 				return ;
 			}
 			for(int observation = 0; observation<this.observationCount; observation++) {
@@ -3292,8 +3296,8 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					}
 				}
 			}
-			this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isDone = true;
-			this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isInitialised = true;
+			this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isDone = true;
+			this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of numberOfIterationsDecreased and TraitCount and UserCount and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and ObservationCount and Ratings and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserFeatureCount and UserIds and UserThresholdCount and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
@@ -3324,9 +3328,9 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 
 		/// <summary>Computations that depend on the observed value of numberOfIterationsDecreased and TraitCount and UserCount and UserTraitsInitializer and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and ObservationCount and Ratings and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserFeatureCount and UserIds and UserThresholdCount and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26(bool initialise)
+		private void Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27(bool initialise)
 		{
-			if (this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised)) {
+			if (this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised)) {
 				return ;
 			}
 			for(int user = 0; user<this.userCount; user++) {
@@ -3334,36 +3338,36 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.UserTraits_use_F[user][trait] = ArrayHelper.MakeCopy<Gaussian>(this.userTraitsInitializer[user][trait]);
 				}
 			}
-			this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isDone = true;
-			this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isInitialised = true;
+			this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isDone = true;
+			this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of numberOfIterationsDecreased and TraitCount and UserFeatureCount and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and ObservationCount and Ratings and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserCount and UserIds and UserThresholdCount and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38(bool initialise)
+		private void Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39(bool initialise)
 		{
-			if (this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised)) {
+			if (this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised)) {
 				return ;
 			}
 			for(int trait = 0; trait<this.traitCount; trait++) {
 				this.UserTraitFeatureWeights_use_F_trait__marginal[trait] = JaggedSubarrayOp<double>.MarginalInit<DistributionStructArray<Gaussian,double>>(this.UserTraitFeatureWeights_F[trait]);
 			}
-			this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isDone = true;
-			this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isInitialised = true;
+			this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isDone = true;
+			this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of numberOfIterationsDecreased and UserBiasInitializer and UserCount and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and ObservationCount and Ratings and TraitCount and UserBiasFeatureWeightPriorVariance and UserBiasMessage and UserBiasVariance and UserFeatureCount and UserIds and UserThresholdCount and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16(bool initialise)
+		private void Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17(bool initialise)
 		{
-			if (this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised)) {
+			if (this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised)) {
 				return ;
 			}
 			for(int user = 0; user<this.userCount; user++) {
 				this.UserBias_use_F[user] = ArrayHelper.MakeCopy<Gaussian>(this.userBiasInitializer[user]);
 			}
-			this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isDone = true;
-			this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isInitialised = true;
+			this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isDone = true;
+			this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of numberOfIterationsDecreased and UserCount and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and ObservationCount and Ratings and TraitCount and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserFeatureCount and UserIds and UserThresholdCount and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
@@ -3390,9 +3394,9 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 
 		/// <summary>Computations that depend on the observed value of numberOfIterationsDecreased and UserCount and UserThresholdCount and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and ObservationCount and Ratings and TraitCount and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserFeatureCount and UserIds and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19(bool initialise)
+		private void Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20(bool initialise)
 		{
-			if (this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised)) {
+			if (this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised)) {
 				return ;
 			}
 			for(int user = 0; user<this.userCount; user++) {
@@ -3405,15 +3409,15 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.UserThresholds_depth0_uses_F[1][user][userThreshold] = Gaussian.Uniform();
 				}
 			}
-			this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isDone = true;
-			this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isInitialised = true;
+			this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isDone = true;
+			this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of numberOfIterationsDecreased and UserCount and UserThresholdCount and UserThresholdsInitializer and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and ObservationCount and Ratings and TraitCount and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserFeatureCount and UserIds and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance and UseSharedUserThresholds</summary>
 		/// <param name="initialise">If true, reset messages that initialise loops</param>
-		private void Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22(bool initialise)
+		private void Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23(bool initialise)
 		{
-			if (this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised)) {
+			if (this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isDone&&((!initialise)||this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised)) {
 				return ;
 			}
 			for(int user = 0; user<this.userCount; user++) {
@@ -3421,8 +3425,8 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 					this.UserThresholds_use_F[user][userThreshold] = ArrayHelper.MakeCopy<Gaussian>(this.userThresholdsInitializer[user][userThreshold]);
 				}
 			}
-			this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isDone = true;
-			this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isInitialised = true;
+			this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isDone = true;
+			this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isInitialised = true;
 		}
 
 		/// <summary>Computations that depend on the observed value of numberOfIterationsDecreased and UserCount and UserThresholdCount and UseSharedUserThresholds and must reset on changes to AffinityNoiseVariance and ItemBiasFeatureWeightPriorVariance and ItemBiasInitializer and ItemBiasMessage and ItemBiasVariance and ItemCount and ItemFeatureCount and ItemIds and ItemTraitFeatureWeightPriorVariance and ItemTraitsInitializer and ItemTraitsMessage and ItemTraitVariance and MiddleUserThresholdIndex and NonZeroItemFeatureCounts and NonZeroItemFeatureIndices and NonZeroItemFeatureValues and NonZeroUserFeatureCounts and NonZeroUserFeatureIndices and NonZeroUserFeatureValues and ObservationCount and Ratings and TraitCount and UserBiasFeatureWeightPriorVariance and UserBiasInitializer and UserBiasMessage and UserBiasVariance and UserFeatureCount and UserIds and UserThresholdNoiseVariance and UserThresholdPriorMean and UserThresholdPriorVariance and UserThresholdsInitializer and UserThresholdsMessage and UserTraitFeatureWeightPriorVariance and UserTraitsInitializer and UserTraitsMessage and UserTraitVariance</summary>
@@ -3767,8 +3771,8 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			this.UserBias_use_F = new DistributionStructArray<Gaussian,double>(this.userCount);
 			this.UserBias_uses_B[1] = new DistributionStructArray<Gaussian,double>(this.userCount);
 			this.UserThresholds_depth0_B = new DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]>(this.userCount);
-			this.UserThresholds_depth0_uses_B[0] = new DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]>(this.userCount);
 			this.UserThresholds_depth0_uses_B[1] = new DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]>(this.userCount);
+			this.UserThresholds_depth0_uses_B[0] = new DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]>(this.userCount);
 			this.UserThresholds_uses_B = new Gaussian[this.userCount][][];
 			this.UserThresholds_uses_F = new Gaussian[this.userCount][][];
 			this.UserThresholds_use_F = new DistributionRefArray<DistributionStructArray<Gaussian,double>,double[]>(this.userCount);
@@ -3814,11 +3818,11 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			}
 			for(int user = 0; user<this.userCount; user++) {
 				this.UserThresholds_depth0_B[user] = new DistributionStructArray<Gaussian,double>(this.userThresholdCount);
+				this.UserThresholds_depth0_uses_B[1][user] = new DistributionStructArray<Gaussian,double>(this.userThresholdCount);
 				this.UserThresholds_depth0_uses_B[0][user] = new DistributionStructArray<Gaussian,double>(this.userThresholdCount);
 				for(int userThreshold = 0; userThreshold<this.userThresholdCount; userThreshold++) {
 					this.UserThresholds_depth0_uses_B[0][user][userThreshold] = Gaussian.Uniform();
 				}
-				this.UserThresholds_depth0_uses_B[1][user] = new DistributionStructArray<Gaussian,double>(this.userThresholdCount);
 				this.UserThresholds_uses_B[user] = new Gaussian[this.userThresholdCount][];
 				for(int userThreshold = 0; userThreshold<this.userThresholdCount; userThreshold++) {
 					this.UserThresholds_uses_B[user][userThreshold] = new Gaussian[2];
@@ -3941,29 +3945,29 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			if (numberOfIterations!=this.numberOfIterationsDone) {
 				if (numberOfIterations<this.numberOfIterationsDone) {
 					this.numberOfIterationsDone = 0;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30_isDone = false;
-					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31_isDone = false;
+					this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30_isDone = false;
 					this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47_isDone = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38_isDone = false;
-					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53_isDone = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39_isDone = false;
+					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52_isDone = false;
 					this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55_isDone = false;
-					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18_isDone = false;
+					this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19_isDone = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8_isDone = false;
 					this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50_isDone = false;
-					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13_isDone = false;
+					this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14_isDone = false;
 					this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6_isDone = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43_isDone = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44_isDone = false;
 					this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45_isDone = false;
-					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16_isDone = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22_isDone = false;
-					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19_isDone = false;
+					this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17_isDone = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23_isDone = false;
+					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20_isDone = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21_isDone = false;
 					this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7_isDone = false;
-					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41_isDone = false;
-					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26_isDone = false;
+					this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42_isDone = false;
+					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27_isDone = false;
 					this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3_isDone = false;
 					this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59_isDone = false;
 				}
@@ -3981,12 +3985,12 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			this.Changed_ObservationCount();
 			this.Changed_ObservationCount_Ratings();
 			this.Changed_ObservationCount_UserThresholdCount();
-			this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa37(initialise);
-			this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init32(initialise);
-			this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I34(initialise);
-			this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh30(initialise);
+			this.Changed_numberOfIterationsDecreased_ObservationCount_Ratings_UserThresholdCount_Init_AffinityNoiseVa38(initialise);
+			this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_UseSharedUserThresholds_Init33(initialise);
+			this.Changed_numberOfIterationsDecreased_ObservationCount_UserThresholdCount_Init_AffinityNoiseVariance_I35(initialise);
+			this.Changed_numberOfIterationsDecreased_ObservationCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeigh31(initialise);
 			this.Changed_ObservationCount_TraitCount();
-			this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF29(initialise);
+			this.Changed_numberOfIterationsDecreased_ObservationCount_TraitCount_Init_AffinityNoiseVariance_ItemBiasF30(initialise);
 			this.Changed_UserFeatureCount();
 			this.Changed_UserBiasFeatureWeightPriorVariance_UserFeatureCount();
 			this.Changed_TraitCount();
@@ -3995,13 +3999,13 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			this.Changed_ItemFeatureCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasF47(initialise);
 			this.Changed_TraitCount_UserFeatureCount();
 			this.Changed_TraitCount_UserFeatureCount_UserTraitFeatureWeightPriorVariance();
-			this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF38(initialise);
+			this.Changed_numberOfIterationsDecreased_TraitCount_UserFeatureCount_Init_AffinityNoiseVariance_ItemBiasF39(initialise);
 			this.Changed_ItemCount();
 			this.Changed_ItemBiasInitializer_ItemCount();
 			this.Changed_ItemCount_NonZeroItemFeatureCounts();
-			this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It53(initialise);
+			this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_Init_AffinityNoiseVariance_It52(initialise);
 			this.Changed_ItemBiasFeatureWeightPriorVariance_ItemCount_ItemFeatureCount_NonZeroItemFeatureCounts_NonZe55(initialise);
-			this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia18(initialise);
+			this.Changed_ItemBiasInitializer_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBia19(initialise);
 			this.Changed_ItemBiasMessage_ItemCount();
 			this.Changed_ItemCount_numberOfIterationsDecreased_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV8(initialise);
 			this.Changed_ItemCount_TraitCount();
@@ -4009,28 +4013,28 @@ namespace Microsoft.ML.Probabilistic.Learners.MatchboxRecommenderInternal
 			this.Changed_ItemCount_NonZeroItemFeatureCounts_TraitCount();
 			this.Changed_ItemCount_NonZeroItemFeatureCounts_numberOfIterationsDecreased_TraitCount_Init_AffinityNoise50(initialise);
 			this.Changed_ItemCount_ItemTraitsMessage_TraitCount();
-			this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar13(initialise);
+			this.Changed_ItemCount_ItemTraitsInitializer_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVar14(initialise);
 			this.Changed_ItemCount_numberOfIterationsDecreased_TraitCount_Init_AffinityNoiseVariance_ItemBiasFeatureW6(initialise);
 			this.Changed_UserCount();
 			this.Changed_UserBiasInitializer_UserCount();
 			this.Changed_NonZeroUserFeatureCounts_UserCount();
-			this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It43(initialise);
+			this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_It44(initialise);
 			this.Changed_NonZeroUserFeatureCounts_NonZeroUserFeatureIndices_numberOfIterationsDecreased_UserBiasFeatu45(initialise);
-			this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia16(initialise);
+			this.Changed_numberOfIterationsDecreased_UserBiasInitializer_UserCount_Init_AffinityNoiseVariance_ItemBia17(initialise);
 			this.Changed_UserBiasMessage_UserCount();
 			this.Changed_UserCount_UserThresholdCount();
 			this.Changed_UserCount_UserThresholdCount_UserThresholdsInitializer();
 			this.Changed_MiddleUserThresholdIndex_UserCount_UserThresholdCount_UserThresholdPriorMean_UserThresholdPr58();
-			this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi22(initialise);
+			this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UserThresholdsInitializer_Init_Affi23(initialise);
 			this.Changed_UserCount_UserThresholdCount_UserThresholdsMessage();
-			this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias19(initialise);
+			this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_Init_AffinityNoiseVariance_ItemBias20(initialise);
 			this.Changed_numberOfIterationsDecreased_UserCount_UserThresholdCount_UseSharedUserThresholds_Init_Affini21(initialise);
 			this.Changed_numberOfIterationsDecreased_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureWeightPriorV7(initialise);
 			this.Changed_TraitCount_UserCount();
 			this.Changed_TraitCount_UserCount_UserTraitsInitializer();
 			this.Changed_NonZeroUserFeatureCounts_TraitCount_UserCount();
-			this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise41(initialise);
-			this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar26(initialise);
+			this.Changed_NonZeroUserFeatureCounts_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoise42(initialise);
+			this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_UserTraitsInitializer_Init_AffinityNoiseVar27(initialise);
 			this.Changed_TraitCount_UserCount_UserTraitsMessage();
 			this.Changed_numberOfIterationsDecreased_TraitCount_UserCount_Init_AffinityNoiseVariance_ItemBiasFeatureW3(initialise);
 			this.Changed_AffinityNoiseVariance_ItemBiasFeatureWeightPriorVariance_ItemBiasInitializer_ItemBiasMessage59();

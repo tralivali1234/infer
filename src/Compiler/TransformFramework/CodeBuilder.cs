@@ -466,8 +466,7 @@ namespace Microsoft.ML.Probabilistic.Compiler
         /// <returns>Expression statement</returns>
         public IExpressionStatement ExprStatement(IExpression expr)
         {
-            if (expr == null)
-                throw new ArgumentException("Supplied expression was null.");
+            if (expr == null) throw new ArgumentNullException(nameof(expr));
             IExpressionStatement es = ExprStatement();
             es.Expression = expr;
             return es;
@@ -514,12 +513,11 @@ namespace Microsoft.ML.Probabilistic.Compiler
         public ITypeReference TypeRef(string name, Type t, IType outerClass, params IType[] typeArguments)
         {
             ITypeReference tir = TypeInstRef();
-            IDotNetType tir_dn = tir as IDotNetType;
             foreach (IType tp in typeArguments) tir.GenericArguments.Add(tp);
             string s = "`" + typeArguments.Length;
             if (name.EndsWith(s)) name = name.Substring(0, name.Length - s.Length);
             tir.GenericType = (ITypeReference)TypeRef(name, t, outerClass);
-            if (tir_dn != null)
+            if (tir is IDotNetType tir_dn)
                 tir_dn.DotNetType = t;
             return tir;
         }
@@ -534,7 +532,6 @@ namespace Microsoft.ML.Probabilistic.Compiler
         public IType TypeRef(string name, Type t, IType outerClass)
         {
             ITypeReference tr = TypeRef();
-            IDotNetType tr_dn = tr as IDotNetType;
             name = name.Replace('+', '.');
             bool isByRef = (name.EndsWith("&"));
             if (isByRef) name = name.Substring(0, name.Length - 1);
@@ -549,15 +546,14 @@ namespace Microsoft.ML.Probabilistic.Compiler
             if (outerClass != null)
                 tr.Owner = outerClass;
 
-            if (tr_dn != null)
+            if (tr is IDotNetType tr_dn)
                 tr_dn.DotNetType = t;
 
             if (isByRef)
             {
                 IReferenceType rt = RefType();
                 rt.ElementType = tr;
-                IDotNetType rt_dn = rt as IDotNetType;
-                if (rt_dn != null)
+                if (rt is IDotNetType rt_dn)
                     rt_dn.DotNetType = t;
                 return rt;
             }
@@ -865,7 +861,7 @@ namespace Microsoft.ML.Probabilistic.Compiler
         {
             ConstructorInfo mi = t.GetConstructor(types);
             if (mi == null && types.Length > 0)
-                throw new MissingMethodException("GetConstructor failed for type " + t);
+                throw new MissingMethodException($"GetConstructor failed for type {StringUtil.TypeToString(t)} with arguments {StringUtil.ArrayToString(types)}");
             IMethodReference m = MethodRef();
             m.ReturnType = MethodReturnType(TypeRef(t));
             m.DeclaringType = TypeRef(t);
@@ -1081,8 +1077,7 @@ namespace Microsoft.ML.Probabilistic.Compiler
             //    at.Dimensions.Add(ArrayDim());
             //}
             // Set up the dotNet type for the array
-            IDotNetType idn = at as IDotNetType;
-            if (idn != null)
+            if (at is IDotNetType idn)
             {
                 Type elementType = ToType(type);
                 idn.DotNetType = MakeArrayType(elementType, rank);
@@ -1244,7 +1239,7 @@ namespace Microsoft.ML.Probabilistic.Compiler
         /// <returns>Variable reference expression</returns>
         public IVariableReferenceExpression VarRefExpr(IVariableReference ivr)
         {
-            if (ivr == null) throw new ArgumentException("Null variable reference supplied.");
+            if (ivr == null) throw new ArgumentNullException(nameof(ivr));
             IVariableReferenceExpression vre = VarRefExpr();
             vre.Variable = ivr;
             return vre;
@@ -1270,8 +1265,8 @@ namespace Microsoft.ML.Probabilistic.Compiler
         /// <returns>Assignment expression</returns>
         public IAssignExpression AssignExpr(IExpression target, IExpression expr)
         {
-            if (target == null) throw new NullReferenceException("Assignment target was null.");
-            if (expr == null) throw new NullReferenceException("Assignment expression was null.");
+            if (target == null) throw new ArgumentNullException(nameof(target));
+            if (expr == null) throw new ArgumentNullException(nameof(expr));
             IAssignExpression ae = AssignExpr();
             ae.Target = target;
             ae.Expression = expr;
@@ -1480,31 +1475,27 @@ namespace Microsoft.ML.Probabilistic.Compiler
         /// <returns>The resulting expression</returns>
         public IExpression ReplaceVariable(IExpression expr, IVariableDeclaration ivdFind, IVariableDeclaration ivdReplace)
         {
-            if (expr is IVariableReferenceExpression)
+            if (expr is IVariableReferenceExpression ivre)
             {
-                IVariableReferenceExpression ivre = (IVariableReferenceExpression)expr;
                 if (ivre.Variable.Resolve() == ivdFind) return VarRefExpr(ivdReplace);
                 return ivre;
             }
-            else if (expr is IArrayIndexerExpression)
+            else if (expr is IArrayIndexerExpression iaie)
             {
-                IArrayIndexerExpression iaie = (IArrayIndexerExpression)expr;
                 IArrayIndexerExpression aie = ArrayIndxrExpr();
                 foreach (IExpression ind in iaie.Indices) aie.Indices.Add(ReplaceVariable(ind, ivdFind, ivdReplace));
                 aie.Target = ReplaceVariable(iaie.Target, ivdFind, ivdReplace);
                 return aie;
             }
-            else if (expr is IVariableDeclarationExpression)
+            else if (expr is IVariableDeclarationExpression ivde)
             {
-                IVariableDeclarationExpression ivde = (IVariableDeclarationExpression)expr;
                 if (ivde.Variable == ivdFind) return VarDeclExpr(ivdReplace);
                 return ivde;
             }
             else if (expr is ILiteralExpression) return expr;
             else if (expr is IArgumentReferenceExpression) return expr;
-            else if (expr is IPropertyReferenceExpression)
+            else if (expr is IPropertyReferenceExpression ipre)
             {
-                IPropertyReferenceExpression ipre = (IPropertyReferenceExpression)expr;
                 IExpression target = ReplaceVariable(ipre.Target, ivdFind, ivdReplace);
                 if (target == ipre.Target) return ipre;
                 IPropertyReferenceExpression pre = PropRefExpr();
@@ -1525,9 +1516,8 @@ namespace Microsoft.ML.Probabilistic.Compiler
         /// <returns>The resulting expression</returns>
         public IExpression ReplaceVariable(IExpression expr, IVariableDeclaration ivdFind, IExpression exprReplace, ref int replaceCount)
         {
-            if (expr is IVariableReferenceExpression)
+            if (expr is IVariableReferenceExpression ivre)
             {
-                IVariableReferenceExpression ivre = (IVariableReferenceExpression)expr;
                 if (ivre.Variable.Resolve() == ivdFind)
                 {
                     replaceCount++;
@@ -1535,17 +1525,15 @@ namespace Microsoft.ML.Probabilistic.Compiler
                 }
                 return ivre;
             }
-            else if (expr is IArrayIndexerExpression)
+            else if (expr is IArrayIndexerExpression iaie)
             {
-                IArrayIndexerExpression iaie = (IArrayIndexerExpression)expr;
                 IArrayIndexerExpression aie = ArrayIndxrExpr();
                 foreach (IExpression ind in iaie.Indices) aie.Indices.Add(ReplaceVariable(ind, ivdFind, exprReplace, ref replaceCount));
                 aie.Target = ReplaceVariable(iaie.Target, ivdFind, exprReplace, ref replaceCount);
                 return aie;
             }
-            else if (expr is IVariableDeclarationExpression)
+            else if (expr is IVariableDeclarationExpression ivde)
             {
-                IVariableDeclarationExpression ivde = (IVariableDeclarationExpression)expr;
                 if (ivde.Variable == ivdFind)
                 {
                     replaceCount++;
@@ -1555,9 +1543,8 @@ namespace Microsoft.ML.Probabilistic.Compiler
             }
             else if (expr is ILiteralExpression) return expr;
             else if (expr is IArgumentReferenceExpression) return expr;
-            else if (expr is IPropertyReferenceExpression)
+            else if (expr is IPropertyReferenceExpression ipre)
             {
-                IPropertyReferenceExpression ipre = (IPropertyReferenceExpression)expr;
                 IExpression target = ReplaceVariable(ipre.Target, ivdFind, exprReplace, ref replaceCount);
                 if (target == ipre.Target) return ipre;
                 IPropertyReferenceExpression pre = PropRefExpr();
@@ -1610,31 +1597,27 @@ namespace Microsoft.ML.Probabilistic.Compiler
                 replaceCount++;
                 return exprReplace;
             }
-            else if (expr is IArrayIndexerExpression)
+            else if (expr is IArrayIndexerExpression iaie)
             {
-                IArrayIndexerExpression iaie = (IArrayIndexerExpression)expr;
                 IArrayIndexerExpression aie = ArrayIndxrExpr();
                 foreach (IExpression ind in iaie.Indices) aie.Indices.Add(ReplaceExpression(ind, exprFind, exprReplace, ref replaceCount));
                 aie.Target = ReplaceExpression(iaie.Target, exprFind, exprReplace, ref replaceCount);
                 return aie;
             }
-            else if (expr is IPropertyIndexerExpression)
+            else if (expr is IPropertyIndexerExpression ipie)
             {
-                IPropertyIndexerExpression ipie = (IPropertyIndexerExpression)expr;
                 IPropertyIndexerExpression pie = PropIndxrExpr();
                 foreach (IExpression ind in ipie.Indices) pie.Indices.Add(ReplaceExpression(ind, exprFind, exprReplace, ref replaceCount));
                 pie.Target = (IPropertyReferenceExpression)ReplaceExpression(ipie.Target, exprFind, exprReplace, ref replaceCount);
                 return pie;
             }
-            else if (expr is ICastExpression)
+            else if (expr is ICastExpression ice)
             {
-                ICastExpression ice = (ICastExpression)expr;
                 return CastExpr(ReplaceExpression(ice.Expression, exprFind, exprReplace, ref replaceCount), ice.TargetType);
             }
-            else if (expr is ICheckedExpression)
+            else if (expr is ICheckedExpression iche)
             {
-                ICheckedExpression ice = (ICheckedExpression)expr;
-                return CheckedExpr(ReplaceExpression(ice.Expression, exprFind, exprReplace, ref replaceCount));
+                return CheckedExpr(ReplaceExpression(iche.Expression, exprFind, exprReplace, ref replaceCount));
             }
             else if (
                 (expr is IVariableDeclarationExpression) ||
@@ -1642,9 +1625,8 @@ namespace Microsoft.ML.Probabilistic.Compiler
                 (expr is ILiteralExpression) ||
                 (expr is IDefaultExpression) ||
                 (expr is IArgumentReferenceExpression)) return expr;
-            else if (expr is IPropertyReferenceExpression)
+            else if (expr is IPropertyReferenceExpression ipre)
             {
-                IPropertyReferenceExpression ipre = (IPropertyReferenceExpression)expr;
                 IExpression target = ReplaceExpression(ipre.Target, exprFind, exprReplace, ref replaceCount);
                 if (target == ipre.Target) return ipre;
                 IPropertyReferenceExpression pre = PropRefExpr();
@@ -1664,19 +1646,17 @@ namespace Microsoft.ML.Probabilistic.Compiler
                 }
                 return ace;
             }
-            else if (expr is IBlockExpression)
+            else if (expr is IBlockExpression ible)
             {
-                IBlockExpression ibe = (IBlockExpression)expr;
                 IBlockExpression be = BlockExpr();
-                foreach (IExpression e in ibe.Expressions)
+                foreach (IExpression e in ible.Expressions)
                 {
                     be.Expressions.Add(ReplaceExpression(e, exprFind, exprReplace, ref replaceCount));
                 }
                 return be;
             }
-            else if (expr is IMethodInvokeExpression)
+            else if (expr is IMethodInvokeExpression imie)
             {
-                IMethodInvokeExpression imie = (IMethodInvokeExpression)expr;
                 IMethodInvokeExpression mie = MethodInvkExpr();
                 mie.Method = imie.Method;
                 foreach (IExpression arg in imie.Arguments)
@@ -1685,9 +1665,8 @@ namespace Microsoft.ML.Probabilistic.Compiler
                 }
                 return mie;
             }
-            else if (expr is IObjectCreateExpression)
+            else if (expr is IObjectCreateExpression ioce)
             {
-                IObjectCreateExpression ioce = (IObjectCreateExpression)expr;
                 IObjectCreateExpression oce = ObjCreateExpr();
                 oce.Constructor = ioce.Constructor;
                 oce.Type = ioce.Type;
@@ -1698,9 +1677,8 @@ namespace Microsoft.ML.Probabilistic.Compiler
                 oce.Initializer = (IBlockExpression)ReplaceExpression(ioce.Initializer, exprFind, exprReplace, ref replaceCount);
                 return oce;
             }
-            else if (expr is IAnonymousMethodExpression)
+            else if (expr is IAnonymousMethodExpression iame)
             {
-                IAnonymousMethodExpression iame = (IAnonymousMethodExpression)expr;
                 IAnonymousMethodExpression ame = AnonMethodExpr();
                 ame.DelegateType = iame.DelegateType;
                 foreach (IParameterDeclaration ipd in iame.Parameters) ame.Parameters.Add(ipd);
@@ -1708,40 +1686,35 @@ namespace Microsoft.ML.Probabilistic.Compiler
                 foreach (IStatement ist in iame.Body.Statements)
                 {
                     IStatement st = ist;
-                    if (ist is IExpressionStatement)
+                    if (ist is IExpressionStatement ies)
                     {
-                        IExpressionStatement ies = (IExpressionStatement)ist;
                         st = ExprStatement(ReplaceExpression(ies.Expression, exprFind, exprReplace, ref replaceCount));
                     }
-                    else if (ist is IMethodReturnStatement)
+                    else if (ist is IMethodReturnStatement imrs)
                     {
-                        IMethodReturnStatement imrs = (IMethodReturnStatement)ist;
                         st = Return(ReplaceExpression(imrs.Expression, exprFind, exprReplace, ref replaceCount));
                     }
                     ame.Body.Statements.Add(st);
                 }
                 return ame;
             }
-            else if (expr is IUnaryExpression)
+            else if (expr is IUnaryExpression iue)
             {
-                IUnaryExpression iue = (IUnaryExpression)expr;
                 IUnaryExpression ue = UnaryExpr();
                 ue.Operator = iue.Operator;
                 ue.Expression = ReplaceExpression(iue.Expression, exprFind, exprReplace, ref replaceCount);
                 return ue;
             }
-            else if (expr is IBinaryExpression)
+            else if (expr is IBinaryExpression ibe)
             {
-                IBinaryExpression ibe = (IBinaryExpression)expr;
                 IBinaryExpression be = BinaryExpr();
                 be.Operator = ibe.Operator;
                 be.Left = ReplaceExpression(ibe.Left, exprFind, exprReplace, ref replaceCount);
                 be.Right = ReplaceExpression(ibe.Right, exprFind, exprReplace, ref replaceCount);
                 return be;
             }
-            else if (expr is IMethodReferenceExpression)
+            else if (expr is IMethodReferenceExpression imre)
             {
-                var imre = (IMethodReferenceExpression)expr;
                 var mre = MethodRefExpr();
                 mre.Method = imre.Method;
                 mre.Target = ReplaceExpression(imre.Target, exprFind, exprReplace, ref replaceCount);
@@ -1751,7 +1724,12 @@ namespace Microsoft.ML.Probabilistic.Compiler
             {
                 return expr;
             }
-
+            else if (expr is IAddressOutExpression iaoe)
+            {
+                IAddressOutExpression aoe = AddrOutExpr();
+                aoe.Expression = ReplaceExpression(iaoe.Expression, exprFind, exprReplace, ref replaceCount);
+                return aoe;
+            }
             else throw new NotImplementedException("Unhandled expression type in ReplaceExpression(): " + expr.GetType());
         }
 
@@ -2215,21 +2193,23 @@ namespace Microsoft.ML.Probabilistic.Compiler
             Type arrayType = ToType(decl.VariableType);
             int rank;
             Type elementType = Util.GetElementType(arrayType, out rank);
-            if (sizes.Count == 0 || !arrayType.IsAssignableFrom(MakeArrayType(elementType, rank)))
+            if (sizes.Count == 0)
             {
                 addTo.Add(ExprStatement(VarDeclExpr(decl)));
                 return decl;
             }
+            if (!arrayType.IsAssignableFrom(MakeArrayType(elementType, rank)))
+                throw new ArgumentException($"sizes.Count > 0 but {decl} cannot be assigned to an array");
 
             IStatement declSt = AssignStmt(VarDeclExpr(decl), ArrayCreateExpr(elementType, sizes[0]));
             addTo.Add(declSt);
-            ICollection<IStatement> isc = addTo;
             IExpression expr = VarRefExpr(decl);
-            AddInnerLoops(0, indexVars, sizes, elementType, isc, expr, literalIndexingDepth);
+            AddInnerLoops(addTo, expr, elementType, indexVars, sizes, literalIndexingDepth, 0);
             return decl;
         }
 
-        private void AddInnerLoops(int i, IList<IVariableDeclaration[]> indexVars, IList<IExpression[]> sizes, Type elementType, ICollection<IStatement> isc, IExpression expr, int literalIndexingDepth)
+        // elementType is the type of expr[0]
+        private void AddInnerLoops(ICollection<IStatement> addTo, IExpression expr, Type elementType, IList<IVariableDeclaration[]> indexVars, IList<IExpression[]> sizes, int literalIndexingDepth, int i)
         {
             if (i >= sizes.Count - 1)
                 return;
@@ -2237,7 +2217,7 @@ namespace Microsoft.ML.Probabilistic.Compiler
             int rank;
             elementType = Util.GetElementType(arrayType, out rank);
             if (!arrayType.IsAssignableFrom(MakeArrayType(elementType, rank)))
-                return;
+                throw new ArgumentException($"{StringUtil.TypeToString(arrayType)} cannot be assigned to an array");
             if (i == literalIndexingDepth - 1)
             {
                 if (sizes[i].Length != 1) throw new Exception("sizes[i].Length != 1");
@@ -2245,19 +2225,19 @@ namespace Microsoft.ML.Probabilistic.Compiler
                 for (int j = 0; j < sizeAsInt; j++)
                 {
                     var lhs = ArrayIndex(expr, this.LiteralExpr(j));
-                    isc.Add(AssignStmt(lhs, ArrayCreateExpr(elementType, sizes[i + 1])));
-                    AddInnerLoops(i + 1, indexVars, sizes, elementType, isc, lhs, literalIndexingDepth);
+                    addTo.Add(AssignStmt(lhs, ArrayCreateExpr(elementType, sizes[i + 1])));
+                    AddInnerLoops(addTo, lhs, elementType, indexVars, sizes, literalIndexingDepth, i + 1);
                 }
             }
             else
             {
                 IForStatement innerFor;
                 IForStatement fs = NestedForStmt(indexVars[i], sizes[i], out innerFor);
-                isc.Add(fs);
-                isc = innerFor.Body.Statements;
+                addTo.Add(fs);
+                addTo = innerFor.Body.Statements;
                 var lhs = ArrayIndex(expr, VarRefExprArray(indexVars[i]));
-                isc.Add(AssignStmt(lhs, ArrayCreateExpr(elementType, sizes[i + 1])));
-                AddInnerLoops(i + 1, indexVars, sizes, elementType, isc, lhs, literalIndexingDepth);
+                addTo.Add(AssignStmt(lhs, ArrayCreateExpr(elementType, sizes[i + 1])));
+                AddInnerLoops(addTo, lhs, elementType, indexVars, sizes, literalIndexingDepth, i + 1);
             }
         }
 

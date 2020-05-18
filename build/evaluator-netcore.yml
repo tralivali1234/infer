@@ -9,11 +9,11 @@ parameters:
 
 steps:
 - task: Bash@3
-  displayName: 'Running Evaluator'
+  displayName: 'Running Evaluator (.NET Core)'
   condition: not(endsWith('${{ parameters.Configuration }}', 'Full'))
   inputs:
     targetType: 'inline'
     script: dotnet Evaluator.dll InferNetRunsOnly.xml
-    workingDirectory: ${{ format('src/Learners/Runners/Evaluator/bin/{0}/netcoreapp2.1', parameters.Configuration) }}
+    workingDirectory: ${{ format('src/Learners/Runners/Evaluator/bin/{0}/netcoreapp3.1', parameters.Configuration) }}
     displayName: Running Evaluator
     continueOnError: true

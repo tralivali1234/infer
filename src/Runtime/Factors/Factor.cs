@@ -81,7 +81,7 @@ namespace Microsoft.ML.Probabilistic.Factors
         [ParameterNames("sample", "shape", "rate", "lowerBound", "upperBound")]
         public static double TruncatedGammaFromShapeAndRate(double shape, double rate, double lowerBound, double upperBound)
         {
-            return TruncatedGamma.Sample(shape, 1 / rate, lowerBound, upperBound);
+            return TruncatedGamma.Sample(Gamma.FromShapeAndRate(shape, rate), lowerBound, upperBound);
         }
 
         /// <summary>
@@ -753,23 +753,23 @@ namespace Microsoft.ML.Probabilistic.Factors
         {
             if (array == null)
             {
-                throw new ArgumentNullException("array");
+                throw new ArgumentNullException(nameof(array));
             }
 
             if (array.Count < 1)
             {
-                throw new ArgumentException("array.Count < 1", "array");
+                throw new ArgumentException("array.Count < 1", nameof(array));
             }
 
             if (array.Any(element => element == null))
             {
-                throw new ArgumentNullException("array", "The array contains a null vector.");
+                throw new ArgumentNullException(nameof(array), "The array contains a null vector.");
             }
 
             int dimension = array[0].Count;
             if (array.Any(element => element.Count != dimension))
             {
-                throw new ArgumentException("Vectors in the array have different dimensions.", "array");
+                throw new ArgumentException("Vectors in the array have different dimensions.", nameof(array));
             }
 
             Vector sum = Vector.Copy(array[0]);
@@ -785,17 +785,17 @@ namespace Microsoft.ML.Probabilistic.Factors
         {
             if (array == null)
             {
-                throw new ArgumentNullException("array");
+                throw new ArgumentNullException(nameof(array));
             }
 
             if (array.Count < 1)
             {
-                throw new ArgumentException("array.Count < 1", "array");
+                throw new ArgumentException("array.Count < 1", nameof(array));
             }
 
             if (array.Any(element => element == null))
             {
-                throw new ArgumentNullException("array", "The array contains a null vector.");
+                throw new ArgumentNullException(nameof(array), "The array contains a null vector.");
             }
 
             int dimension = array.Sum(v => v.Count);
@@ -1298,18 +1298,6 @@ namespace Microsoft.ML.Probabilistic.Factors
         [Fresh] // needed for CopyPropagationTransform
         [HasUnitDerivative]
         public static T Copy<T>([SkipIfUniform] T value)
-        {
-            return value;
-        }
-
-        /// <summary>
-        /// Passes the input through to the output. Used to set backward messages to uniform.
-        /// </summary>
-        /// <typeparam name="T">The type the input value.</typeparam>
-        /// <param name="value">The value to return.</param>
-        /// <returns>The supplied value.</returns>
-        [Hidden]
-        public static T Cut<T>([SkipIfUniform] T value)
         {
             return value;
         }

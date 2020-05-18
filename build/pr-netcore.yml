@@ -7,7 +7,10 @@
 resources:
 - repo: self
   clean: true
-  
+
+queue:
+  timeoutInMinutes: 120
+
 trigger: none # disable CI build
 
 variables:
@@ -17,7 +20,7 @@ steps:
 - task: DotNetCoreInstaller@0
   inputs:
     packageType: 'sdk' 
-    version: '2.1.403' 
+    version: '3.1.201' 
 
 - script: |
     dotnet build /p:DisableImplicitNuGetFallbackFolder=true --configuration $(buildConfiguration)Core Infer.sln

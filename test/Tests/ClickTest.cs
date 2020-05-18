@@ -13,6 +13,7 @@ using Microsoft.ML.Probabilistic.Factors;
 using Microsoft.ML.Probabilistic.Models;
 using Microsoft.ML.Probabilistic.Compiler;
 using Microsoft.ML.Probabilistic.Models.Attributes;
+using Range = Microsoft.ML.Probabilistic.Models.Range;
 
 namespace Microsoft.ML.Probabilistic.Tests
 {
@@ -192,11 +193,7 @@ namespace Microsoft.ML.Probabilistic.Tests
             int[] ex;
 
             // limit numDocs to 100 to make the test quicker
-            LoadData(Path.Combine(
-#if NETCORE
-                Path.GetDirectoryName(typeof(ClickTest).Assembly.Location), // work dir is not the one with Microsoft.ML.Probabilistic.Tests.dll on netcore and neither is .Location on netfull
-#endif
-                "Data", "ClickModel.txt"), out lb, out ck, out ex, 100);
+            LoadData(Path.Combine(TestUtils.DataFolderPath, "ClickModel.txt"), out lb, out ck, out ex, 100);
             Console.WriteLine("Total number of documents: {0}", lb.Length);
 
 #if multi_plate_model
@@ -227,9 +224,7 @@ namespace Microsoft.ML.Probabilistic.Tests
             List<int> examList = new List<int>();
             char[] sep = {'\t'};
 
-            StreamReader reader = new StreamReader(filename);
-            string line;
-            while ((line = reader.ReadLine()) != null)
+            foreach (string line in File.ReadLines(filename))
             {
                 if (maxDocs >= 0 && labelList.Count == maxDocs) break;
                 string[] split = line.Split(sep);
@@ -237,7 +232,6 @@ namespace Microsoft.ML.Probabilistic.Tests
                 clickList.Add(int.Parse(split[1]));
                 examList.Add(int.Parse(split[2]));
             }
-            reader.Close();
             labels = labelList.ToArray();
             clicks = clickList.ToArray();
             exams = examList.ToArray();

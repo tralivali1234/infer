@@ -6,6 +6,7 @@ using System;
 using System.IO;
 using Microsoft.ML.Probabilistic.Models;
 using Microsoft.ML.Probabilistic.Distributions;
+using Range = Microsoft.ML.Probabilistic.Models.Range;
 
 namespace Microsoft.ML.Probabilistic.Tutorials
 {
@@ -400,7 +401,6 @@ namespace Microsoft.ML.Probabilistic.Tutorials
             exams = null;
             int totalDocs = 0;
             string myStr;
-            StreamReader mySR;
             char[] sep = { '\t', ',' };
 
             for (int pass = 0; pass < 2; pass++)
@@ -413,30 +413,30 @@ namespace Microsoft.ML.Probabilistic.Tutorials
                     totalDocs = 0;
                 }
 
-                mySR = new StreamReader(ifn);
-                mySR.ReadLine(); // Skip over header line
-                while ((myStr = mySR.ReadLine()) != null)
+                using (var mySR = new StreamReader(ifn))
                 {
-                    string[] mySplitStr = myStr.Split(sep);
-                    int exm = int.Parse(mySplitStr[2]);
-
-                    // Only include data with non-zero examinations
-                    if (0 != exm || allowNoExams)
+                    mySR.ReadLine(); // Skip over header line
+                    while ((myStr = mySR.ReadLine()) != null)
                     {
-                        if (1 == pass)
-                        {
-                            int lab = int.Parse(mySplitStr[0]);
-                            int clk = int.Parse(mySplitStr[1]);
-                            labels[totalDocs] = lab;
-                            clicks[totalDocs] = clk;
-                            exams[totalDocs] = exm;
-                        }
+                        string[] mySplitStr = myStr.Split(sep);
+                        int exm = int.Parse(mySplitStr[2]);
 
-                        totalDocs++;
+                        // Only include data with non-zero examinations
+                        if (0 != exm || allowNoExams)
+                        {
+                            if (1 == pass)
+                            {
+                                int lab = int.Parse(mySplitStr[0]);
+                                int clk = int.Parse(mySplitStr[1]);
+                                labels[totalDocs] = lab;
+                                clicks[totalDocs] = clk;
+                                exams[totalDocs] = exm;
+                            }
+
+                            totalDocs++;
+                        }
                     }
                 }
-
-                mySR.Close();
             }
         }
 

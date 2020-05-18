@@ -67,7 +67,7 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
             Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TAutomaton> automaton,
             bool collapseAlternatives = true)
             where TSequence : class, IEnumerable<TElement>
-            where TElementDistribution : class, IDistribution<TElement>, SettableToProduct<TElementDistribution>, SettableToWeightedSumExact<TElementDistribution>, CanGetLogAverageOf<TElementDistribution>,
+            where TElementDistribution : IDistribution<TElement>, SettableToProduct<TElementDistribution>, SettableToWeightedSumExact<TElementDistribution>, CanGetLogAverageOf<TElementDistribution>,
                 SettableToPartialUniform<TElementDistribution>, new()
             where TSequenceManipulator : ISequenceManipulator<TSequence, TElement>, new()
             where TAutomaton : Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TAutomaton>, new()
@@ -96,9 +96,9 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
                 {
                     var state = currentComponent.GetStateByIndex(stateIndex);
                     RegexpTreeNode<TElement> stateDownwardRegexp = state.CanEnd ? RegexpTreeNode<TElement>.Empty() : RegexpTreeNode<TElement>.Nothing();
-                    for (int transitionIndex = 0; transitionIndex < state.TransitionCount; ++transitionIndex)
+
+                    foreach (var transition in state.Transitions)
                     {
-                        var transition = state.GetTransition(transitionIndex);
                         var destState = automaton.States[transition.DestinationStateIndex];
                         if (!transition.Weight.IsZero && !currentComponent.HasState(destState))
                         {
@@ -146,7 +146,7 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
             Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TAutomaton> automaton,
             bool collapseAlternatives = true)
             where TSequence : class, IEnumerable<TElement>
-            where TElementDistribution : class, IDistribution<TElement>, SettableToProduct<TElementDistribution>, SettableToWeightedSumExact<TElementDistribution>, CanGetLogAverageOf<TElementDistribution>,
+            where TElementDistribution : IDistribution<TElement>, SettableToProduct<TElementDistribution>, SettableToWeightedSumExact<TElementDistribution>, CanGetLogAverageOf<TElementDistribution>,
                 SettableToPartialUniform<TElementDistribution>, new()
             where TSequenceManipulator : ISequenceManipulator<TSequence, TElement>, new()
             where TAutomaton : Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TAutomaton>, new()
@@ -180,9 +180,8 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
                                 return true;
                             }
 
-                            for (int tidx = 0; tidx < s.TransitionCount; ++tidx)
+                            foreach (var t in s.Transitions)
                             {
-                                var t = s.GetTransition(tidx);
                                 var dest = automaton.States[t.DestinationStateIndex];
                                 if ((!t.Weight.IsZero) && (!currentComponent.HasState(dest)))
                                 {
@@ -200,17 +199,15 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
                         {
                             var s = currentComponent.GetStateByIndex(i);
                             var sIdx = s.Index;
-                            foreach (var s1 in s.Owner.States)
+                            foreach (var s1 in automaton.States)
                             {
                                 if (currentComponent.HasState(s1))
                                 {
                                     continue;
                                 }
 
-                                var trans = s1.GetTransitions();
-                                for (int tIdx = 0; tIdx < trans.Length; tIdx++)
+                                foreach (var t in s1.Transitions)
                                 {
-                                    var t = trans[tIdx];
                                     if (t.DestinationStateIndex == sIdx && !t.Weight.IsZero)
                                     {
                                         return true;
@@ -238,9 +235,8 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
                     }
 
                     var outgoingRegexes = new Dictionary<int, RegexpTreeNode<TElement>>();
-                    for (int transitionIndex = 0; transitionIndex < state.TransitionCount; ++transitionIndex)
+                    foreach (var transition in state.Transitions)
                     {
-                        var transition = state.GetTransition(transitionIndex);
                         var destState = automaton.States[transition.DestinationStateIndex];
                         if ((!transition.Weight.IsZero) && (!currentComponent.HasState(destState)))
                         {
@@ -366,7 +362,7 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
         private static RegexpTreeNode<TElement>[,] BuildStronglyConnectedComponentRegexp<TSequence, TElement, TElementDistribution, TSequenceManipulator, TAutomaton>(
             Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TAutomaton>.StronglyConnectedComponent component)
             where TSequence : class, IEnumerable<TElement>
-            where TElementDistribution : class, IDistribution<TElement>, SettableToProduct<TElementDistribution>, SettableToWeightedSumExact<TElementDistribution>, CanGetLogAverageOf<TElementDistribution>,
+            where TElementDistribution : IDistribution<TElement>, SettableToProduct<TElementDistribution>, SettableToWeightedSumExact<TElementDistribution>, CanGetLogAverageOf<TElementDistribution>,
                 SettableToPartialUniform<TElementDistribution>, new()
             where TSequenceManipulator : ISequenceManipulator<TSequence, TElement>, new()
             where TAutomaton : Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TAutomaton>, new()
@@ -377,16 +373,15 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
                 var state = component.GetStateByIndex(stateIndex);
                 regexps[stateIndex, stateIndex] = RegexpTreeNode<TElement>.Empty();
 
-                for (int transitionIndex = 0; transitionIndex < state.TransitionCount; ++transitionIndex)
+                foreach (var transition in state.Transitions)
                 {
-                    var transition = state.GetTransition(transitionIndex);
                     if (transition.Weight.IsZero)
                     {
                         continue;
                     }
 
                     int destStateIndex;
-                    if ((destStateIndex = component.GetIndexByState(state.Owner.States[transition.DestinationStateIndex])) != -1)
+                    if ((destStateIndex = component.GetIndexByState(component.Automaton.States[transition.DestinationStateIndex])) != -1)
                     {
                         var destStateRegexp = transition.IsEpsilon
                                 ? RegexpTreeNode<TElement>.Empty()
@@ -1129,7 +1124,7 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
                 /// <summary>
                 /// A static instance of an interval comparer.
                 /// </summary>
-                private static IComparer<IntervalTreeNode> intervalComparerInstance = new IntervalNodeComparer();
+                private static readonly IComparer<IntervalTreeNode> intervalComparerInstance = new IntervalNodeComparer();
 
                 /// <summary>
                 /// Backing field for <see cref="Children"/>.

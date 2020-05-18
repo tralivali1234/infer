@@ -40,7 +40,7 @@ namespace Microsoft.ML.Probabilistic.Serialization
         {
             if (reader == null)
             {
-                throw new ArgumentNullException("reader");
+                throw new ArgumentNullException(nameof(reader));
             }
 
             Guid deserializedGuid = reader.ReadGuid();
@@ -48,10 +48,7 @@ namespace Microsoft.ML.Probabilistic.Serialization
             {
                 if (exceptionMessage == null)
                 {
-                    exceptionMessage = string.Format(
-                        "The deserialized guid {0} is invalid. Custom binary serialization of this object expects the guid to be {1}.",
-                        deserializedGuid,
-                        expectedSerializationGuid);
+                    exceptionMessage = $"The deserialized guid {deserializedGuid} is invalid. Custom binary serialization of this object expects the guid to be {expectedSerializationGuid}.";
                 }
 
                 throw new SerializationException(exceptionMessage);
@@ -73,7 +70,7 @@ namespace Microsoft.ML.Probabilistic.Serialization
         {
             if (reader == null)
             {
-                throw new ArgumentNullException("reader");
+                throw new ArgumentNullException(nameof(reader));
             }
 
             var deserializedVersion = reader.ReadInt32();
@@ -102,7 +99,7 @@ namespace Microsoft.ML.Probabilistic.Serialization
         {
             if (reader == null)
             {
-                throw new ArgumentNullException("reader");
+                throw new ArgumentNullException(nameof(reader));
             }
 
             return ByteArrayToObject(reader.ReadByteArray());
@@ -117,7 +114,7 @@ namespace Microsoft.ML.Probabilistic.Serialization
         {
             if (reader == null)
             {
-                throw new ArgumentNullException("reader");
+                throw new ArgumentNullException(nameof(reader));
             }
 
             return new Guid(reader.ReadBytes(GuidByteCount));
@@ -132,7 +129,7 @@ namespace Microsoft.ML.Probabilistic.Serialization
         {
             if (reader == null)
             {
-                throw new ArgumentNullException("reader");
+                throw new ArgumentNullException(nameof(reader));
             }
 
             int length = reader.ReadInt32();
@@ -153,7 +150,7 @@ namespace Microsoft.ML.Probabilistic.Serialization
         {
             if (reader == null)
             {
-                throw new ArgumentNullException("reader");
+                throw new ArgumentNullException(nameof(reader));
             }
 
             int length = reader.ReadInt32();
@@ -180,7 +177,7 @@ namespace Microsoft.ML.Probabilistic.Serialization
         {
             if (reader == null)
             {
-                throw new ArgumentNullException("reader");
+                throw new ArgumentNullException(nameof(reader));
             }
 
             return Gaussian.FromNatural(reader.ReadDouble(), reader.ReadDouble());
@@ -195,7 +192,7 @@ namespace Microsoft.ML.Probabilistic.Serialization
         {
             if (reader == null)
             {
-                throw new ArgumentNullException("reader");
+                throw new ArgumentNullException(nameof(reader));
             }
 
             int length = reader.ReadInt32();
@@ -216,7 +213,7 @@ namespace Microsoft.ML.Probabilistic.Serialization
         {
             if (reader == null)
             {
-                throw new ArgumentNullException("reader");
+                throw new ArgumentNullException(nameof(reader));
             }
 
             int length = reader.ReadInt32();
@@ -237,7 +234,7 @@ namespace Microsoft.ML.Probabilistic.Serialization
         {
             if (reader == null)
             {
-                throw new ArgumentNullException("reader");
+                throw new ArgumentNullException(nameof(reader));
             }
 
             return Gamma.FromShapeAndRate(reader.ReadDouble(), reader.ReadDouble());
@@ -252,7 +249,7 @@ namespace Microsoft.ML.Probabilistic.Serialization
         {
             if (reader == null)
             {
-                throw new ArgumentNullException("reader");
+                throw new ArgumentNullException(nameof(reader));
             }
 
             int length = reader.ReadInt32();

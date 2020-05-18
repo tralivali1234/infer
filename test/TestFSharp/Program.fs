@@ -4,18 +4,10 @@
 
 #light
 open System
-open Microsoft.ML.Probabilistic
-open Microsoft.ML.Probabilistic.Models
-open Microsoft.ML.Probabilistic.Distributions
-open Microsoft.ML.Probabilistic.Factors
-open Microsoft.ML.Probabilistic.FSharp
+open System.Diagnostics
 
-open TwoCoinsTutorial
-open TruncatedGaussianTutorial
-open GaussianRangesTutorial
-open ClinicalTrialTutorial
-open BayesPointTutorial
-open MixtureGaussiansTutorial
+let coreAssemblyInfo = FileVersionInfo.GetVersionInfo(typeof<Object>.Assembly.Location)
+printfn "%s .NET version %s mscorlib %s" (if Environment.Is64BitProcess then "64-bit" else "32-bit") (Environment.Version.ToString ()) coreAssemblyInfo.ProductVersion
 
 //main Smoke Test .............................................
 
@@ -25,6 +17,6 @@ let _ = GaussianRangesTutorial.ranges.rangesTestFunc()
 let _ = ClinicalTrialTutorial.clinical.clinicalTestFunc()
 let _ = BayesPointTutorial.bayes.bayesTestFunc()
 let _ = MixtureGaussiansTutorial.mixture.mixtureTestFunc()
-
+let _ = DifficultyAbilityExample.DifficultyAbility.main()
 
 Console.ReadLine() |> ignore

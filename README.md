@@ -21,15 +21,15 @@ and many others.
 
 ## Build Status
 
-|    | Debug | Release |
-|:---|----------------:|------------------:|
-|**Windows**|[![Win Debug](https://msrcambridge.visualstudio.com/Infer.NET/_apis/build/status/Nightly%20Windows%20Debug)](https://msrcambridge.visualstudio.com/Infer.NET/_build/latest?definitionId=135)|[![Win Release](https://msrcambridge.visualstudio.com/Infer.NET/_apis/build/status/Nightly%20Windows%20Release)](https://msrcambridge.visualstudio.com/Infer.NET/_build/latest?definitionId=134)|
-|**Linux**|[![Linux Debug](https://msrcambridge.visualstudio.com/Infer.NET/_apis/build/status/Nightly%20Linux%20Debug)](https://msrcambridge.visualstudio.com/Infer.NET/_build/latest?definitionId=137)|[![Linux Release](https://msrcambridge.visualstudio.com/Infer.NET/_apis/build/status/Nightly%20Linux%20Release)](https://msrcambridge.visualstudio.com/Infer.NET/_build/latest?definitionId=136)|
-|**macOS**|[![macOS Debug](https://msrcambridge.visualstudio.com/Infer.NET/_apis/build/status/Nightly%20macOS%20Debug)](https://msrcambridge.visualstudio.com/Infer.NET/_build/latest?definitionId=139)|[![macOS Release](https://msrcambridge.visualstudio.com/Infer.NET/_apis/build/status/Nightly%20macOS%20Release)](https://msrcambridge.visualstudio.com/Infer.NET/_build/latest?definitionId=138)|
+|    | Release |
+|:---|------------------:|
+|**Windows**|[![Win Release](https://msrcambridge.visualstudio.com/Infer.NET/_apis/build/status/Nightly%20Windows%20Release)](https://msrcambridge.visualstudio.com/Infer.NET/_build/latest?definitionId=134)|
+|**Linux**|[![Linux Release](https://msrcambridge.visualstudio.com/Infer.NET/_apis/build/status/Nightly%20Linux%20Release)](https://msrcambridge.visualstudio.com/Infer.NET/_build/latest?definitionId=136)|
+|**macOS**|[![macOS Release](https://msrcambridge.visualstudio.com/Infer.NET/_apis/build/status/Nightly%20macOS%20Release)](https://msrcambridge.visualstudio.com/Infer.NET/_build/latest?definitionId=138)|
 
 ## Installing pre-built binaries
 
-Binaries for Infer.NET are located on [nuget.org](https://www.nuget.org/packages?q=Microsoft.ML.Probabilistic).  These binaries are cross-platform and work anywhere that .NET is supported, so there is no need to select your platform.  You do not need to clone the GitHub repository to use the pre-built binaries.
+Binaries for Infer.NET are located on [nuget.org](https://www.nuget.org/packages?q=Microsoft.ML.Probabilistic).  These binaries are cross-platform and work anywhere that .NET is supported, so there is no need to select your platform.  The core packages target .NET Standard 2.0, making them useable from any project that targets .NET framework version 4.6.1 or .NET Core 2.1, as explained at [.NET implementation support](https://docs.microsoft.com/en-us/dotnet/standard/net-standard).  You do not need to clone the GitHub repository to use the pre-built binaries.
 
 There currently are [four maintained Infer.NET nuget packages](https://www.nuget.org/packages?q=Microsoft.ML.Probabilistic):
 
@@ -119,6 +119,9 @@ Please, refer to our [building guide](BUILDING.md).
 ## Contributing
 
 We welcome contributions! Please review our [contribution guide](CONTRIBUTING.md).
+
+When submitting pull request with changed or added factor, please make sure you updated factor documentation as described [here](docs/README.md#Documenting-Factors). 
+
 
 ## License
 

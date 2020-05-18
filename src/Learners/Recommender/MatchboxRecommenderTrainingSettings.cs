@@ -129,7 +129,7 @@ namespace Microsoft.ML.Probabilistic.Learners
         {
             if (reader == null)
             {
-                throw new ArgumentNullException("reader");
+                throw new ArgumentNullException(nameof(reader));
             }
 
             reader.VerifySerializationGuid(
@@ -205,7 +205,7 @@ namespace Microsoft.ML.Probabilistic.Learners
             set
             {
                 this.trainingSettingsGuard.OnSettingChanging();
-                Argument.CheckIfInRange(value > 0, "value", "The number of traits must be non-negative.");
+                Argument.CheckIfInRange(value >= 0, "value", "The number of traits must be non-negative.");
                 this.traitCount = value;
             }
         }

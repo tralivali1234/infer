@@ -34,7 +34,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
                          SettableToRatio<Beta>, SettableToPower<Beta>, SettableToWeightedSum<Beta>, CanGetLogAverageOf<Beta>, CanGetLogAverageOfPower<Beta>,
                          CanGetAverageLog<Beta>, CanGetLogNormalizer,
                          Sampleable<double>, CanGetMean<double>, CanGetVariance<double>, CanGetMeanAndVarianceOut<double, double>, CanSetMeanAndVariance<double, double>,
-                         CanGetMode<double>
+                         CanGetMode<double>, CanGetProbLessThan
     {
         /// <summary>
         /// True count
@@ -51,7 +51,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// <summary>
         /// The sum of TrueCount and FalseCount.
         /// </summary>
-        [NonSerializedProperty]
+        [IgnoreDataMember]
         public double TotalCount
         {
             get { return TrueCount + FalseCount; }
@@ -283,11 +283,11 @@ namespace Microsoft.ML.Probabilistic.Distributions
             }
             else if (mean < 0.0 || mean > 1.0)
             {
-                throw new ArgumentException("Supplied mean is outside [0,1]", "mean");
+                throw new ArgumentException("Supplied mean is outside [0,1]", nameof(mean));
             }
             else if (variance < 0)
             {
-                throw new ArgumentException("Supplied variance is negative", "variance");
+                throw new ArgumentException("Supplied variance is negative", nameof(variance));
             }
             else
             {
@@ -312,7 +312,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// <summary>
         /// Gets/sets the instance as a point mass
         /// </summary>
-        [NonSerializedProperty, System.Xml.Serialization.XmlIgnore]
+        [IgnoreDataMember, System.Xml.Serialization.XmlIgnore]
         public double Point
         {
             get { return TrueCount; }
@@ -320,14 +320,14 @@ namespace Microsoft.ML.Probabilistic.Distributions
             {
                 FalseCount = Double.PositiveInfinity;
                 TrueCount = value;
-                if (TrueCount < 0.0 || TrueCount > 1.0) throw new ArgumentException("Supplied value is outside [0,1]", "value");
+                if (TrueCount < 0.0 || TrueCount > 1.0) throw new ArgumentException("Supplied value is outside [0,1]", nameof(value));
             }
         }
 
         /// <summary>
         /// Whether the instance is a point mass beta distribution
         /// </summary>
-        [NonSerializedProperty, System.Xml.Serialization.XmlIgnore]
+        [IgnoreDataMember, System.Xml.Serialization.XmlIgnore]
         public bool IsPointMass
         {
             get { return Double.IsPositiveInfinity(FalseCount); }

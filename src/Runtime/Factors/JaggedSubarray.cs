@@ -282,7 +282,7 @@ namespace Microsoft.ML.Probabilistic.Factors
             return (ArrayType)array.Clone();
         }
 
-        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="JaggedSubarrayOp{T}"]/message_doc[@name="Marginal{ArrayType, DistributionType, Object, ItemType}(ArrayType, IList{ItemType}, IList{IList{int}}, ArrayType)"]/*'/>
+        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="JaggedSubarrayOp{T}"]/message_doc[@name="Marginal{ArrayType, DistributionType, ItemType}(ArrayType, IList{ItemType}, IList{IList{int}}, ArrayType)"]/*'/>
         /// <typeparam name="ArrayType">The type of a message from <c>array</c>.</typeparam>
         /// <typeparam name="DistributionType">The type of a distribution over array elements.</typeparam>
         /// <typeparam name="ItemType">The type of a sub-array.</typeparam>
@@ -293,7 +293,8 @@ namespace Microsoft.ML.Probabilistic.Factors
             where DistributionType : SettableToProduct<DistributionType>
             where ItemType : IList<DistributionType>
         {
-            Assert.IsTrue(items.Count == indices.Count, "items.Count != indices.Count");
+            if(items.Count != indices.Count)
+                throw new ArgumentException($"items.Count ({items.Count}) != indices.Count ({indices.Count})");
             result.SetTo(array);
             for (int i = 0; i < indices.Count; i++)
             {
@@ -354,14 +355,15 @@ namespace Microsoft.ML.Probabilistic.Factors
             where DistributionType : SettableToRatio<DistributionType>
         {
             int i = resultIndex;
-            Assert.IsTrue(result.Count == indices[i].Count, "result.Count != indices[i].Count");
+            if(result.Count != indices[i].Count)
+                throw new ArgumentException($"result.Count ({result.Count}) != indices[{i}].Count ({indices[i].Count})");
             // indices_i are all different
             var indices_i = indices[i];
             var indices_i_Count = indices_i.Count;
             for (int j = 0; j < indices_i_Count; j++)
             {
                 DistributionType value = result[j];
-                value.SetToRatio(marginal[indices_i[j]], items[j]);
+                value.SetToRatio(marginal[indices_i[j]], items[j], GaussianOp.ForceProper);
                 result[j] = value;
             }
             return result;
@@ -377,7 +379,8 @@ namespace Microsoft.ML.Probabilistic.Factors
             where ItemType : IList<DistributionType>
             where DistributionType : SettableToProduct<DistributionType>
         {
-            Assert.IsTrue(items.Count == indices.Count, "items.Count != indices.Count");
+            if(items.Count != indices.Count)
+                throw new ArgumentException($"items.Count ({items.Count}) != indices.Count ({indices.Count})");
             result.SetToUniform();
             var indices_Count = indices.Count;
             for (int i = 0; i < indices_Count; i++)
@@ -406,7 +409,8 @@ namespace Microsoft.ML.Probabilistic.Factors
             where ItemType : IList<T>
             where DistributionType : HasPoint<T>
         {
-            Assert.IsTrue(items.Count == indices.Count, "items.Count != indices.Count");
+            if (items.Count != indices.Count)
+                throw new ArgumentException($"items.Count ({items.Count}) != indices.Count ({indices.Count})");
             result.SetToUniform();
             for (int i = 0; i < indices.Count; i++)
             {
@@ -454,7 +458,8 @@ namespace Microsoft.ML.Probabilistic.Factors
             where ItemType : IList<DistributionType>
             where DistributionType : SettableToUniform, SettableToProduct<DistributionType>
         {
-            Assert.IsTrue(items.Count == indices.Count, "items.Count != indices.Count");
+            if (items.Count != indices.Count)
+                throw new ArgumentException($"items.Count ({items.Count}) != indices.Count ({indices.Count})");
             result.SetToUniform();
             for (int i = 0; i < indices.Count; i++)
             {
@@ -496,7 +501,8 @@ namespace Microsoft.ML.Probabilistic.Factors
             where ItemType : IList<DistributionType>
             where DistributionType : SettableToProduct<DistributionType>, SettableToRatio<DistributionType>
         {
-            Assert.IsTrue(result.Count == indices.Count, "result.Count != indices.Count");
+            if(result.Count != indices.Count)
+                throw new ArgumentException($"result.Count ({result.Count}) != indices.Count ({indices.Count})");
             Dictionary<int, int[]> itemsOfArray = new Dictionary<int, int[]>();
             for (int i = 0; i < indices.Count; i++)
             {
@@ -804,7 +810,7 @@ namespace Microsoft.ML.Probabilistic.Factors
         }
 #endif
 
-        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="JaggedSubarrayWithMarginalOp{T}"]/message_doc[@name="Marginal{ArrayType, DistributionType, Object, ItemType}(ArrayType, IList{ItemType}, IList{IList{int}}, ArrayType)"]/*'/>
+        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="JaggedSubarrayWithMarginalOp{T}"]/message_doc[@name="Marginal{ArrayType, DistributionType, ItemType}(ArrayType, IList{ItemType}, IList{IList{int}}, ArrayType)"]/*'/>
         /// <typeparam name="ArrayType">The type of a message from <c>array</c>.</typeparam>
         /// <typeparam name="DistributionType">The type of a distribution over array elements.</typeparam>
         /// <typeparam name="ItemType">The type of a sub-array.</typeparam>
@@ -815,7 +821,8 @@ namespace Microsoft.ML.Probabilistic.Factors
             where DistributionType : SettableToProduct<DistributionType>
             where ItemType : IList<DistributionType>
         {
-            Assert.IsTrue(items.Count == indices.Count, "items.Count != indices.Count");
+            if (items.Count != indices.Count)
+                throw new ArgumentException($"items.Count ({items.Count}) != indices.Count ({indices.Count})");
             result.SetTo(array);
             for (int i = 0; i < indices.Count; i++)
             {
@@ -833,7 +840,7 @@ namespace Microsoft.ML.Probabilistic.Factors
             return result;
         }
 
-        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="JaggedSubarrayWithMarginalOp{T}"]/message_doc[@name="Marginal{ArrayType, DistributionType, Object, ItemType}(ArrayType, IList{ItemType}, IList{IList{int}}, ArrayType)"]/*'/>
+        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="JaggedSubarrayWithMarginalOp{T}"]/message_doc[@name="Marginal{ArrayType, DistributionType, ItemArrayType, ItemType}(ArrayType, IList{ItemType}, IList{IList{int}}, ArrayType)"]/*'/>
         /// <typeparam name="ArrayType">The type of a message from <c>array</c>.</typeparam>
         /// <typeparam name="DistributionType">The type of a distribution over array elements.</typeparam>
         /// <typeparam name="ItemArrayType">The type of an incoming message from <c>items</c>.</typeparam>
@@ -845,7 +852,8 @@ namespace Microsoft.ML.Probabilistic.Factors
             where DistributionType : HasPoint<T>
             where ItemType : IList<T>
         {
-            Assert.IsTrue(items.Count == indices.Count, "items.Count != indices.Count");
+            if (items.Count != indices.Count)
+                throw new ArgumentException($"items.Count ({items.Count}) != indices.Count ({indices.Count})");
             result.SetTo(array);
             for (int i = 0; i < indices.Count; i++)
             {
@@ -863,7 +871,7 @@ namespace Microsoft.ML.Probabilistic.Factors
             return result;
         }
 
-        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="JaggedSubarrayWithMarginalOp{T}"]/message_doc[@name="MarginalIncrement{ArrayType, DistributionType, ItemType}(ArrayType, ItemType, ItemType, IList{IList{int}}, int)"]/*'/>
+        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="JaggedSubarrayWithMarginalOp{T}"]/message_doc[@name="MarginalIncrementItems{ArrayType, DistributionType, ItemType}(ItemType, ItemType, IList{IList{int}}, int, ArrayType)"]/*'/>
         /// <typeparam name="ArrayType">The type of the outgoing message.</typeparam>
         /// <typeparam name="DistributionType">The type of a distribution over array elements.</typeparam>
         /// <typeparam name="ItemType">The type of a sub-array.</typeparam>
@@ -896,7 +904,7 @@ namespace Microsoft.ML.Probabilistic.Factors
         /// <typeparam name="ItemType">The type of a sub-array.</typeparam>
         public static ItemType ItemsAverageConditional<ArrayType, DistributionType, ItemType>(
             [Indexed, Cancels] ItemType items, // items dependency must be ignored for Sequential schedule
-            [IgnoreDependency] ArrayType array,
+            ArrayType array,
             [SkipIfAllUniform] ArrayType to_marginal,
             IList<IList<int>> indices,
             int resultIndex,
@@ -906,20 +914,21 @@ namespace Microsoft.ML.Probabilistic.Factors
             where DistributionType : SettableToProduct<DistributionType>, SettableToRatio<DistributionType>
         {
             int i = resultIndex;
-            Assert.IsTrue(result.Count == indices[i].Count, "result.Count != indices[i].Count");
+            if(result.Count != indices[i].Count)
+                throw new ArgumentException($"result.Count ({result.Count}) != indices[{i}].Count ({indices[i].Count})");
             // indices_i are all different
             var indices_i = indices[i];
             var indices_i_Count = indices_i.Count;
             for (int j = 0; j < indices_i_Count; j++)
             {
                 DistributionType value = result[j];
-                value.SetToRatio(to_marginal[indices_i[j]], items[j]);
+                value.SetToRatio(to_marginal[indices_i[j]], items[j], GaussianOp.ForceProper);
                 result[j] = value;
             }
             return result;
         }
 
-        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="JaggedSubarrayWithMarginalOp{T}"]/message_doc[@name="ArrayAverageConditional{DistributionType, ArrayType, ItemType}(IList{ItemType}, IList{IList{int}}, ArrayType)"]/*'/>
+        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="JaggedSubarrayWithMarginalOp{T}"]/message_doc[@name="ArrayAverageConditional{ArrayType}(ArrayType, ArrayType, ArrayType)"]/*'/>
         /// <typeparam name="ArrayType">The type of the outgoing message.</typeparam>
         public static ArrayType ArrayAverageConditional<ArrayType>(
             [Cancels] ArrayType array,
@@ -927,10 +936,11 @@ namespace Microsoft.ML.Probabilistic.Factors
             ArrayType result)
             where ArrayType : SettableToRatio<ArrayType>
         {
-            result.SetToRatio(to_marginal, array);
+            result.SetToRatio(to_marginal, array, GaussianOp.ForceProper);
             return result;
         }
 
+        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="JaggedSubarrayWithMarginalOp{T}"]/message_doc[@name="MarginalIncrementArray{ArrayType}(ArrayType, ArrayType, ArrayType)"]/*'/>
         /// <typeparam name="ArrayType">The type of the outgoing message.</typeparam>
         public static ArrayType MarginalIncrementArray<ArrayType>(
             [SkipIfUniform] ArrayType array,  // SkipIfUniform on 'array' causes this line to be pruned when the incoming message isn't changing
@@ -952,7 +962,8 @@ namespace Microsoft.ML.Probabilistic.Factors
             where ItemType : IList<T>
             where DistributionType : HasPoint<T>
         {
-            Assert.IsTrue(items.Count == indices.Count, "items.Count != indices.Count");
+            if (items.Count != indices.Count)
+                throw new ArgumentException($"items.Count ({items.Count}) != indices.Count ({indices.Count})");
             result.SetToUniform();
             for (int i = 0; i < indices.Count; i++)
             {
@@ -968,6 +979,8 @@ namespace Microsoft.ML.Probabilistic.Factors
 
         //-- VMP -------------------------------------------------------------------------------------------------------------
 
+        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="JaggedSubarrayWithMarginalOp{T}"]/message_doc[@name="MarginalAverageLogarithm{ArrayType}(ArrayType, ArrayType)"]/*'/>
+        /// <typeparam name="ArrayType">The type of the outgoing message.</typeparam>
         public static ArrayType MarginalAverageLogarithm<ArrayType>(
             ArrayType array, ArrayType result)
             where ArrayType : SettableTo<ArrayType>
@@ -1008,7 +1021,8 @@ namespace Microsoft.ML.Probabilistic.Factors
             where ItemType : IList<DistributionType>
             where DistributionType : SettableToUniform, SettableToProduct<DistributionType>
         {
-            Assert.IsTrue(items.Count == indices.Count, "items.Count != indices.Count");
+            if (items.Count != indices.Count)
+                throw new ArgumentException($"items.Count ({items.Count}) != indices.Count ({indices.Count})");
             result.SetToUniform();
             for (int i = 0; i < indices.Count; i++)
             {

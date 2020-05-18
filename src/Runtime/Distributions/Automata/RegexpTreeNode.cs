@@ -128,15 +128,15 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
         /// <typeparam name="TElementSet">The type of a sequence element set.</typeparam>
         /// <param name="elementSet">The distribution over sequence elements.</param>
         /// <returns>The created node.</returns>
-        public static RegexpTreeNode<TElement> FromElementSet<TElementSet>(TElementSet elementSet)
-            where TElementSet : class, SettableToPartialUniform<TElementSet>, IDistribution<TElement>, new()
+        public static RegexpTreeNode<TElement> FromElementSet<TElementSet>(Option<TElementSet> elementSet)
+            where TElementSet : SettableToPartialUniform<TElementSet>, IDistribution<TElement>, new()
         {
             Argument.CheckIfNotNull(elementSet, "elementSet");
 
             return new RegexpTreeNode<TElement>
             { 
                 Type = RegexpTreeNodeType.ElementSet, 
-                elementSet = elementSet /* Distribution.CreatePartialUniform(elementSet) */
+                elementSet = elementSet.HasValue ? (IDistribution<TElement>)elementSet.Value : null /* Distribution.CreatePartialUniform(elementSet) */
             };
         }
 
@@ -306,14 +306,14 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
         /// <param name="discreteChar">The Discrete distribution over characters.</param>
         private static void AppendRangesForDiscreteChar(StringBuilder resultBuilder, DiscreteChar discreteChar)
         {
-            var ranges = discreteChar.GetRanges();
-            if (ranges.Length > 1)
+            var ranges = discreteChar.Ranges;
+            if (ranges.Count > 1)
             {
                 resultBuilder.Append('[');
                 ranges.ForEach(range => AppendCharacterRange(resultBuilder, range));
                 resultBuilder.Append(']');
             }
-            else if (ranges.Length == 1)
+            else if (ranges.Count == 1)
             {
                 AppendCharacterRange(resultBuilder, ranges.Single());
             }
@@ -390,12 +390,12 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
                     }
                     else
                     {
-                        var discreteChar = this.elementSet as DiscreteChar;
                         if (this.elementSet.IsPointMass)
                         {
-                            if (discreteChar != null)
+                            if (this.elementSet is DiscreteChar)
                             {
-                                discreteChar.AppendRegex(resultBuilder);
+                                var dc = (DiscreteChar)(object)this.elementSet;
+                                dc.AppendRegex(resultBuilder);
                             }
                             else
                             {
@@ -408,9 +408,10 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
                         }
                         else
                         {
-                            if (discreteChar != null)
+                            if (this.elementSet is DiscreteChar)
                             {
-                                discreteChar.AppendRegex(resultBuilder);
+                                var dc = (DiscreteChar)(object)this.elementSet;
+                                dc.AppendRegex(resultBuilder);
                             }
                             else
                             {

@@ -2,6 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 using System;
+using System.Globalization;
+using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ImageClassifier
@@ -14,7 +17,7 @@ namespace ImageClassifier
         [STAThread]
         static void Main()
         {
-            // First compute features for all the images.
+  	        // First compute features for all the images.
             // Comment the next 2 lines out if the images have not changed and you don't want to re-compute the features each run.
             var features = new ImageFeatures();
             features.ComputeImageFeatures();
@@ -22,7 +25,7 @@ namespace ImageClassifier
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             ItemsModel model = new ItemsModel();
-            model.PopulateFromStringsAndVectors(Form1.ReadLines(model.form1.folder + "Images.txt"), model.form1.data);
+            model.PopulateFromStringsAndVectors(File.ReadAllLines(model.form1.folder + "Images.txt"), model.form1.data);
             ClassifierView cv = new ClassifierView();
             cv.DataContext = model;
             cv.ShowInForm("Image Classifer using Infer.NET");

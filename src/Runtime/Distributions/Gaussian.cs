@@ -120,9 +120,16 @@ namespace Microsoft.ML.Probabilistic.Distributions
             {
                 double prec = 1.0 / variance;
                 double meanTimesPrecision = prec * mean;
-                if ((prec > double.MaxValue) || (Math.Abs(meanTimesPrecision) > double.MaxValue))
+                if (prec > double.MaxValue)
                 {
                     Point = mean;
+                }
+                else if (Math.Abs(meanTimesPrecision) > double.MaxValue)
+                {
+                    // This can happen when precision is too high.
+                    // Lower the precision until meanTimesPrecision fits in the double-precision range.
+                    MeanTimesPrecision = Math.Sign(mean) * double.MaxValue;
+                    Precision = MeanTimesPrecision / mean;
                 }
                 else
                 {
@@ -176,9 +183,9 @@ namespace Microsoft.ML.Probabilistic.Distributions
                 double meanTimesPrecision = precision * mean;
                 if (Math.Abs(meanTimesPrecision) > double.MaxValue)
                 {
-                    // If the precision is so large that it causes numerical overflow, 
-                    // treat the distribution as a point mass.
-                    Point = mean;
+                    // Lower the precision until meanTimesPrecision fits in the double-precision range.
+                    MeanTimesPrecision = Math.Sign(mean) * double.MaxValue;
+                    Precision = MeanTimesPrecision / mean;
                 }
                 else
                 {
@@ -226,8 +233,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         public double GetMean()
         {
             if (IsPointMass) return Point;
-            else if (Precision == 0.0) return 0.0;
-            else if (Precision < 0.0) throw new ImproperDistributionException(this);
+            else if (Precision <= 0.0) throw new ImproperDistributionException(this);
             else return MeanTimesPrecision / Precision;
         }
 
@@ -273,6 +279,8 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// <returns></returns>
         public double GetQuantile(double probability)
         {
+            if (probability < 0) throw new ArgumentOutOfRangeException("probability < 0");
+            if (probability > 1) throw new ArgumentOutOfRangeException("probability > 1");
             if (this.IsPointMass)
             {
                 return (probability == 1.0) ? MMath.NextDouble(this.Point) : this.Point;
@@ -292,7 +300,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// <summary>
         /// Asks whether the instance is a point mass
         /// </summary>
-        [NonSerializedProperty, System.Xml.Serialization.XmlIgnore]
+        [IgnoreDataMember, System.Xml.Serialization.XmlIgnore]
         public bool IsPointMass
         {
             get { return (Precision == Double.PositiveInfinity); }
@@ -310,7 +318,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// <summary>
         /// Sets/gets the instance as a point mass
         /// </summary>
-        [NonSerializedProperty, System.Xml.Serialization.XmlIgnore]
+        [IgnoreDataMember, System.Xml.Serialization.XmlIgnore]
         public double Point
         {
             get
@@ -406,7 +414,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
                 // This approach avoids rounding errors.
                 // (x - mean)^2 * Precision = (x*Precision - MeanTimesPrecision)^2/Precision
                 double diff = x * Precision - MeanTimesPrecision;
-                return 0.5 * (Math.Log(Precision) - diff * diff / Precision) - MMath.LnSqrt2PI;
+                return 0.5 * (Math.Log(Precision) - diff * (diff / Precision)) - MMath.LnSqrt2PI;
             }
             else
             {
@@ -537,10 +545,15 @@ namespace Microsoft.ML.Probabilistic.Distributions
                 MeanTimesPrecision = a.MeanTimesPrecision + b.MeanTimesPrecision;
                 if (Precision > double.MaxValue || Math.Abs(MeanTimesPrecision) > double.MaxValue)
                 {
-                    // (am*ap + bm*bp)/(ap + bp) = am*w + bm*(1-w)
-                    // w = 1/(1 + bp/ap)
-                    double w = 1 / (1 + b.Precision / a.Precision);
-                    Point = a.GetMean() * w + b.GetMean() * (1 - w);
+                    if (a.IsUniform()) SetTo(b);
+                    else if (b.IsUniform()) SetTo(a);
+                    else
+                    {
+                        // (am*ap + bm*bp)/(ap + bp) = am*w + bm*(1-w)
+                        // w = 1/(1 + bp/ap)
+                        double w = 1 / (1 + b.Precision / a.Precision);
+                        Point = a.GetMean() * w + b.GetMean() * (1 - w);
+                    }
                 }
             }
         }
@@ -592,8 +605,15 @@ namespace Microsoft.ML.Probabilistic.Distributions
             {
                 if (forceProper && numerator.Precision < denominator.Precision)
                 {
-                    // must not modify this before computing numerator.GetMean()
-                    MeanTimesPrecision = numerator.GetMean() * denominator.Precision - denominator.MeanTimesPrecision;
+                    if (numerator.IsUniform())
+                    {
+                        MeanTimesPrecision = -denominator.MeanTimesPrecision;
+                    }
+                    else
+                    {
+                        // must not modify this before computing numerator.GetMean()
+                        MeanTimesPrecision = numerator.GetMean() * denominator.Precision - denominator.MeanTimesPrecision;
+                    }
                     Precision = 0;
                 }
                 else

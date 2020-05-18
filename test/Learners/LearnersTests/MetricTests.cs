@@ -296,11 +296,11 @@ namespace Microsoft.ML.Probabilistic.Learners.Tests
             // General
             var expectedCurve = new[]
                                     {
-                                        Pair.Create<double, double>(0, 1), 
-                                        Pair.Create<double, double>(0, 0),
-                                        Pair.Create<double, double>(0.5, 0.5), 
-                                        Pair.Create<double, double>(1, 2 / (double)3),
-                                        Pair.Create<double, double>(1, 0.5)
+                                        new PrecisionRecall(1, 0), 
+                                        new PrecisionRecall(0, 0),
+                                        new PrecisionRecall(0.5, 0.5), 
+                                        new PrecisionRecall(2 / (double)3, 1),
+                                        new PrecisionRecall(0.5, 1)
                                     };
             var computedCurve = Metrics.PrecisionRecallCurve(new[] { 1, 2 }, new Dictionary<int, double> { { 3, 1 }, { 1, 0.5 }, { 2, 0.25 }, { 4, 0 } }).ToArray();
             Assert.Equal(expectedCurve.Length, computedCurve.Length);
@@ -310,7 +310,7 @@ namespace Microsoft.ML.Probabilistic.Learners.Tests
             }
 
             // No instance scores
-            expectedCurve = new[] { Pair.Create<double, double>(0, 1) };
+            expectedCurve = new[] { new PrecisionRecall(1, 0),  };
             computedCurve = Metrics.PrecisionRecallCurve(new[] { 1 }, new Dictionary<int, double>()).ToArray();
             Assert.Equal(expectedCurve.Length, computedCurve.Length);
             for (int i = 0; i < expectedCurve.Length; i++)
@@ -319,7 +319,7 @@ namespace Microsoft.ML.Probabilistic.Learners.Tests
             }
 
             // No negative instance scores
-            expectedCurve = new[] { Pair.Create<double, double>(0, 1), Pair.Create<double, double>(1, 1) };
+            expectedCurve = new[] { new PrecisionRecall(1, 0), new PrecisionRecall(1, 1) };
             computedCurve = Metrics.PrecisionRecallCurve(new[] { 1 }, new Dictionary<int, double> { { 1, 1 } }).ToArray();
             Assert.Equal(expectedCurve.Length, computedCurve.Length);
             for (int i = 0; i < expectedCurve.Length; i++)
@@ -352,9 +352,9 @@ namespace Microsoft.ML.Probabilistic.Learners.Tests
             // Duplicate instance scores, duplicate positive instances
             var expectedCurve = new[]
                                     {
-                                        Pair.Create<double, double>(0, 0), 
-                                        Pair.Create<double, double>(0.5, 1), 
-                                        Pair.Create<double, double>(1, 1)
+                                        new FalseAndTruePositiveRate(0, 0), 
+                                        new FalseAndTruePositiveRate(0.5, 1),
+                                        new FalseAndTruePositiveRate(1, 1)
                                     };
             var computedCurve = Metrics.ReceiverOperatingCharacteristicCurve(new[] { 1, 1, 2 }, new Dictionary<int, double> { { 1, 0.5 }, { 2, 0.5 }, { 3, 0.5 }, { 4, 0 } }).ToArray();
             foreach (var tuple in computedCurve)
@@ -362,11 +362,7 @@ namespace Microsoft.ML.Probabilistic.Learners.Tests
                 Console.WriteLine(tuple);
             }
 
-            Assert.Equal(expectedCurve.Length, computedCurve.Length);
-            for (int i = 0; i < expectedCurve.Length; i++)
-            {
-                Assert.Equal(expectedCurve[i], computedCurve[i]);
-            }
+            Xunit.Assert.Equal(expectedCurve, computedCurve);
 
             // No positive instance scores
             Assert.Throws<ArgumentException>(() => Metrics.ReceiverOperatingCharacteristicCurve(new int[] { }, new Dictionary<int, double> { { 1, 1 } }));
@@ -489,12 +485,12 @@ namespace Microsoft.ML.Probabilistic.Learners.Tests
         {
             if (a <= 0.0)
             {
-                throw new ArgumentOutOfRangeException("a", "The parameter a needs to be strictly positive.");
+                throw new ArgumentOutOfRangeException(nameof(a), $"The parameter {nameof(a)} needs to be strictly positive.");
             }
 
             if (b <= 0.0)
             {
-                throw new ArgumentOutOfRangeException("b", "The parameter b needs to be strictly positive.");
+                throw new ArgumentOutOfRangeException(nameof(b), $"The parameter {nameof(b)} needs to be strictly positive.");
             }
 
             return (truth, estimate) =>

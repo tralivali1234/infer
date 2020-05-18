@@ -222,7 +222,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// <summary>
         /// Set this distribution to a point mass, or get its location
         /// </summary>
-        [NonSerializedProperty, System.Xml.Serialization.XmlIgnore]
+        [IgnoreDataMember, System.Xml.Serialization.XmlIgnore]
         public double Point
         {
             get { return Gaussian.Point; }
@@ -232,7 +232,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// <summary>
         /// True if the distribution is a point mass. 
         /// </summary>
-        [NonSerializedProperty, System.Xml.Serialization.XmlIgnore]
+        [IgnoreDataMember, System.Xml.Serialization.XmlIgnore]
         public bool IsPointMass
         {
             get { return Gaussian.IsPointMass; }
@@ -474,7 +474,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
             }
             else
             {
-                return Sample(Gaussian.GetMean(), Gaussian.Precision, LowerBound, UpperBound);
+                return Sample(Gaussian.IsUniform() ? 0.0 : Gaussian.GetMean(), Gaussian.Precision, LowerBound, UpperBound);
             }
         }
 

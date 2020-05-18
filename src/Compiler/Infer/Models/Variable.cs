@@ -1602,7 +1602,7 @@ namespace Microsoft.ML.Probabilistic.Models
         /// contains more than two <c>Range</c> objects.</exception>
         public static IVariableArray Array<T>(IList<Range> ranges)
         {
-            if (ranges.Count == 0) throw new ArgumentException("Range list is empty.", "ranges");
+            if (ranges.Count == 0) throw new ArgumentException("Range list is empty.", nameof(ranges));
             else if (ranges.Count == 1) return Variable.Array<T>(ranges[0]);
             else if (ranges.Count == 2) return Variable.Array<T>(ranges[0], ranges[1]);
             else throw new NotSupportedException("More than two ranges were specified, high rank arrays are not yet supported.");
@@ -3747,6 +3747,22 @@ namespace Microsoft.ML.Probabilistic.Models
         }
 
         /// <summary>
+        /// Creates a copy of the argument where the forward message is uniform when <paramref name="shouldCut"/> is true.  Used to control inference.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="x"></param>
+        /// <param name="shouldCut"></param>
+        /// <returns></returns>
+        public static Variable<T> CutForwardWhen<T>(Variable<T> x, Variable<bool> shouldCut)
+        {
+            Variable<T> result = Variable<T>.Factor(Factors.Cut.ForwardWhen, x, shouldCut);
+            Range valueRange = x.GetValueRange(false);
+            if (valueRange != null)
+                result.AddAttribute(new ValueRange(valueRange));
+            return result;
+        }
+
+        /// <summary>
         /// Returns a cut of the argument. Cut is equivalent to random(infer()).
         /// </summary>
         /// <typeparam name="T">The domain type.</typeparam>
@@ -3755,7 +3771,7 @@ namespace Microsoft.ML.Probabilistic.Models
         /// <remarks>Cut allows forward messages to pass through unchanged, whereas backward messages are cut off.</remarks>
         public static Variable<T> Cut<T>(Variable<T> x)
         {
-            Variable<T> result = Variable<T>.Factor(Factor.Cut<T>, x);
+            Variable<T> result = Variable<T>.Factor(Factors.Cut.Backward, x);
             Range valueRange = x.GetValueRange(false);
             if (valueRange != null)
                 result.AddAttribute(new ValueRange(valueRange));
@@ -5560,43 +5576,18 @@ namespace Microsoft.ML.Probabilistic.Models
                 MethodInfo method = type.GetMethod("CreateVariableArrayFromItem", BindingFlags.NonPublic | BindingFlags.Static);
                 return (IVariableArray)Util.Invoke(method, null, array, headRanges);
             }
-            IVariableArray result;
+
             Variable<T> itemPrototype = (Variable<T>)item.Clone();
-            if (ranges.Count == 1)
+
+            VariableArray<T> variableArray = new VariableArray<T>(itemPrototype, ranges[0]);
+            variableArray.timestamp = item.timestamp;
+            if (Variable.AutoNaming)
             {
-                VariableArray<T> array = new VariableArray<T>(itemPrototype, ranges[0]);
-                array.timestamp = item.timestamp;
-                if (Variable.AutoNaming)
-                {
-                    array.Name = item.StripIndexers().ToString();
-                }
-                item.MakeItem(array, ranges[0]);
-                result = array;
+                variableArray.Name = item.StripIndexers().ToString();
             }
-            else if (ranges.Count == 2)
-            {
-                VariableArray2D<T> array = new VariableArray2D<T>(itemPrototype, ranges[0], ranges[1]);
-                array.timestamp = item.timestamp;
-                if (Variable.AutoNaming)
-                {
-                    array.Name = item.StripIndexers().ToString();
-                }
-                item.MakeItem(array, ranges[0], ranges[1]);
-                result = array;
-            }
-            else if (ranges.Count == 3)
-            {
-                VariableArray3D<T> array = new VariableArray3D<T>(itemPrototype, ranges[0], ranges[1], ranges[2]);
-                array.timestamp = item.timestamp;
-                if (Variable.AutoNaming)
-                {
-                    array.Name = item.StripIndexers().ToString();
-                }
-                item.MakeItem(array, ranges[0], ranges[1], ranges[2]);
-                result = array;
-            }
-            else throw new NotSupportedException("arrays of rank higher than 3 are not supported yet");
-            return result;
+            item.MakeItem(variableArray, ranges[0]);
+
+            return variableArray;
         }
 
         /// <summary>
@@ -6411,12 +6402,17 @@ namespace Microsoft.ML.Probabilistic.Models
         /// </summary>
         protected static Variable<bool> GreaterThan(Variable<T> a, Variable<T> b)
         {
-            Variable<bool> f = OperatorFactor<bool>(Operator.GreaterThan, a, b);
-            if ((object)f == null) f = OperatorFactor<bool>(Operator.LessThan, b, a);
-            if ((object)f == null) f = NotOrNull(OperatorFactor<bool>(Operator.LessThanOrEqual, a, b));
-            if ((object)f == null) f = NotOrNull(OperatorFactor<bool>(Operator.GreaterThanOrEqual, b, a));
-            if ((object)f != null) return f;
-            else if (typeof(double).IsAssignableFrom(typeof(T)))
+            return OperatorFactor<bool>(Operator.GreaterThan, a, b)
+                ?? OperatorFactor<bool>(Operator.LessThan, b, a)
+                ?? NotOrNull(OperatorFactor<bool>(Operator.LessThanOrEqual, a, b))
+                ?? NotOrNull(OperatorFactor<bool>(Operator.GreaterThanOrEqual, b, a))
+                ?? GreaterThanFromMinus(a, b)
+                ?? throw new InvalidOperationException("Neither of the operators (<,<=,>,>=) has a registered factor for argument type " + typeof(T) + ".");
+        }
+
+        private static Variable<bool> GreaterThanFromMinus(Variable<T> a, Variable<T> b)
+        {
+            if (typeof(double).IsAssignableFrom(typeof(T)))
             {
                 Variable<T> diff;
                 if (b.IsObserved && b.IsReadOnly && b.IsBase && b.ObservedValue.Equals(0.0))
@@ -6425,22 +6421,23 @@ namespace Microsoft.ML.Probabilistic.Models
                 }
                 else if (a.IsObserved && a.IsReadOnly && a.IsBase && a.ObservedValue.Equals(0.0))
                 {
-                    return !GreaterThanOrEqual(b, a);
+                    diff = OperatorFactor<T>(Operator.Negative, b);
                 }
                 else
                 {
-                    diff = OperatorFactor<T>(Operator.Minus, a, b);
+                    diff = null;
                 }
                 if ((object)diff == null)
                 {
-                    throw new InvalidOperationException("None of the operators (<,>,-) has a registered factor for argument type " + typeof(T) + ".");
+                    diff = OperatorFactor<T>(Operator.Minus, a, b);
                 }
-                return IsPositive((Variable<double>)(Variable)diff);
+                if ((object)diff != null)
+                {
+                    return IsPositive((Variable<double>)(Variable)diff);
+                }
+                // Fall through
             }
-            else
-            {
-                throw new InvalidOperationException("Neither of the operators (<,>) has a registered factor for argument type " + typeof(T) + ".");
-            }
+            return null;
         }
 
         private static Variable<bool> NotOrNull(Variable<bool> Variable)
@@ -6453,36 +6450,12 @@ namespace Microsoft.ML.Probabilistic.Models
         /// </summary>
         protected static Variable<bool> GreaterThanOrEqual(Variable<T> a, Variable<T> b)
         {
-            Variable<bool> f = OperatorFactor<bool>(Operator.GreaterThanOrEqual, a, b);
-            if ((object)f == null) f = OperatorFactor<bool>(Operator.LessThanOrEqual, b, a);
-            if ((object)f == null) f = NotOrNull(OperatorFactor<bool>(Operator.LessThan, a, b));
-            if ((object)f == null) f = NotOrNull(OperatorFactor<bool>(Operator.GreaterThan, b, a));
-            if ((object)f != null) return f;
-            else if (typeof(double).IsAssignableFrom(typeof(T)))
-            {
-                Variable<T> diff;
-                if (b.IsObserved && b.IsReadOnly && b.IsBase && b.ObservedValue.Equals(0.0))
-                {
-                    diff = a;
-                }
-                else if (a.IsObserved && a.IsReadOnly && a.IsBase && a.ObservedValue.Equals(0.0))
-                {
-                    return !GreaterThan(b, a);
-                }
-                else
-                {
-                    diff = OperatorFactor<T>(Operator.Minus, a, b);
-                }
-                if ((object)diff == null)
-                {
-                    throw new InvalidOperationException("None of the operators (<,>,-) has a registered factor for argument type " + typeof(T) + ".");
-                }
-                return IsPositive((Variable<double>)(Variable)diff); // should be IsPositiveOrZero
-            }
-            else
-            {
-                throw new InvalidOperationException("Neither of the operators (<,>) has a registered factor for argument type " + typeof(T) + ".");
-            }
+            return OperatorFactor<bool>(Operator.GreaterThanOrEqual, a, b)
+                ?? OperatorFactor<bool>(Operator.LessThanOrEqual, b, a)
+                ?? NotOrNull(OperatorFactor<bool>(Operator.LessThan, a, b))
+                ?? NotOrNull(OperatorFactor<bool>(Operator.GreaterThan, b, a))
+                ?? NotOrNull(GreaterThanFromMinus(b, a))
+                ?? throw new InvalidOperationException("Neither of the operators (<,<=,>,>=) has a registered factor for argument type " + typeof(T) + ".");
         }
 
         /// <summary>

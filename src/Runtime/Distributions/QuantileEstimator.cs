@@ -10,6 +10,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
     using System.Linq;
     using System.Runtime.Serialization;
     using System.Text;
+    using Microsoft.ML.Probabilistic.Collections;
     using Microsoft.ML.Probabilistic.Math;
     using Microsoft.ML.Probabilistic.Utilities;
 
@@ -53,6 +54,25 @@ namespace Microsoft.ML.Probabilistic.Distributions
         [DataMember]
         public readonly double MaximumError;
 
+        private int bufferLength
+        {
+            get
+            {
+                double invError = 1 / MaximumError;
+                int bufferCount = buffers.Length;
+                int length = (int)Math.Ceiling(invError * Math.Sqrt(bufferCount - 1));
+                if (length % 2 == 1) length++;
+                return length;
+            }
+        }
+
+        /// <summary>
+        /// 0 = point mass on each data point (i/n)
+        /// 1 = interpolate (i/n + (i+1)/n)/2 = (i+0.5)/n
+        /// 2 = interpolate i/(n-1)
+        /// </summary>
+        private readonly int InterpolationType = 0;
+
         /// <summary>
         /// Creates a new QuantileEstimator.
         /// </summary>
@@ -66,9 +86,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
             double invError = 1 / maximumError;
             int bufferCount = 1 + Math.Max(1, (int)Math.Ceiling(Math.Log(invError, 2)));
             if (bufferCount < 2) throw new Exception("bufferCount < 2");
-            int bufferLength = (int)Math.Ceiling(invError * Math.Sqrt(bufferCount - 1));
-            if (bufferLength % 2 == 1) bufferLength++;
-            buffers = Util.ArrayInit(bufferCount, i => new double[bufferLength]);
+            buffers = new double[bufferCount][];
             countInBuffer = new int[bufferCount];
         }
 
@@ -79,15 +97,32 @@ namespace Microsoft.ML.Probabilistic.Distributions
         {
             double lowerItem;
             double upperItem;
-            long lowerIndex;
+            long lowerRank;
             long lowerWeight, minLowerWeight, upperWeight, minUpperWeight;
             long itemCount;
-            GetAdjacentItems(x, out lowerItem, out upperItem, out lowerIndex, out lowerWeight, out upperWeight, out minLowerWeight, out minUpperWeight, out itemCount);
-            if (lowerIndex < 0) return 0;
-            if (x == lowerItem) return (double)(lowerIndex - lowerWeight + 1) / (itemCount - 1);
-            // interpolate between the ranks of lowerItem and upperItem
-            double frac = (x - lowerItem) / (upperItem - lowerItem);
-            return (lowerIndex + frac) / (itemCount - 1);
+            GetAdjacentItems(x, out lowerItem, out upperItem, out lowerRank, out lowerWeight, out upperWeight, out minLowerWeight, out minUpperWeight, out itemCount);
+            if (lowerRank == 0) return 0;
+            if (lowerRank == itemCount) return 1;
+            if (InterpolationType == 0)
+            {
+                return (double)lowerRank / itemCount;
+            }
+            else if (InterpolationType == 1)
+            {
+                // interpolate between the ranks of lowerItem and upperItem
+                // lowerItem has rank (lowerRank - 0.5) from above
+                // upperItem has rank (lowerRank + 0.5) from below
+                double frac = (x - lowerItem) / (upperItem - lowerItem);
+                return (lowerRank - 0.5 + frac) / itemCount;
+            }
+            else
+            {
+                // interpolate between the ranks of lowerItem and upperItem
+                // lowerItem has rank (lowerRank - 1)/(itemCount-1)  from above
+                // upperItem has rank lowerRank/(itemCount-1) from below
+                double frac = (x - lowerItem) / (upperItem - lowerItem);
+                return (lowerRank - 1 + frac) / (itemCount - 1);
+            }
         }
 
         /// <summary>
@@ -97,14 +132,17 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// <returns></returns>
         public double GetQuantile(double probability)
         {
+            if (double.IsNaN(probability)) throw new ArgumentOutOfRangeException(nameof(probability), "probability is NaN");
             if (probability < 0) throw new ArgumentOutOfRangeException(nameof(probability), "probability < 0");
             if (probability > 1.0) throw new ArgumentOutOfRangeException(nameof(probability), "probability > 1.0");
             // compute the min and max of the retained items
             double lowerBound = double.PositiveInfinity, upperBound = double.NegativeInfinity;
+            bool countGreaterThanZero = false;
             for (int bufferIndex = 0; bufferIndex < buffers.Length; bufferIndex++)
             {
                 double[] buffer = buffers[bufferIndex];
                 int count = countInBuffer[bufferIndex];
+                if (count > 0) countGreaterThanZero = true;
                 for (int i = 0; i < count; i++)
                 {
                     double item = buffer[i];
@@ -113,40 +151,93 @@ namespace Microsoft.ML.Probabilistic.Distributions
                 }
             }
             if (probability == 1.0) return MMath.NextDouble(upperBound);
-            if (double.IsPositiveInfinity(lowerBound)) throw new Exception("QuantileEstimator has no data");
+            if (probability == 0.0) return lowerBound;
+            if (!countGreaterThanZero) throw new Exception("QuantileEstimator has no data");
             if (lowerBound == upperBound) return upperBound;
             // use bisection
             while (true)
             {
-                double x = (lowerBound + upperBound) / 2;
+                double x = MMath.Average(lowerBound, upperBound);
                 double lowerItem;
                 double upperItem;
-                long lowerIndex;
+                long lowerRank;
                 long lowerWeight, minLowerWeight, upperWeight, minUpperWeight;
                 long itemCount;
-                GetAdjacentItems(x, out lowerItem, out upperItem, out lowerIndex, out lowerWeight, out upperWeight, out minLowerWeight, out minUpperWeight, out itemCount);
-                double scaledProbability = MMath.LargestDoubleProduct(itemCount - 1, probability);
-                // probability of lowerItem ranges from (lowerIndex - lowerWeight + 1) / (itemCount - 1)
-                // to lowerIndex / (itemCount - 1).
-                if ((scaledProbability >= lowerIndex - lowerWeight + 1) && (scaledProbability < lowerIndex))
-                    return lowerItem;
-                // probability of upperItem ranges from (lowerIndex + 1) / (itemCount - 1)
-                // to (lowerIndex + upperWeight) / (itemCount - 1)
-                if ((scaledProbability >= lowerIndex + 1) && (scaledProbability <= lowerIndex + upperWeight))
-                    return upperItem;
-                // solve for frac in (lowerIndex + frac) / (itemCount - 1) == probability
-                double frac = scaledProbability - lowerIndex;
-                if (frac < 0)
+                GetAdjacentItems(x, out lowerItem, out upperItem, out lowerRank, out lowerWeight, out upperWeight, out minLowerWeight, out minUpperWeight, out itemCount);
+                if (InterpolationType == 0)
                 {
-                    upperBound = x;
+                    double probabilityLessThanLowerItem = (double)(lowerRank - lowerWeight) / itemCount;
+                    if (probability < probabilityLessThanLowerItem)
+                    {
+                        upperBound = MMath.PreviousDouble(lowerItem);
+                    }
+                    else
+                    {
+                        double probabilityLessThanUpperItem = (double)lowerRank / itemCount;
+                        if (probability < probabilityLessThanUpperItem) return lowerItem;
+                        double probabilityLessThanOrEqualUpperItem = (double)(lowerRank + upperWeight) / itemCount;
+                        if (probability < probabilityLessThanOrEqualUpperItem) return upperItem;
+                        lowerBound = MMath.NextDouble(upperItem);
+                    }
+                    if (lowerBound > upperBound) throw new Exception("lowerBound > upperBound");
                 }
-                else if (frac > 1)
+                else if (InterpolationType == 1)
                 {
-                    lowerBound = x;
+                    // Find frac such that (lowerRank - 0.5 + frac) / itemCount == probability
+                    double scaledProbability = MMath.LargestDoubleProduct(probability, itemCount);
+                    if (scaledProbability < 0.5) return lowerBound;
+                    if (scaledProbability >= itemCount - 0.5) return upperBound;
+                    // probability of lowerItem ranges from (lowerRank-lowerWeight+0.5) / itemCount
+                    // to (lowerRank - 0.5) / itemCount
+                    //if (scaledProbability == lowerRank - lowerWeight + 0.5) return lowerItem;
+                    if ((scaledProbability > lowerRank - lowerWeight + 0.5) && (scaledProbability < lowerRank - 0.5))
+                        return lowerItem;
+                    // probability of upperItem ranges from (lowerRank + 0.5) / itemCount
+                    // to (lowerRank + upperWeight - 0.5) / itemCount
+                    if (scaledProbability == lowerRank + 0.5) return upperItem;
+                    if ((scaledProbability > lowerRank + 0.5) && (scaledProbability < lowerRank + upperWeight - 0.5))
+                        return upperItem;
+                    double frac = scaledProbability - (lowerRank - 0.5);
+                    if (frac < 0)
+                    {
+                        upperBound = MMath.PreviousDouble(x);
+                    }
+                    else if (frac > 1)
+                    {
+                        lowerBound = MMath.NextDouble(x);
+                    }
+                    else
+                    {
+                        return OuterQuantiles.GetQuantile(probability, lowerRank - 0.5, lowerItem, upperItem, itemCount + 1);
+                    }
                 }
                 else
                 {
-                    return OuterQuantiles.GetQuantile(probability, lowerIndex, lowerItem, upperItem, itemCount);
+                    double scaledProbability = MMath.LargestDoubleProduct(probability, itemCount - 1);
+                    // probability of lowerItem ranges from (lowerRank-lowerWeight) / (itemCount - 1)
+                    // to (lowerRank - 1) / (itemCount - 1).
+                    if (scaledProbability == lowerRank - lowerWeight) return lowerItem;
+                    if ((scaledProbability > lowerRank - lowerWeight) && (scaledProbability < lowerRank - 1))
+                        return lowerItem;
+                    // probability of upperItem ranges from lowerRank / (itemCount - 1)
+                    // to (lowerRank + upperWeight-1) / (itemCount - 1)
+                    if (scaledProbability == lowerRank) return upperItem;
+                    if ((scaledProbability > lowerRank) && (scaledProbability < lowerRank + upperWeight - 1))
+                        return upperItem;
+                    // solve for frac in (lowerRank-1 + frac) / (itemCount - 1) == probability
+                    double frac = scaledProbability - (lowerRank - 1);
+                    if (frac < 0)
+                    {
+                        upperBound = MMath.PreviousDouble(x);
+                    }
+                    else if (frac > 1)
+                    {
+                        lowerBound = MMath.NextDouble(x);
+                    }
+                    else
+                    {
+                        return OuterQuantiles.GetQuantile(probability, lowerRank - 1, lowerItem, upperItem, itemCount);
+                    }
                 }
             }
         }
@@ -206,10 +297,23 @@ namespace Microsoft.ML.Probabilistic.Distributions
         {
             if (lowestBufferHeight == 0)
             {
+                int bufferToFree = lowestBufferIndex;
                 RaiseLowestHeight();
+                if (countInBuffer[bufferToFree] > 0) throw new Exception("countInBuffer[bufferToFree] > 0");
+                buffers[bufferToFree] = null;
             }
             lowestBufferHeight--;
             reservoirCount /= 2;
+        }
+
+        /// <summary>
+        /// Multiply all sample weights by 2.
+        /// </summary>
+        public void Inflate()
+        {
+            if (lowestBufferHeight >= 30) throw new InvalidOperationException($"Cannot inflate when lowestBufferHeight = {lowestBufferHeight}");
+            lowestBufferHeight++;
+            reservoirCount *= 2;
         }
 
         public override string ToString()
@@ -225,8 +329,8 @@ namespace Microsoft.ML.Probabilistic.Distributions
         public bool ValueEquals(QuantileEstimator that)
         {
             return (this.MaximumError == that.MaximumError) &&
-                Util.JaggedValueEquals(this.buffers, that.buffers) &&
-                Util.ValueEquals(this.countInBuffer, that.countInBuffer) &&
+                this.buffers.JaggedValueEquals(that.buffers) &&
+                this.countInBuffer.ValueEquals(that.countInBuffer) &&
                 (this.lowestBufferIndex == that.lowestBufferIndex) &&
                 (this.lowestBufferHeight == that.lowestBufferHeight) &&
                 (this.nextSample == that.nextSample) &&
@@ -255,17 +359,17 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// 
         /// </summary>
         /// <param name="x"></param>
-        /// <param name="lowerItem">The largest item that is less than or equal to x.</param>
-        /// <param name="upperItem">The smallest item that is greater than x.</param>
-        /// <param name="lowerIndex"></param>
-        /// <param name="lowerWeight">The total weight of items equal to lowerItem, excluding the item with lowest weight.</param>
+        /// <param name="lowerItem">The largest item that is less than x.</param>
+        /// <param name="upperItem">The smallest item that is greater than or equal to x.</param>
+        /// <param name="lowerRank">The total weight of items less than x.</param>
+        /// <param name="lowerWeight">The total weight of items equal to lowerItem.</param>
         /// <param name="upperWeight">The total weight of items equal to upperItem.</param>
         /// <param name="minLowerWeight">The smallest weight of items equal to lowerItem.</param>
         /// <param name="minUpperWeight">The smallest weight of items equal to upperItem.</param>
         /// <param name="itemCount"></param>
-        private void GetAdjacentItems(double x, out double lowerItem, out double upperItem, out long lowerIndex, out long lowerWeight, out long upperWeight, out long minLowerWeight, out long minUpperWeight, out long itemCount)
+        private void GetAdjacentItems(double x, out double lowerItem, out double upperItem, out long lowerRank, out long lowerWeight, out long upperWeight, out long minLowerWeight, out long minUpperWeight, out long itemCount)
         {
-            long lowerRank = 0;
+            lowerRank = 0;
             long weight = (1L << lowestBufferHeight);
             itemCount = 0;
             lowerItem = double.NegativeInfinity;
@@ -282,7 +386,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
                 for (int i = 0; i < count; i++)
                 {
                     double item = buffer[i];
-                    if (item <= x)
+                    if (item < x)
                     {
                         lowerRank += weight;
                         if (item > lowerItem)
@@ -316,12 +420,21 @@ namespace Microsoft.ML.Probabilistic.Distributions
                 if (bufferIndex == lowestBufferIndex) break;
             }
             if (itemCount == 0) throw new Exception("QuantileEstimator has no data");
-            lowerIndex = lowerRank - 1;
+        }
+
+        private double[] GetBuffer(int bufferIndex)
+        {
+            double[] buffer = buffers[bufferIndex];
+            if (buffer == null)
+            {
+                buffers[bufferIndex] = buffer = new double[bufferLength];
+            }
+            return buffer;
         }
 
         private void AddToBuffer(int bufferIndex, double item)
         {
-            double[] buffer = buffers[bufferIndex];
+            double[] buffer = GetBuffer(bufferIndex);
             int count = countInBuffer[bufferIndex];
             if (count == buffer.Length)
             {
@@ -336,14 +449,16 @@ namespace Microsoft.ML.Probabilistic.Distributions
 
         private void CompactBuffer(int bufferIndex)
         {
-            double[] buffer = buffers[bufferIndex];
             int count = countInBuffer[bufferIndex];
+            if (count == 0) return;
+            double[] buffer = buffers[bufferIndex];
             // move half of the items to the next buffer, and empty this buffer.
             int nextBufferIndex = (bufferIndex + 1) % buffers.Length;
             if (nextBufferIndex == lowestBufferIndex)
                 throw new Exception("Out of buffers");
             Array.Sort(buffer, 0, count);
             int firstIndex = Rand.Int(2);
+            if (count == 1 && firstIndex == 1) countInBuffer[bufferIndex] = 0;
             for (int i = firstIndex; i < count; i += 2)
             {
                 if (i + 2 >= count) countInBuffer[bufferIndex] = 0;
@@ -449,7 +564,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
                 }
                 // find the buffer with same height 
                 int bufferIndex = (lowestBufferIndex + heightDifference) % buffers.Length;
-                double[] buffer = buffers[bufferIndex];
+                double[] buffer = GetBuffer(bufferIndex);
                 int count = countInBuffer[bufferIndex];
                 // Make room in the buffer.
                 if (count == buffer.Length)
@@ -494,11 +609,14 @@ namespace Microsoft.ML.Probabilistic.Distributions
         private void MaintainInvariant()
         {
             int bufferIndex = (lowestBufferIndex + buffers.Length - 1) % buffers.Length;
-            double[] buffer = buffers[bufferIndex];
             int count = countInBuffer[bufferIndex];
-            if (count > buffer.Length / 2)
+            if (count > 0)
             {
-                RaiseLowestHeight();
+                double[] buffer = buffers[bufferIndex];
+                if (count > buffer.Length / 2)
+                {
+                    RaiseLowestHeight();
+                }
             }
         }
 
@@ -508,8 +626,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         private void RaiseLowestHeight()
         {
             // Compacting the lowest buffer will always succeed because of the invariant or because there is at least one empty buffer.
-            if (countInBuffer[lowestBufferIndex] > 0)
-                CompactBuffer(lowestBufferIndex);
+            CompactBuffer(lowestBufferIndex);
             // Since the lowest buffer is now empty, we re-purpose it as the new highest buffer.
             lowestBufferIndex = (lowestBufferIndex + 1) % buffers.Length;
             lowestBufferHeight++;

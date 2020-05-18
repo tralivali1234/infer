@@ -9,18 +9,12 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
     using System.Diagnostics;
     using System.Linq;
 
-    using Microsoft.ML.Probabilistic.Distributions;
-    using Microsoft.ML.Probabilistic.Math;
     using Microsoft.ML.Probabilistic.Utilities;
 
     /// <content>
     /// Contains the class used to represent the condensation of an automaton graph.
     /// </content>
     public abstract partial class Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TThis>
-        where TSequence : class, IEnumerable<TElement>
-        where TElementDistribution : class, IDistribution<TElement>, SettableToProduct<TElementDistribution>, SettableToWeightedSumExact<TElementDistribution>, CanGetLogAverageOf<TElementDistribution>, SettableToPartialUniform<TElementDistribution>, new()
-        where TSequenceManipulator : ISequenceManipulator<TSequence, TElement>, new()
-        where TThis : Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TThis>, new()
     {
         /// <summary>
         /// Represents a strongly connected component of an automaton graph.
@@ -61,6 +55,7 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
             /// <summary>
             /// Initializes a new instance of the <see cref="StronglyConnectedComponent"/> class.
             /// </summary>
+            /// <param name="automaton">The automaton to which all states belong</param>
             /// <param name="transitionFilter">The transition filter used to build the condensation this component belongs to.</param>
             /// <param name="statesInComponent">The list of states in the component.</param>
             /// <param name="useApproximateClosure">
@@ -68,6 +63,7 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
             /// instead of <see cref="Weight.Closure"/> in semiring computations.
             /// </param>
             internal StronglyConnectedComponent(
+                Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TThis> automaton,
                 Func<Transition, bool> transitionFilter,
                 List<State> statesInComponent,
                 bool useApproximateClosure)
@@ -75,14 +71,17 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
                 Debug.Assert(
                     statesInComponent.Count > 0,
                     "There must be at least one state in the strongly connected component.");
-                Debug.Assert(
-                    statesInComponent.All(s => s != null && ReferenceEquals(s.Owner, statesInComponent[0].Owner)),
-                    "All the states must be valid and belong to the same automaton.");
 
+                this.Automaton = automaton;
                 this.transitionFilter = transitionFilter;
                 this.statesInComponent = statesInComponent;
                 this.useApproximateClosure = useApproximateClosure;
             }
+
+            /// <summary>
+            /// Automaton to which all states belong.
+            /// </summary>
+            public Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TThis> Automaton { get;  }
 
             /// <summary>
             /// Gets the number of states in the component.
@@ -112,12 +111,7 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
             /// <see langword="true"/> if <paramref name="state"/> belongs to the component,
             /// <see langword="false"/> otherwise.
             /// </returns>
-            public bool HasState(State state)
-            {
-                Argument.CheckIfNotNull(state, "state");
-
-                return this.GetIndexByState(state) != -1;
-            }
+            public bool HasState(State state) => this.GetIndexByState(state) != -1;
 
             /// <summary>
             /// Attempts to retrieve the index of a given state in the component.
@@ -128,12 +122,9 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
             /// </returns>
             public int GetIndexByState(State state)
             {
-                Argument.CheckIfNotNull(state, "state");
-                Argument.CheckIfValid(ReferenceEquals(state.Owner, this.statesInComponent[0].Owner), "state", "The given state belongs to other automaton.");
-
                 if (this.statesInComponent.Count == 1)
                 {
-                    return ReferenceEquals(this.statesInComponent[0], state) ? 0 : -1;
+                    return this.statesInComponent[0].Index == state.Index ? 0 : -1;
                 }
 
                 if (this.stateIdToIndexInComponent == null)
@@ -159,11 +150,11 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
             {
                 Argument.CheckIfInRange(
                     srcStateIndexInComponent >= 0 && srcStateIndexInComponent < this.Size,
-                    "srcStateIndexInComponent",
+                    nameof(srcStateIndexInComponent),
                     "The given index is out of range.");
                 Argument.CheckIfInRange(
                     destStateIndexInComponent >= 0 && destStateIndexInComponent < this.Size,
-                    "destStateIndexInComponent",
+                    nameof(destStateIndexInComponent),
                     "The given index is out of range.");
 
                 if (this.Size == 1)
@@ -173,13 +164,11 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
                         // Optimize for a common case
                         State state = this.statesInComponent[0];
                         this.singleStatePairwiseWeight = Weight.Zero;
-                        for (int i = 0; i < state.TransitionCount; ++i)
+                        foreach (var transition in state.Transitions)
                         {
-                            Transition transition = state.GetTransition(i);
                             if (this.transitionFilter(transition) && transition.DestinationStateIndex == state.Index)
                             {
-                                this.singleStatePairwiseWeight = Weight.Sum(
-                                    this.singleStatePairwiseWeight.Value, transition.Weight);
+                                this.singleStatePairwiseWeight += transition.Weight;
                             }
                         }
 
@@ -210,15 +199,13 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
                 for (int srcStateIndexInComponent = 0; srcStateIndexInComponent < this.Size; ++srcStateIndexInComponent)
                 {
                     State state = this.statesInComponent[srcStateIndexInComponent];
-                    for (int transitionIndex = 0; transitionIndex < state.TransitionCount; ++transitionIndex)
+                    foreach (var transition in state.Transitions)
                     {
-                        Transition transition = state.GetTransition(transitionIndex);
-                        State destState = state.Owner.States[transition.DestinationStateIndex];
+                        State destState = this.Automaton.States[transition.DestinationStateIndex];
                         int destStateIndexInComponent;
                         if (this.transitionFilter(transition) && (destStateIndexInComponent = this.GetIndexByState(destState)) != -1)
                         {
-                            this.pairwiseWeights[srcStateIndexInComponent, destStateIndexInComponent] = Weight.Sum(
-                                this.pairwiseWeights[srcStateIndexInComponent, destStateIndexInComponent], transition.Weight);
+                            this.pairwiseWeights[srcStateIndexInComponent, destStateIndexInComponent] += transition.Weight;
                         }
                     }
                 }
@@ -242,16 +229,15 @@ namespace Microsoft.ML.Probabilistic.Distributions.Automata
                                 continue;
                             }
 
-                            Weight additionalWeight = Weight.Product(
+                            this.pairwiseWeights[i, j] += Weight.Product(
                                 this.pairwiseWeights[i, k], loopWeight, this.pairwiseWeights[k, j]);
-                            this.pairwiseWeights[i, j] = Weight.Sum(this.pairwiseWeights[i, j], additionalWeight);
                         }
                     }
 
                     for (int i = 0; i < this.Size; ++i)
                     {
-                        this.pairwiseWeights[i, k] = Weight.Product(this.pairwiseWeights[i, k], loopWeight);
-                        this.pairwiseWeights[k, i] = Weight.Product(this.pairwiseWeights[k, i], loopWeight);
+                        this.pairwiseWeights[i, k] *= loopWeight;
+                        this.pairwiseWeights[k, i] *= loopWeight;
                     }
 
                     this.pairwiseWeights[k, k] = loopWeight;

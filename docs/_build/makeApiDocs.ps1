@@ -2,7 +2,7 @@
  .SYNOPSIS
     Makes API documentation for current version of Infer.NET.
  .DESCRIPTION
-    Builds PrepareSource.csproj, creates API documentation using docfx for Infer2 to docs/apiguide/ folder.
+    Builds PrepareSource.csproj, creates API documentation using docfx for Infer.NET to the gh-pages branch.
 #>
 
 # Licensed to the .NET Foundation under one or more agreements.
@@ -14,64 +14,59 @@ $scriptDir = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
 $sourceDirectory = [IO.Path]::GetFullPath((join-path $scriptDir '../../'))
 $destinationDirectory = [IO.Path]::GetFullPath((join-path $scriptDir '../../InferNet_Copy_Temp/'))
 
+$dotnetExe = 'dotnet'
+
 Write-Host $sourceDirectory
-Write-Host "Copy src to InferNet_Copy_Temp directory"
+Write-Host "Copy src and build to InferNet_Copy_Temp directory"
 Copy-Item -Path "$sourceDirectory/src/" -Destination "$destinationDirectory/src/" -Recurse -Force
+Copy-Item -Path "$sourceDirectory/build/" -Destination "$destinationDirectory/build/" -Recurse -Force
 
 Write-Host "Copy root files to InferNet_Copy_Temp directory"
 Get-ChildItem -Path $sourceDirectory -Filter "*.*" | Copy-Item -Destination $destinationDirectory -Force 
 
 
 Write-Host "Build PrepareSource project"
-if ([Environment]::Is64BitOperatingSystem) {
-    $pfiles = ${env:PROGRAMFILES(X86)}
-} else {
-    $pfiles = $env:PROGRAMFILES
-}
-$msBuildExe = Resolve-Path -Path "${pfiles}\Microsoft Visual Studio\*\*\MSBuild\15.0\bin\msbuild.exe" -ErrorAction SilentlyContinue
-if (!($msBuildExe)) {
-    $msBuildExe = Resolve-Path -Path "~/../../usr/bin/msbuild" -ErrorAction SilentlyContinue
-    $useMono = "mono "
-    if (!($msBuildExe)) {
-        Write-Error -Message ('ERROR: Falied to locate MSBuild at' + $msBuildExe)
-        exit 1
-    }
-}
-if ($msbuildExe.GetType() -Eq [object[]]) {
-  $msbuildExe = $msbuildExe | Select -index 0
+if (!($dotnetExe))
+{
+    Write-Error -Message ("ERROR: Failed to use 'dotnet'")
+    exit 1
 }
 
-$projPath = [IO.Path]::GetFullPath((join-path $scriptDir '../PrepareSource/PrepareSource.csproj'))
+$projPath = [IO.Path]::GetFullPath((join-path $sourceDirectory 'src/Tools/PrepareSource/Tools.PrepareSource.csproj'))
 if (!(Test-Path $projPath)) {
     Write-Error -Message ('ERROR: Failed to locate PrepareSource project file at ' + $projPath)
     exit 1
 }
-$BuildArgs = @{
-  FilePath = $msBuildExe
-  ArgumentList = $projPath, "/t:rebuild", "/p:Configuration=Release", "/v:minimal" 
-}
-Start-Process @BuildArgs -NoNewWindow -Wait
+
+& "$dotnetExe" build "$projPath" /p:Configuration=Release
 
 Write-Host "Run PrepareSource for InferNet_Copy_Temp folder"
-$prepareSourcePath = [IO.Path]::GetFullPath((join-path $scriptDir '../PrepareSource/bin/Release/PrepareSource.exe'))
-$prepareSourceCmd = "& $useMono ""$prepareSourcePath"" ""$destinationDirectory"""
-Invoke-Expression $prepareSourceCmd
+$prepareSourcePath = [IO.Path]::GetFullPath((join-path $sourceDirectory 'src/Tools/PrepareSource/bin/Release/netcoreapp3.1/Microsoft.ML.Probabilistic.Tools.PrepareSource.dll'))
+& "$dotnetExe" "$prepareSourcePath" "$destinationDirectory"
 
 Write-Host "Install nuget package docfx.console"
-Install-Package -Name docfx.console -provider Nuget -Source https://nuget.org/api/v2 -RequiredVersion 2.38.0 -Destination $scriptDir\..\..\packages -Force
+Install-Package -Name docfx.console -provider Nuget -Source https://nuget.org/api/v2 -RequiredVersion 2.48.1 -Destination $scriptDir\..\..\packages -Force
 Write-Host "Run docfx"
-$docFXPath = [IO.Path]::GetFullPath((join-path $scriptDir '../../packages/docfx.console.2.38.0/tools/docfx.exe'))
+$docFXPath = [IO.Path]::GetFullPath((join-path $scriptDir '../../packages/docfx.console.2.48.1/tools/docfx.exe'))
 $docFxJsonPath = "$scriptDir/../docfx.json"
-$docFxCmd = "& $useMono ""$docFXPath"" ""$docFxJsonPath"""
-Invoke-Expression $docFxCmd
+& "$docFXPath" "$docFxJsonPath"
+if($LASTEXITCODE)
+{
+    if(!(Invoke-Expression "& mono ""$docFXPath"" ""$docFxJsonPath"""))
+    {
+        Write-Error -Message ("ERROR: Unable to evaluate """ + $docFxCmd + """. Maybe Mono hasn't been installed")
+    }
+}
+
+Write-Warning "Three warnings about invalid file links in toc.yml are expected and benign, because those files don't exist yet. However, the links are still set up correctly."
 
 if ((Test-Path $destinationDirectory)) {
     Write-Host "Remove temp repository"
     Remove-Item -Path $destinationDirectory -Recurse -Force
 }
-$apiguideTmp = "./apiguide-tmp"
+$apiguideTmp = [IO.Path]::GetFullPath((join-path $sourceDirectory 'apiguide-tmp'))
 if (!(Test-Path $apiguideTmp)) {
-    Write-Host "Couldn't find the folder \apiguide-tmp."
+    Write-Host ("Couldn't find the folder """ + $apiguideTmp + """.")
     exit 1
 } else {
     Write-Host "Switch to gh-pages. All uncommited changes will be stashed."

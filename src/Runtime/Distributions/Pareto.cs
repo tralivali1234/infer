@@ -82,7 +82,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
             this.LowerBound = that.LowerBound;
         }
 
-        [NonSerializedProperty, System.Xml.Serialization.XmlIgnore]
+        [IgnoreDataMember, System.Xml.Serialization.XmlIgnore]
         public double Point
         {
             get
@@ -96,7 +96,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
             }
         }
 
-        [NonSerializedProperty, System.Xml.Serialization.XmlIgnore]
+        [IgnoreDataMember, System.Xml.Serialization.XmlIgnore]
         public bool IsPointMass
         {
             get
@@ -128,7 +128,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
             if (value < LowerBound)
                 return double.NegativeInfinity;
             else
-                return (Shape+1)*Math.Log(value) - GetLogNormalizer();
+                return -(Shape+1)*Math.Log(value) - GetLogNormalizer();
         }
 
         public double GetLogNormalizer()

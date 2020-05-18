@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using System.Linq;
+
 namespace Microsoft.ML.Probabilistic.Distributions
 {
     using System;
@@ -16,13 +18,13 @@ namespace Microsoft.ML.Probabilistic.Distributions
     /// </summary>
     [Serializable]
     [DataContract]
-    [Quality(QualityBand.Experimental)]
+    [Quality(QualityBand.Preview)]
     public class StringDistribution :
         SequenceDistribution<string, char, DiscreteChar, StringManipulator, StringAutomaton, StringDistribution>
     {
         /// <summary>
         /// Concatenates the weighted regular languages defined by given distributions
-        /// (see <see cref="SequenceDistribution{TSequence,TElement,TElementDistribution,TSequenceManipulator,TWeightFunction,TThis}.Append(TThis, byte)"/>).
+        /// (see <see cref="SequenceDistribution{TSequence,TElement,TElementDistribution,TSequenceManipulator,TWeightFunction,TThis}.Append(TThis, int)"/>).
         /// </summary>
         /// <param name="first">The first distribution.</param>
         /// <param name="second">The second distribution.</param>
@@ -69,31 +71,24 @@ namespace Microsoft.ML.Probabilistic.Distributions
         {
             return StringDistribution.SingleElement(characterDist);
         }
-        
+
         /// <summary>
         /// Creates a uniform distribution over all strings that are case-invariant matches of the specified string.
         /// </summary>
         /// <param name="template">The string to match.</param>
         /// <returns>The created distribution.</returns>
-        public static StringDistribution CaseInvariant(string template)
-        {
-            StringDistribution result = StringDistribution.Empty();
-            foreach (var ch in template)
-            {
-                var upper = char.ToUpperInvariant(ch);
-                var lower = char.ToLowerInvariant(ch);
-                if (upper == lower)
-                {
-                    result.AppendInPlace(ch);
-                }
-                else
-                {
-                    result.AppendInPlace(DiscreteChar.OneOf(lower, upper));
-                }
-            }
-            
-            return result;
-        }
+        public static StringDistribution CaseInvariant(string template) =>
+            StringDistribution.Concatenate(
+                template.Select(
+                    ch =>
+                    {
+                        var upper = char.ToUpperInvariant(ch);
+                        var lower = char.ToLowerInvariant(ch);
+                        return
+                            upper == lower
+                                ? DiscreteChar.PointMass(lower)
+                                : DiscreteChar.OneOf(lower, upper);
+                    }));
 
         /// <summary>
         /// Creates a uniform distribution over strings of lowercase letters, with length within the given bounds.

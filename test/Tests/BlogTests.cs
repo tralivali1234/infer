@@ -20,6 +20,7 @@ using Microsoft.ML.Probabilistic.Algorithms;
 using Microsoft.ML.Probabilistic.Models.Attributes;
 using Microsoft.ML.Probabilistic.Compiler;
 using Microsoft.ML.Probabilistic.Serialization;
+using Range = Microsoft.ML.Probabilistic.Models.Range;
 
 namespace Microsoft.ML.Probabilistic.Tests
 {
@@ -2317,7 +2318,8 @@ namespace Microsoft.ML.Probabilistic.Tests
             Console.WriteLine("P(woman's height|isTaller) = {0}", engine.Infer(heightWoman));
         }
 
-        internal void Handedness()
+        [Fact]
+        public void Handedness()
         {
             bool[] studentData = {false, true, true, true, true, true, true, true, false, false};
             bool[] lecturerData = {false, true, true, true, true, true, true, true, true, true};
@@ -2339,7 +2341,9 @@ namespace Microsoft.ML.Probabilistic.Tests
             // -----------------------------------
             InferenceEngine engine = new InferenceEngine();
             //Console.WriteLine("isRightHanded = {0}", engine.Infer(isRightHanded));
-            Console.WriteLine("probRightHanded = {0}", engine.Infer(probRightHanded));
+            var probRightHandedExpected = new Beta(7.72, 3.08);
+            var probRightHandedActual = engine.Infer<Beta>(probRightHanded);
+            Assert.True(probRightHandedExpected.MaxDiff(probRightHandedActual) < 1e-4);
         }
 
         [Fact]

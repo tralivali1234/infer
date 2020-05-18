@@ -4,11 +4,15 @@
 
 namespace Microsoft.ML.Probabilistic.Math
 {
+    using Microsoft.ML.Probabilistic.Utilities;
     using System;
 
+    /// <summary>
+    /// Represents a hyper-rectangle in arbitrary dimensions.
+    /// </summary>
     public class Region
     {
-        public Vector Lower, Upper;
+        public readonly Vector Lower, Upper;
 
         public int Dimension
         {
@@ -18,6 +22,10 @@ namespace Microsoft.ML.Probabilistic.Math
             }
         }
 
+        /// <summary>
+        /// Creates a new Region containing only the all-zero vector.
+        /// </summary>
+        /// <param name="dimension"></param>
         public Region(int dimension)
         {
             Lower = Vector.Zero(dimension);
@@ -35,7 +43,7 @@ namespace Microsoft.ML.Probabilistic.Math
             double logVolume = 0;
             for (int i = 0; i < Dimension; i++)
             {
-                logVolume += Math.Log(Upper[i] - Lower[i]);
+                logVolume += Math.Log(Math.Max(1e-10, Upper[i] - Lower[i]));
             }
             return logVolume;
         }
@@ -44,7 +52,7 @@ namespace Microsoft.ML.Probabilistic.Math
         {
             for (int i = 0; i < Dimension; i++)
             {
-                if (x[i] < Lower[i] || x[i] >= Upper[i]) return false;
+                if (x[i] < Lower[i] || x[i] > Upper[i]) return false;
             }
             return true;
         }
@@ -54,27 +62,32 @@ namespace Microsoft.ML.Probabilistic.Math
             Vector x = Vector.Zero(Dimension);
             for (int i = 0; i < Dimension; i++)
             {
-                double lower = Lower[i];
-                double upper = Upper[i];
-                double midpoint;
-                if (double.IsNegativeInfinity(lower))
-                {
-                    if (double.IsPositiveInfinity(upper))
-                        midpoint = 0.0;
-                    else
-                        midpoint = upper - 1;
-                }
-                else if (double.IsPositiveInfinity(upper))
-                {
-                    midpoint = lower + 1;
-                }
-                else
-                {
-                    midpoint = 0.5 * (lower + upper);
-                }
-                x[i] = midpoint;
+                x[i] = GetMidpoint(Lower[i], Upper[i]);
             }
             return x;
+        }
+
+        public static double GetMidpoint(double lower, double upper)
+        {
+            double midpoint;
+            if (double.IsNegativeInfinity(lower))
+            {
+                if (double.IsPositiveInfinity(upper)) midpoint = 0.0;
+                else if (upper > 0) midpoint = -upper;
+                else if (upper < 0) midpoint = 2 * upper;
+                else midpoint = -1;
+            }
+            else if (double.IsPositiveInfinity(upper))
+            {
+                if (lower > 0) midpoint = 2 * lower;
+                else if (lower < 0) midpoint = -lower;
+                else midpoint = 1;
+            }
+            else
+            {
+                midpoint = MMath.Average(lower, upper);
+            }
+            return midpoint;
         }
 
         public Vector Sample()
@@ -100,6 +113,36 @@ namespace Microsoft.ML.Probabilistic.Math
         public string ToString(string format)
         {
             return string.Format("[{0},{1}]", Lower.ToString(format), Upper.ToString(format));
+        }
+
+        public override bool Equals(object obj)
+        {
+            Region that = obj as Region;
+            if (that == null) return false;
+            return (that.Lower == this.Lower) && (that.Upper == this.Upper);
+        }
+
+        public override int GetHashCode()
+        {
+            return Hash.Combine(Lower.GetHashCode(), Upper.GetHashCode());
+        }
+
+        public int CompareTo(Region other)
+        {
+            int result = CompareTo(Lower, other.Lower);
+            if (result == 0) result = CompareTo(Upper, other.Upper);
+            return result;
+        }
+
+        public int CompareTo(Vector a, Vector b)
+        {
+            int result = 0;
+            for (int i = 0; i < a.Count; i++)
+            {
+                result = a[i].CompareTo(b[i]);
+                if (result != 0) return result;
+            }
+            return result;
         }
     }
 }

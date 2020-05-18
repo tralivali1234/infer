@@ -453,21 +453,13 @@ namespace Microsoft.ML.Probabilistic.Learners.Runners
             for (int c = 0; c < classLabelCount; c++)
             {
                 // ...find the longest string among counts and label
-                int labelWidth = labels[c].Length;
+                int labelWidth = Math.Min(labels[c].Length, MaxLabelWidth);
 
-                columnWidths[c + 1] = labelWidth > MaxLabelWidth ? MaxLabelWidth : labelWidth;
-                for (int r = 0; r < classLabelCount; r++)
-                {
-                    int countWidth = MaxValueWidth;
-                    if (countWidth > columnWidths[c + 1])
-                    {
-                        columnWidths[c + 1] = countWidth;
-                    }
-                }
+                columnWidths[c + 1] = Math.Max(MaxValueWidth, labelWidth);
 
                 if (labelWidth > columnWidths[0])
                 {
-                    columnWidths[0] = labelWidth > MaxLabelWidth ? MaxLabelWidth : labelWidth;
+                    columnWidths[0] = labelWidth;
                 }
             }
 
@@ -521,7 +513,7 @@ namespace Microsoft.ML.Probabilistic.Learners.Runners
             Debug.Assert(positiveClassLabel != null, "The label of the positive class must not be null.");
 
             var calibrationCurve = evaluator.CalibrationCurve(positiveClassLabel, groundTruth, predictiveDistributions);
-            double calibrationError = calibrationCurve.Select(i => Metrics.AbsoluteError(i.First, i.Second)).Average();
+            double calibrationError = calibrationCurve.Select(i => Metrics.AbsoluteError(i.EmpiricalProbability, i.PredictedProbability)).Average();
 
             using (var writer = new StreamWriter(fileName))
             {
@@ -533,7 +525,7 @@ namespace Microsoft.ML.Probabilistic.Learners.Runners
                 writer.WriteLine("# Predicted probability, empirical probability");
                 foreach (var point in calibrationCurve)
                 {
-                    writer.WriteLine("{0}, {1}", point.First, point.Second);
+                    writer.WriteLine(point);
                 }
             }
         }
@@ -564,10 +556,10 @@ namespace Microsoft.ML.Probabilistic.Learners.Runners
                 writer.WriteLine("#");
                 writer.WriteLine("# Class '" + positiveClassLabel + "'     (versus the rest)");
                 writer.WriteLine("#");
-                writer.WriteLine("# Recall (R), precision (P)");
+                writer.WriteLine("# precision (P), Recall (R)");
                 foreach (var point in precisionRecallCurve)
                 {
-                    writer.WriteLine("{0}, {1}", point.First, point.Second);
+                    writer.WriteLine(point);
                 }
             }
         }
@@ -599,10 +591,10 @@ namespace Microsoft.ML.Probabilistic.Learners.Runners
                 writer.WriteLine("#");
                 writer.WriteLine("# Class '" + positiveClassLabel + "'     (versus the rest)");
                 writer.WriteLine("#");
-                writer.WriteLine("# False positive rate (FPR), true positive rate (TPR)");
+                writer.WriteLine("# False positive rate (FPR), True positive rate (TPR)");
                 foreach (var point in rocCurve)
                 {
-                    writer.WriteLine("{0}, {1}", point.First, point.Second);
+                    writer.WriteLine(point);
                 }
             }
         }

@@ -5,6 +5,7 @@
 using System;
 using Microsoft.ML.Probabilistic.Models;
 using Microsoft.ML.Probabilistic.Distributions;
+using Range = Microsoft.ML.Probabilistic.Models.Range;
 
 namespace Microsoft.ML.Probabilistic.Tutorials
 {
@@ -41,14 +42,14 @@ namespace Microsoft.ML.Probabilistic.Tutorials
                 treatedGroup[j] = Variable.Bernoulli(probAll).ForEach(j);
             }
 
-            InferenceEngine ie = new InferenceEngine();
-            if (!(ie.Algorithm is Algorithms.GibbsSampling))
+            InferenceEngine engine = new InferenceEngine();
+            if (!(engine.Algorithm is Algorithms.GibbsSampling))
             {
-                Console.WriteLine("Probability treatment has an effect = " + ie.Infer(isEffective));
+                Console.WriteLine("Probability treatment has an effect = " + engine.Infer(isEffective));
                 Console.WriteLine("Probability of good outcome if given treatment = "
-                                        + (float)ie.Infer<Beta>(probIfTreated).GetMean());
+                                        + (float)engine.Infer<Beta>(probIfTreated).GetMean());
                 Console.WriteLine("Probability of good outcome if control = "
-                                        + (float)ie.Infer<Beta>(probIfControl).GetMean());
+                                        + (float)engine.Infer<Beta>(probIfControl).GetMean());
             }
             else
             {

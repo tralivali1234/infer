@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using System.Runtime.InteropServices.ComTypes;
+
 namespace Microsoft.ML.Probabilistic.Distributions
 {
     using System;
@@ -44,7 +46,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         Sampleable<TSequence>
         where TSequence : class, IEnumerable<TElement>
         where TSequenceManipulator : ISequenceManipulator<TSequence, TElement>, new()
-        where TElementDistribution : class, IDistribution<TElement>, SettableToProduct<TElementDistribution>, SettableToWeightedSumExact<TElementDistribution>, CanGetLogAverageOf<TElementDistribution>, SettableToPartialUniform<TElementDistribution>, Sampleable<TElement>, new()
+        where TElementDistribution : IDistribution<TElement>, SettableToProduct<TElementDistribution>, SettableToWeightedSumExact<TElementDistribution>, CanGetLogAverageOf<TElementDistribution>, SettableToPartialUniform<TElementDistribution>, Sampleable<TElement>, new()
         where TWeightFunction : Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TWeightFunction>, new()
         where TThis : SequenceDistribution<TSequence, TElement, TElementDistribution, TSequenceManipulator, TWeightFunction, TThis>, new()
     {
@@ -224,10 +226,10 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// </remarks>
         public static TThis SingleElement(TElementDistribution elementDistribution)
         {
-            var func = Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TWeightFunction>.Zero();
+            var func = new Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TWeightFunction>.Builder();
             var end = func.Start.AddTransition(elementDistribution, Weight.One);
-            end.EndWeight = Weight.One;
-            return FromWorkspace(func);
+            end.SetEndWeight(Weight.One);
+            return FromWorkspace(func.GetAutomaton());
         }
 
         /// <summary>
@@ -239,6 +241,42 @@ namespace Microsoft.ML.Probabilistic.Distributions
         {
             var sequence = SequenceManipulator.ToSequence(new List<TElement> { element });
             return PointMass(sequence);
+        }
+
+        /// <summary>
+        /// Creates a distribution over sequences induced by a given list of distributions over sequence elements
+        /// where the sequence can optionally end at any length, and the last element can optionally repeat without limit.
+        /// </summary>
+        /// <param name="elementDistributions">Enumerable of distributions over sequence elements and the transition weights.</param>
+        /// <param name="allowEarlyEnd">Allow the sequence to end at any point.</param>
+        /// <param name="repeatLastElement">Repeat the last element.</param>
+        /// <returns>The created distribution.</returns>
+        public static TThis Concatenate(IEnumerable<TElementDistribution> elementDistributions, bool allowEarlyEnd = false, bool repeatLastElement = false)
+        {
+            var result = new Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TWeightFunction>.Builder();
+            var last = result.Start;
+            var elementDistributionArray = elementDistributions.ToArray();
+            for (var i = 0; i < elementDistributionArray.Length - 1; i++)
+            {
+                last = last.AddTransition(elementDistributionArray[i], Weight.One);
+                if (allowEarlyEnd)
+                {
+                    last.SetEndWeight(Weight.One);
+                }
+            }
+
+            var lastElement = elementDistributionArray[elementDistributionArray.Length - 1];
+            if (repeatLastElement)
+            {
+                last.AddSelfTransition(lastElement, Weight.One);
+            }
+            else
+            {
+                last = last.AddTransition(lastElement, Weight.One);
+            }
+
+            last.SetEndWeight(Weight.One);
+            return FromWorkspace(result.GetAutomaton());
         }
 
         /// <summary>
@@ -397,7 +435,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// <returns>The created distribution.</returns>
         public static TThis Repeat(TElementDistribution allowedElements, int minTimes = 1, int? maxTimes = null, DistributionKind uniformity = DistributionKind.UniformOverValue)
         {
-            Argument.CheckIfNotNull(allowedElements, "allowedElements");
+            Argument.CheckIfNotNull(allowedElements, nameof(allowedElements));
             Argument.CheckIfInRange(minTimes >= 0, "minTimes", "The minimum number of times to repeat must be non-negative.");
             Argument.CheckIfInRange(!maxTimes.HasValue || maxTimes.Value >= 0, "maxTimes", "The maximum number of times to repeat must be non-negative.");
             Argument.CheckIfValid(!maxTimes.HasValue || minTimes <= maxTimes.Value, "The minimum length cannot be greater than the maximum length.");
@@ -423,7 +461,8 @@ namespace Microsoft.ML.Probabilistic.Distributions
             var weight = uniformity == DistributionKind.UniformOverLengthThenValue
                 ? Weight.One
                 : Weight.FromLogValue(distLogNormalizer);
-            var func = Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TWeightFunction>.Zero();
+
+            var func = new Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TWeightFunction>.Builder();
             var state = func.Start;
 
             int iterationBound = maxTimes.HasValue ? maxTimes.Value : minTimes;
@@ -431,7 +470,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
             for (int i = 0; i <= iterationBound; i++)
             {
                 bool isLengthAllowed = i >= minTimes;
-                state.EndWeight = isLengthAllowed ? Weight.One : Weight.Zero;
+                state.SetEndWeight(isLengthAllowed ? Weight.One : Weight.Zero);
                 if (i < iterationBound)
                 {
                     state = state.AddTransition(allowedElements, weight); // todo: clone set?    
@@ -443,7 +482,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
                 state.AddSelfTransition(allowedElements, weight);
             }
 
-            return FromWorkspace(func);
+            return FromWorkspace(func.GetAutomaton());
         }
 
         /// <summary>
@@ -647,7 +686,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// </list>
         /// </remarks>
         /// <returns>The distribution over the concatenations of sequences and the element.</returns>
-        public TThis Append(TElement element, byte group = 0)
+        public TThis Append(TElement element, int group = 0)
         {
             return this.Append(SingleElement(element), group);
         }
@@ -673,7 +712,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// </list>
         /// </remarks>
         /// <returns>The distribution over the concatenations of sequences and elements.</returns>
-        public TThis Append(TElementDistribution elementDistribution, byte group = 0)
+        public TThis Append(TElementDistribution elementDistribution, int group = 0)
         {
             return this.Append(SingleElement(elementDistribution), group);
         }
@@ -695,7 +734,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// </list>
         /// </remarks>
         /// <returns>The distribution over the concatenations of sequences.</returns>
-        public TThis Append(TSequence sequence, byte group = 0)
+        public TThis Append(TSequence sequence, int group = 0)
         {
             return this.Append(PointMass(sequence), group);
         }
@@ -721,7 +760,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// </list>
         /// </remarks>
         /// <returns>The distribution over the concatenations of sequences.</returns>
-        public TThis Append(TThis dist, byte group = 0)
+        public TThis Append(TThis dist, int group = 0)
         {
             Argument.CheckIfNotNull(dist, "dist");
             
@@ -747,7 +786,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// </description></item>
         /// </list>
         /// </remarks>
-        public void AppendInPlace(TElement element, byte group = 0)
+        public void AppendInPlace(TElement element, int group = 0)
         {
             this.AppendInPlace(SingleElement(element), group);
         }
@@ -772,9 +811,9 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// </description></item>
         /// </list>
         /// </remarks>
-        public void AppendInPlace(TElementDistribution elementDistribution, byte group = 0)
+        public void AppendInPlace(TElementDistribution elementDistribution, int group = 0)
         {
-            Argument.CheckIfNotNull(elementDistribution, "elementDistribution");
+            Argument.CheckIfValid(elementDistribution != null, nameof(elementDistribution));
             
             this.AppendInPlace(SingleElement(elementDistribution), group);
         }
@@ -796,7 +835,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// </description></item>
         /// </list>
         /// </remarks>
-        public void AppendInPlace(TSequence sequence, byte group = 0)
+        public void AppendInPlace(TSequence sequence, int group = 0)
         {
             Argument.CheckIfNotNull(sequence, "sequence");
             
@@ -823,7 +862,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// </description></item>
         /// </list>
         /// </remarks>
-        public void AppendInPlace(TThis dist, byte group = 0)
+        public void AppendInPlace(TThis dist, int group = 0)
         {
             Argument.CheckIfNotNull(dist, "dist");
 
@@ -1029,7 +1068,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
 
         #region Groups
 
-        public bool HasGroup(byte group)
+        public bool HasGroup(int group)
         {
             if (this.IsPointMass)
             {
@@ -1039,11 +1078,11 @@ namespace Microsoft.ML.Probabilistic.Distributions
             return this.sequenceToWeight.HasGroup(group);
         }
    
-        public Dictionary<byte, TThis> GetGroups()
+        public Dictionary<int, TThis> GetGroups()
         {
             if (this.IsPointMass)
             {
-                return new Dictionary<byte, TThis>(); // TODO: get rid of groups or do something about groups + point mass combo
+                return new Dictionary<int, TThis>(); // TODO: get rid of groups or do something about groups + point mass combo
             }
 
             return this.sequenceToWeight.GetGroups().ToDictionary(x => x.Key, x => FromWorkspace(x.Value));
@@ -1067,15 +1106,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
             }
 
             this.point = that.point;
-            if (this.point == null)
-            {
-                this.SetWeightFunction(that.sequenceToWeight);
-            }
-            else
-            {
-                this.sequenceToWeight = null;
-            }
-
+            this.sequenceToWeight = that.sequenceToWeight?.Clone();
             this.isNormalized = that.isNormalized;
         }
 
@@ -1444,16 +1475,14 @@ namespace Microsoft.ML.Probabilistic.Distributions
             {
                 double logSample = Math.Log(Rand.Double());
                 Weight probSum = Weight.Zero;
-                for (int i = 0; i < currentState.TransitionCount; ++i)
+                foreach (var transition in currentState.Transitions)
                 {
-                    var transition = currentState.GetTransition(i);
-
-                    probSum = Weight.Sum(probSum, transition.Weight);
+                    probSum += transition.Weight;
                     if (logSample < probSum.LogValue)
                     {
                         if (!transition.IsEpsilon)
                         {
-                            sampledElements.Add(transition.ElementDistribution.Sample());
+                            sampledElements.Add(transition.ElementDistribution.Value.Sample());
                         }
 
                         currentState = dist.sequenceToWeight.States[transition.DestinationStateIndex];
@@ -1581,6 +1610,23 @@ namespace Microsoft.ML.Probabilistic.Distributions
         public bool IsZero()
         {
             return !this.IsPointMass && this.sequenceToWeight.IsZero();
+        }
+
+        /// <summary>
+        /// Converges an improper sequence distribution
+        /// </summary>
+        /// <param name="dist">The original distribution.</param>
+        /// <param name="decayWeight">The decay weight.</param>
+        /// <returns>The converged distribution.</returns>
+        public static TThis Converge(TThis dist, double decayWeight = 0.99)
+        {
+            var converger =
+                Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TWeightFunction>
+                    .GetConverger(new TWeightFunction[]
+                    {
+                        dist.sequenceToWeight
+                    }, decayWeight);
+            return dist.Product(FromWorkspace(converger));
         }
 
         /// <summary>
@@ -1773,15 +1819,6 @@ namespace Microsoft.ML.Probabilistic.Distributions
                 this.isNormalized = true;
             }
             
-            ////// todo: consider moving the following logic into the Automaton class
-            ////if (product.PruneTransitionsWithLogWeightLessThan.HasValue)
-            ////{
-            ////    if (this.isNormalized || product.TryNormalizeValues())
-            ////    {
-            ////        product.RemoveTransitionsWithSmallWeights(product.PruneTransitionsWithLogWeightLessThan.Value);
-            ////    }
-            ////}
-            
             return logNormalizer;
         }
         
@@ -1796,7 +1833,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
                 return false;
             }
 
-            return this.sequenceToWeight.UsesGroups();
+            return this.sequenceToWeight.UsesGroups;
         }
 
         /// <summary>

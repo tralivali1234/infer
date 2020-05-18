@@ -649,7 +649,7 @@ namespace Microsoft.ML.Probabilistic.Factors
         public static double NormalVGMomentRatio(int n, int a, double m, double v)
         {
             if (a < 1)
-                throw new ArgumentException("a < 1", "a");
+                throw new ArgumentException($"{nameof(a)} < 1", nameof(a));
             if (a == 1)
             {
                 double sqrtV = Math.Sqrt(v);
@@ -728,7 +728,7 @@ namespace Microsoft.ML.Probabilistic.Factors
         {
             double[][] moments = new double[aMax][];
             if (aMax < 1)
-                throw new ArgumentException("aMax < 1", "aMax");
+                throw new ArgumentException($"{nameof(aMax)} < 1", nameof(aMax));
             // if (a == 1) {
             moments[0] = moments1;
             if (aMax >= 2)
@@ -950,6 +950,57 @@ namespace Microsoft.ML.Probabilistic.Factors
         public static Gaussian MeanAverageLogarithm(double sample, double variance)
         {
             return SampleAverageLogarithm(sample, variance);
+        }
+    }
+
+    /// <summary>
+    /// This class defines specializations for the case where variance is a point mass.
+    /// These methods have fewer inputs, allowing more efficient schedules.
+    /// </summary>
+    /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="GaussianFromMeanAndVarianceOp_PointVariance"]/doc/*'/>
+    [FactorMethod(typeof(Factor), "GaussianFromMeanAndVariance", Default = false)]
+    [Quality(QualityBand.Preview)]
+    public static class GaussianFromMeanAndVarianceOp_PointVariance
+    {
+        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="GaussianFromMeanAndVarianceOp_PointVariance"]/message_doc[@name="LogEvidenceRatio(double, Gaussian, Gamma)"]/*'/>
+        public static double LogEvidenceRatio(
+            double sample, [SkipIfUniform] Gaussian mean, [SkipIfUniform] Gamma variance)
+        {
+            if (!variance.IsPointMass)
+                throw new ArgumentException($"{nameof(variance)} is not a point mass");
+            return GaussianFromMeanAndVarianceOp.LogEvidenceRatio(sample, mean, variance.Point);
+        }
+
+        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="GaussianFromMeanAndVarianceOp_PointVariance"]/message_doc[@name="LogEvidenceRatio(Gaussian, Gaussian, Gamma)"]/*'/>
+        [Skip]
+        public static double LogEvidenceRatio(
+            [SkipIfUniform] Gaussian sample, [SkipIfUniform] Gaussian mean, [SkipIfUniform] Gamma variance)
+        {
+            if (!variance.IsPointMass)
+                throw new ArgumentException($"{nameof(variance)} is not a point mass");
+            return GaussianFromMeanAndVarianceOp.LogEvidenceRatio(sample, mean, variance.Point);
+        }
+
+        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="GaussianFromMeanAndVarianceOp_PointVariance"]/message_doc[@name="VarianceAverageConditional(Gaussian, Gaussian, Gamma)"]/*'/>
+        public static Gamma VarianceAverageConditional([SkipIfUniform] Gaussian sample, [SkipIfUniform] Gaussian mean, [Proper] Gamma variance)
+        {
+            if (!variance.IsPointMass)
+                throw new ArgumentException($"{nameof(variance)} is not a point mass");
+            return GaussianFromMeanAndVarianceOp.VarianceAverageConditional(sample, mean, variance);
+        }
+
+        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="GaussianFromMeanAndVarianceOp_PointVariance"]/message_doc[@name="SampleAverageConditional(Gaussian, Gamma)"]/*'/>
+        public static Gaussian SampleAverageConditional([SkipIfUniform] Gaussian mean, [Proper] Gamma variance)
+        {
+            if (!variance.IsPointMass)
+                throw new ArgumentException($"{nameof(variance)} is not a point mass");
+            return GaussianFromMeanAndVarianceOp.SampleAverageConditional(mean, variance.Point);
+        }
+
+        /// <include file='FactorDocs.xml' path='factor_docs/message_op_class[@name="GaussianFromMeanAndVarianceOp_PointVariance"]/message_doc[@name="MeanAverageConditional(Gaussian, Gamma)"]/*'/>
+        public static Gaussian MeanAverageConditional([SkipIfUniform] Gaussian sample, [Proper] Gamma variance)
+        {
+            return SampleAverageConditional(sample, variance);
         }
     }
 }

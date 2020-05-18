@@ -67,7 +67,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// <summary>
         /// Always returns true.
         /// </summary>
-        [NonSerializedProperty, System.Xml.Serialization.XmlIgnore]
+        [IgnoreDataMember, System.Xml.Serialization.XmlIgnore]
         public bool IsPointMass
         {
             get { return true; }
@@ -236,6 +236,19 @@ namespace Microsoft.ML.Probabilistic.Distributions
         public double GetAverageLog(PointMass<T> that)
         {
             return GetLogAverageOf(that);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is PointMass<T> that)
+                return Point.Equals(that.Point);
+            else
+                return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Point.GetHashCode();
         }
     }
 }

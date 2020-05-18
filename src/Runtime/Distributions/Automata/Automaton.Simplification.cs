@@ -2,1234 +2,511 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+
 namespace Microsoft.ML.Probabilistic.Distributions.Automata
 {
-    using System;
-    using System.Collections;
     using System.Collections.Generic;
     using System.Diagnostics;
-    using System.Linq;
-    using System.Text;
 
     using Microsoft.ML.Probabilistic.Collections;
-    using Microsoft.ML.Probabilistic.Distributions;
-    using Microsoft.ML.Probabilistic.Math;
-    using Microsoft.ML.Probabilistic.Utilities;
+
 
     /// <content>
     /// Contains classes and methods for automata simplification.
     /// </content>
     public abstract partial class Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TThis>
-        where TSequence : class, IEnumerable<TElement>
-        where TElementDistribution : class, IDistribution<TElement>, SettableToProduct<TElementDistribution>, SettableToWeightedSumExact<TElementDistribution>, CanGetLogAverageOf<TElementDistribution>, SettableToPartialUniform<TElementDistribution>, new()
-        where TSequenceManipulator : ISequenceManipulator<TSequence, TElement>, new()
-        where TThis : Automaton<TSequence, TElement, TElementDistribution, TSequenceManipulator, TThis>, new()
     {
-        /// <summary>
-        /// Tests whether the automaton is deterministic,
-        /// i.e. it's epsilon free and for every state and every element there is at most one transition that allows for that element.
-        /// </summary>
-        /// <returns>
-        /// <see langword="true"/> if the automaton is deterministic,
-        /// <see langword="false"/> otherwise.
-        /// </returns>
-        public bool IsDeterministic()
-        {
-            //// We can't track whether the automaton is deterministic while adding/updating transitions
-            //// because element distributions are not immutable.
-            
-            if (!this.IsEpsilonFree)
-            {
-                return false;
-            }
-            
-            for (int stateId = 0; stateId < this.states.Count; ++stateId)
-            {
-                var state = this.states[stateId];
-                
-                // There should be no epsilon transitions
-                for (int transitionIndex = 0; transitionIndex < state.TransitionCount; ++transitionIndex)
-                {
-                    if (state.GetTransition(transitionIndex).IsEpsilon)
-                    {
-                        return false;
-                    }
-                }
-                
-                // Element distributions should not intersect
-                for (int transitionIndex1 = 0; transitionIndex1 < state.TransitionCount; ++transitionIndex1)
-                {
-                    var transition1 = state.GetTransition(transitionIndex1);
-                    for (int transitionIndex2 = transitionIndex1 + 1; transitionIndex2 < state.TransitionCount; ++transitionIndex2)
-                    {
-                        var transition2 = state.GetTransition(transitionIndex2);
-                        double logProductNormalizer = transition1.ElementDistribution.GetLogAverageOf(transition2.ElementDistribution);
-                        if (!double.IsNegativeInfinity(logProductNormalizer))
-                        {
-                            return false;
-                        }
-                    }
-                }
-            }
-
-            return true;
-        }
-        
-        /// <summary>
-        /// Attempts to determinize the automaton,
-        /// i.e. modify it such that for every state and every element there is at most one transition that allows for that element,
-        /// and there are no epsilon transitions.
-        /// </summary>
-        /// <returns>
-        /// <see langword="true"/> if the determinization attempt was successful and the automaton is now deterministic,
-        /// <see langword="false"/> otherwise.
-        /// </returns>
-        /// <remarks>See <a href="http://www.cs.nyu.edu/~mohri/pub/hwa.pdf"/> for algorithm details.</remarks>
-        public bool TryDeterminize()
-        {
-            // We'd like to break if the determinized automaton is much larger than the original one,
-            // or the original automaton is not determinizable at all.
-            int maxStatesBeforeStop = Math.Min(this.States.Count * 3, MaxStateCount);
-            return this.TryDeterminize(maxStatesBeforeStop);
-        }
-
-        /// <summary>
-        /// Attempts to determinize the automaton,
-        /// i.e. modify it such that for every state and every element there is at most one transition that allows for that element,
-        /// and there are no epsilon transitions.
-        /// </summary>
-        /// <param name="maxStatesBeforeStop">
-        /// The maximum number of states the resulting automaton can have. If the number of states exceeds the value
-        /// of this parameter during determinization, the process is aborted.
-        /// </param>
-        /// <returns>
-        /// <see langword="true"/> if the determinization attempt was successful and the automaton is now deterministic,
-        /// <see langword="false"/> otherwise.
-        /// </returns>
-        /// <remarks>See <a href="http://www.cs.nyu.edu/~mohri/pub/hwa.pdf"/> for algorithm details.</remarks>
-        public bool TryDeterminize(int maxStatesBeforeStop)
-        {
-            Argument.CheckIfInRange(
-                maxStatesBeforeStop > 0 && maxStatesBeforeStop <= MaxStateCount,
-                "maxStatesBeforeStop",
-                "The maximum number of states must be positive and not greater than the maximum number of states allowed in an automaton.");
-
-            this.MakeEpsilonFree(); // Deterministic automata cannot have epsilon-transitions
-            ////using (var writer = new System.IO.StreamWriter(@"\GraphViz\graphviz-2.38\release\bin\epsfree.txt"))
-            ////{
-            ////    writer.WriteLine(this.ToString(AutomatonFormats.GraphViz));
-            ////}
-
-            if (this.UsesGroups())
-            {
-                // Determinization will result in lost of group information, which we cannot allow
-                return false;
-            }
-
-            // Weighted state set is a set of (stateId, weight) pairs, where state ids correspond to states of the original automaton..
-            // Such pairs correspond to states of the resulting automaton.
-            var weightedStateSetQueue = new Queue<Determinization.WeightedStateSet>();
-            var weightedStateSetToNewState = new Dictionary<Determinization.WeightedStateSet, State>();
-            var result = Zero();
-
-            var startWeightedStateSet = new Determinization.WeightedStateSet { { this.Start.Index, Weight.One } };
-            weightedStateSetQueue.Enqueue(startWeightedStateSet);
-            weightedStateSetToNewState.Add(startWeightedStateSet, result.Start);
-            result.Start.EndWeight = this.Start.EndWeight;
-
-            while (weightedStateSetQueue.Count > 0)
-            {
-                // Take one unprocessed state of the resulting automaton
-                Determinization.WeightedStateSet currentWeightedStateSet = weightedStateSetQueue.Dequeue();
-                var currentState = weightedStateSetToNewState[currentWeightedStateSet];
-
-                // Find out what transitions we should add for this state
-                IEnumerable<Tuple<TElementDistribution, Weight, Determinization.WeightedStateSet>> outgoingTransitionInfos =
-                    this.GetOutgoingTransitionsForDeterminization(currentWeightedStateSet);
-
-                // For each transition to add
-                foreach (Tuple<TElementDistribution, Weight, Determinization.WeightedStateSet> outgoingTransitionInfo in outgoingTransitionInfos)
-                {
-                    TElementDistribution elementDistribution = outgoingTransitionInfo.Item1;
-                    Weight weight = outgoingTransitionInfo.Item2;
-                    Determinization.WeightedStateSet destWeightedStateSet = outgoingTransitionInfo.Item3;
-
-                    State destinationState;
-                    if (!weightedStateSetToNewState.TryGetValue(destWeightedStateSet, out destinationState))
-                    {
-                        if (result.States.Count == maxStatesBeforeStop)
-                        {
-                            // Too many states, determinization attempt failed
-                            return false;
-                        }
-
-                        // Add new state to the result
-                        destinationState = result.AddState();
-                        weightedStateSetToNewState.Add(destWeightedStateSet, destinationState);
-                        weightedStateSetQueue.Enqueue(destWeightedStateSet);
-
-                        // Compute its ending weight
-                        destinationState.EndWeight = Weight.Zero;
-                        foreach (KeyValuePair<int, Weight> stateIdWithWeight in destWeightedStateSet)
-                        {
-                            destinationState.EndWeight = Weight.Sum(
-                                destinationState.EndWeight,
-                                Weight.Product(stateIdWithWeight.Value, this.States[stateIdWithWeight.Key].EndWeight));
-                        }
-                    }
-
-                    // Add transition to the destination state
-                    currentState.AddTransition(elementDistribution, weight, destinationState);
-                }
-            }
-
-            ////using (var writer = new System.IO.StreamWriter(@"\GraphViz\graphviz-2.38\release\bin\detpremerge.txt"))
-            ////{
-            ////    writer.WriteLine(result.ToString(AutomatonFormats.GraphViz));
-            ////}
-
-            result.MergeParallelTransitions(); // Determinization produces a separate transition for each segment
-            result.PruneTransitionsWithLogWeightLessThan = this.PruneTransitionsWithLogWeightLessThan;
-            result.LogValueOverride = this.LogValueOverride;
-            // Determinization was successful, we can replace the current automaton with its deterministic version
-            this.SwapWith(result);
-            return true;
-        }
-
-        /// <summary>
-        /// Attempts to simplify the automaton using <see cref="Simplify"/> if the number of states
-        /// exceeds <see cref="MaxStateCountBeforeSimplification"/>.
-        /// </summary>
-        public void SimplifyIfNeeded()
-        {
-            if (this.states.Count > MaxStateCountBeforeSimplification || this.PruneTransitionsWithLogWeightLessThan != null)
-            {
-                ////Console.WriteLine(this.ToString(AutomatonFormats.GraphViz));
-                this.Simplify();
-                ////Console.WriteLine(this.ToString(AutomatonFormats.GraphViz));
-            }
-        }
-
         /// <summary>
         /// Attempts to simplify the structure of the automaton, reducing the number of states and transitions.
         /// </summary>
-        /// <remarks>
-        /// <para>
-        /// The simplification procedure works as follows:
-        /// <list type="number">
-        /// <item><description>
-        /// If a pair of states has more than one transition between them, the transitions get merged.
-        /// </description></item>
-        /// <item><description>
-        /// A part of the automaton that is a tree is found.
-        /// </description></item>
-        /// <item><description>
-        /// States and transitions that don't belong to the found tree part are simply copied to the result.
-        /// </description></item>
-        /// <item><description>
-        /// The found tree part is rebuild from scratch. The new tree is essentially a trie:
-        /// for example, if the original tree has two paths accepting <c>"abc"</c> and one path accepting <c>"ab"</c>,
-        /// the resulting tree has a single path accepting both <c>"ab"</c> and <c>"abc"</c>.
-        /// </description></item>
-        /// </list>
-        /// </para>
-        /// <para>The simplification procedure doesn't support automata with non-trivial loops.</para>
-        /// </remarks>
-        public void Simplify()
+        public bool Simplify()
         {
-            this.MergeParallelTransitions();
-
-            if (this.HasNonTrivialLoops())
+            var builder = Builder.FromAutomaton(this);
+            var simplification = new Simplification(builder, this.PruneStatesWithLogEndWeightLessThan);
+            if (simplification.Simplify())
             {
-                return; // TODO: make this stuff work with non-trivial loops
+                this.Data = builder.GetData();
+                return true;
             }
 
-            ArrayDictionary<bool> stateLabels = this.LabelStatesForSimplification();
-
-            TThis result = this.CopyNonSimplifiable(stateLabels);
-            int firstNonCopiedStateIndex = result.States.Count;
-
-            IEnumerable<Pair<Simplification.GeneralizedSequence, Weight>> sequenceToLogWeight = this.BuildAcceptedSequenceList(stateLabels);
-
-            // Before we rebuild the tree part, we prune out the low probability sequences
-            if (this.PruneTransitionsWithLogWeightLessThan != null)
-            {
-                double logNorm = this.GetLogNormalizer();
-                if (!double.IsInfinity(logNorm))
-                {
-                    sequenceToLogWeight = sequenceToLogWeight.Where(
-                        s => s.Second.LogValue - logNorm >= this.PruneTransitionsWithLogWeightLessThan.Value).ToList();
-                }
-            }
-
-            foreach (Pair<Simplification.GeneralizedSequence, Weight> sequenceWithLogWeight in sequenceToLogWeight)
-            {
-                result.AddGeneralizedSequence(firstNonCopiedStateIndex, sequenceWithLogWeight.First, sequenceWithLogWeight.Second);
-            }
-
-            this.SwapWith(result);
-        }
-        
-        /// <summary>
-        /// Optimizes the automaton by removing all states unreachable from the end state.
-        /// </summary>
-        public void RemoveDeadStates()
-        {
-            if (this.IsCanonicZero())
-            {
-                return;
-            }
-            
-            bool[] isEndStateReachable = this.ComputeEndStateReachability();
-            RemoveStates(isEndStateReachable, MaxDeadStateCount);
+            return false;
         }
 
         /// <summary>
-        /// Optimizes the automaton by removing all states unreachable from the start state.
+        /// Optimizes the automaton by removing all states which can't reach end states.
         /// </summary>
-        public void RemoveOrphanStates()
+        public bool RemoveDeadStates()
         {
-            if (this.IsCanonicZero())
+            var builder = Builder.FromAutomaton(this);
+            var initialStatesCount = builder.StatesCount;
+            var simplification = new Simplification(builder, this.PruneStatesWithLogEndWeightLessThan);
+            simplification.RemoveDeadStates();
+            if (builder.StatesCount != initialStatesCount)
             {
-                return;
+                this.Data = builder.GetData();
+                return true;
             }
 
-            bool[] isStateReachable = this.ComputeStartStateReachability();
-            RemoveStates(isStateReachable, 0);
+            return false;
         }
 
         /// <summary>
-        /// Removes a set of states from the automaton where the set is defined by
-        /// the indices of the false elements in the supplied bool array.
+        /// Helper class which which implements automaton simplification.
         /// </summary>
-        /// <param name="statesToKeep">The bool array specifying states to keep</param>
-        /// <param name="minStatesToActuallyRemove">If the number of stats to remove is less than this value, the removal will not be done.</param>
-        private void RemoveStates(bool[] statesToKeep, int minStatesToActuallyRemove)
+        public class Simplification
         {
-            int[] oldToNewStateIdMapping = new int[this.states.Count];
-            int newStateId = 0;
-            int deadStateCount = 0;
-            for (int stateId = 0; stateId < this.states.Count; ++stateId)
+            /// <summary>
+            /// Automaton builder which contains automaton during simplification procedure.
+            /// </summary>
+            private readonly Builder builder;
+
+            /// <summary>
+            /// Gets or sets a value for truncating small weights.
+            /// If non-null, any transition whose weight falls below this value in a normalized
+            /// automaton will be removed.
+            /// </summary>
+            private readonly double? pruneStatesWithLogEndWeightLessThan;
+
+            /// <summary>
+            /// Initializes new instance of <see cref="Simplification"/> class.
+            /// </summary>
+            public Simplification(Builder builder, double? pruneStatesWithLogEndWeightLessThan)
             {
-                if (statesToKeep[stateId])
-                {
-                    oldToNewStateIdMapping[stateId] = newStateId++;
-                }
-                else
-                {
-                    oldToNewStateIdMapping[stateId] = -1;
-                    ++deadStateCount;
-                }
+                this.builder = builder;
+                this.pruneStatesWithLogEndWeightLessThan = pruneStatesWithLogEndWeightLessThan;
             }
 
-            if (oldToNewStateIdMapping[this.Start.Index] == -1)
+            /// <summary>
+            /// Attempts to simplify the automaton using <see cref="Simplify"/> if the number of states
+            /// exceeds <see cref="MaxStateCountBeforeSimplification"/>.
+            /// </summary>
+            public bool SimplifyIfNeeded()
             {
-                // Cannot reach any end state from the start state => the automaton is zero everywhere
-                this.SetToZero();
-                return;
-            }
-
-            if (deadStateCount <= minStatesToActuallyRemove)
-            {
-                // Not enough dead states => no additional work needs to be done
-                return;
-            }
-
-            TThis funcWithoutStates = Zero();
-            funcWithoutStates.AddStates(newStateId - 1);
-            funcWithoutStates.Start = funcWithoutStates.States[oldToNewStateIdMapping[this.Start.Index]];
-            funcWithoutStates.LogValueOverride = this.LogValueOverride;
-            funcWithoutStates.PruneTransitionsWithLogWeightLessThan = this.PruneTransitionsWithLogWeightLessThan;
-            for (int i = 0; i < this.states.Count; ++i)
-            {
-                if (oldToNewStateIdMapping[i] == -1)
+                if (this.builder.StatesCount > MaxStateCountBeforeSimplification ||
+                    this.pruneStatesWithLogEndWeightLessThan != null)
                 {
-                    continue;
+                    return this.Simplify();
                 }
 
-                State oldState = this.states[i];
-                State newState = funcWithoutStates.States[oldToNewStateIdMapping[i]];
-                newState.EndWeight = oldState.EndWeight;
-                for (int transitionIndex = 0; transitionIndex < oldState.TransitionCount; ++transitionIndex)
-                {
-                    Transition transition = oldState.GetTransition(transitionIndex);
-                    int newDestStateId = oldToNewStateIdMapping[transition.DestinationStateIndex];
-                    if (newDestStateId != -1)
-                    {
-                        State newDestState = funcWithoutStates.States[newDestStateId];
-                        newState.AddTransition(transition.ElementDistribution, transition.Weight, newDestState, transition.Group);
-                    }
-                }
-            }
-
-            this.SwapWith(funcWithoutStates);
-        }
-
-        /// <summary>
-        /// Removes transitions in the automaton whose log weight is less than the specified threshold.
-        /// </summary>
-        /// <remarks>
-        /// Any states which are unreachable in the resulting automaton are also removed.
-        /// </remarks>
-        /// <param name="logWeightThreshold">The smallest log weight that a transition can have and not be removed.</param>
-        public void RemoveTransitionsWithSmallWeights(double logWeightThreshold)
-        {
-            foreach (var state in this.states)
-            {
-                for (int i = state.TransitionCount-1; i >=0; i--)
-                {
-                    if (state.GetTransition(i).Weight.LogValue < logWeightThreshold)
-                    {
-                        state.RemoveTransition(i);
-                    }
-                }
-            }
-            RemoveOrphanStates();
-        }
-        
-        /// <summary>
-        /// Overridden in the derived classes to compute a set of outgoing transitions
-        /// from a given state of the determinization result.
-        /// </summary>
-        /// <param name="sourceState">The source state of the determinized automaton represented as 
-        /// a set of (stateId, weight) pairs, where state ids correspond to states of the original automaton.</param>
-        /// <returns>
-        /// A collection of (element distribution, weight, weighted state set) triples corresponding to outgoing transitions from <paramref name="sourceState"/>.
-        /// The first two elements of a tuple define the element distribution and the weight of a transition.
-        /// The third element defines the outgoing state.
-        /// </returns>
-        protected abstract IEnumerable<Tuple<TElementDistribution, Weight, Determinization.WeightedStateSet>> GetOutgoingTransitionsForDeterminization(
-            Determinization.WeightedStateSet sourceState);
-
-        /// <summary>
-        /// Labels each state with a value indicating whether the automaton having that state as the start state is a
-        /// generalized tree (i.e. a tree with self-loops), which is also unreachable from previously traversed states.
-        /// </summary>
-        /// <returns>A dictionary mapping state indices to the computed labels.</returns>
-        private ArrayDictionary<bool> LabelStatesForSimplification()
-        {
-            var result = new ArrayDictionary<bool>();
-            this.DoLabelStatesForSimplification(this.Start, result);
-            return result;
-        }
-
-        /// <summary>
-        /// Recursively labels each state with a value indicating whether the automaton having that state as the start state
-        /// is a generalized tree (i.e. a tree with self-loops), which is also unreachable from previously traversed states.
-        /// </summary>
-        /// <param name="currentState">The currently traversed state.</param>
-        /// <param name="stateLabels">A dictionary mapping state indices to the computed labels.</param>
-        /// <returns>
-        /// <see langword="true"/> if the automaton having <paramref name="currentState"/> having that state as the start state
-        /// is a generalized tree and it was the first visit to it, <see langword="false"/> otherwise.
-        /// </returns>
-        private bool DoLabelStatesForSimplification(State currentState, ArrayDictionary<bool> stateLabels)
-        {
-            if (stateLabels.ContainsKey(currentState.Index))
-            {
-                // This is not the first visit to the state
                 return false;
             }
 
-            stateLabels.Add(currentState.Index, true);
-
-            bool isGeneralizedTree = true;
-            for (int i = 0; i < currentState.TransitionCount; ++i)
-            {
-                Transition transition = currentState.GetTransition(i);
-
-                // Self-loops are allowed
-                if (transition.DestinationStateIndex != currentState.Index)
-                {
-                    isGeneralizedTree &= this.DoLabelStatesForSimplification(this.states[transition.DestinationStateIndex], stateLabels);
-                }
-            }
-
-            // It was the first visit to the state
-            stateLabels[currentState.Index] = isGeneralizedTree;
-            return isGeneralizedTree;
-        }
-
-        /// <summary>
-        /// Merges outgoing transitions with the same destination state.
-        /// </summary>
-        private void MergeParallelTransitions()
-        {
-            for (int stateIndex = 0; stateIndex < this.states.Count; ++stateIndex)
-            {
-                State state = this.states[stateIndex];
-                for (int transitionIndex1 = 0; transitionIndex1 < state.TransitionCount; ++transitionIndex1)
-                {
-                    Transition transition1 = state.GetTransition(transitionIndex1);
-                    for (int transitionIndex2 = transitionIndex1 + 1; transitionIndex2 < state.TransitionCount; ++transitionIndex2)
-                    {
-                        Transition transition2 = state.GetTransition(transitionIndex2);
-                        if (transition1.DestinationStateIndex == transition2.DestinationStateIndex && transition1.Group == transition2.Group)
-                        {
-                            bool removeTransition2 = false;
-                            if (transition1.IsEpsilon && transition2.IsEpsilon)
-                            {
-                                transition1.Weight = Weight.Sum(transition1.Weight, transition2.Weight);
-                                state.SetTransition(transitionIndex1, transition1);
-                                removeTransition2 = true;
-                            }
-                            else if (!transition1.IsEpsilon && !transition2.IsEpsilon)
-                            {
-                                var newElementDistribution = new TElementDistribution();
-                                if (double.IsInfinity(transition1.Weight.Value) && double.IsInfinity(transition1.Weight.Value))
-                                {
-                                    newElementDistribution.SetToSum(1.0, transition1.ElementDistribution, 1.0, transition2.ElementDistribution);
-                                }
-                                else
-                                {
-                                    newElementDistribution.SetToSum(transition1.Weight.Value, transition1.ElementDistribution, transition2.Weight.Value, transition2.ElementDistribution);
-                                }
-
-                                transition1.ElementDistribution = newElementDistribution;
-                                transition1.Weight = Weight.Sum(transition1.Weight, transition2.Weight);
-                                state.SetTransition(transitionIndex1, transition1);
-                                removeTransition2 = true;
-                            }
-
-                            if (removeTransition2)
-                            {
-                                state.RemoveTransition(transitionIndex2);
-                                --transitionIndex2;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Creates a copy of the non-simplifiable part of the automaton (states labeled with
-        /// <see langword="false"/> by <see cref="LabelStatesForSimplification"/> and their children).
-        /// </summary>
-        /// <param name="stateLabels">The state labels obtained from <see cref="LabelStatesForSimplification"/>.</param>
-        /// <returns>The copied part of the automaton.</returns>
-        private TThis CopyNonSimplifiable(ArrayDictionary<bool> stateLabels)
-        {
-            TThis result = Zero();
-            if (!stateLabels[this.Start.Index])
-            {
-                var copiedStateCache = new ArrayDictionary<State>();
-                result.Start = result.DoCopyNonSimplifiable(this.Start, stateLabels, true, copiedStateCache);
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Recursively creates a copy of the non-simplifiable part of the automaton
-        /// (states labeled with <see langword="false"/> by <see cref="LabelStatesForSimplification"/>).
-        /// </summary>
-        /// <param name="stateToCopy">The currently traversed state that needs to be copied.</param>
-        /// <param name="stateLabels">The state labels obtained from <see cref="LabelStatesForSimplification"/>.</param>
-        /// <param name="lookAtLabels">Whether or not labels should be ignored because one of the ancestors was labeled with <see langword="false"/>.</param>
-        /// <param name="copiedStateCache">Cache of the state copies to avoid creating redundant states when traversing diamond-like structures.</param>
-        /// <returns>The copied part of the automaton.</returns>
-        private State DoCopyNonSimplifiable(
-            State stateToCopy, ArrayDictionary<bool> stateLabels, bool lookAtLabels, ArrayDictionary<State> copiedStateCache)
-        {
-            Debug.Assert(!lookAtLabels || !stateLabels[stateToCopy.Index], "States that are not supposed to be copied should not be visited.");
-
-            State copiedState;
-            if (copiedStateCache.TryGetValue(stateToCopy.Index, out copiedState))
-            {
-                return copiedState;
-            }
-
-            copiedState = this.AddState();
-            copiedState.EndWeight = stateToCopy.EndWeight;
-            copiedStateCache.Add(stateToCopy.Index, copiedState);
-
-            for (int i = 0; i < stateToCopy.TransitionCount; ++i)
-            {
-                Transition transitionToCopy = stateToCopy.GetTransition(i);
-                State destStateToCopy = stateToCopy.Owner.states[transitionToCopy.DestinationStateIndex];
-                if (!lookAtLabels || !stateLabels[destStateToCopy.Index])
-                {
-                    State copiedDestState = this.DoCopyNonSimplifiable(destStateToCopy, stateLabels, false, copiedStateCache);
-                    copiedState.AddTransition(transitionToCopy.ElementDistribution, transitionToCopy.Weight, copiedDestState, transitionToCopy.Group);
-                }
-            }
-
-            return copiedState;
-        }
-
-        /// <summary>
-        /// Builds a complete list of generalized sequences accepted by the simplifiable part of the automaton.
-        /// </summary>
-        /// <param name="stateLabels">The state labels obtained from <see cref="LabelStatesForSimplification"/>.</param>
-        /// <returns>The list of generalized sequences accepted by the simplifiable part of the automaton.</returns>
-        private List<Pair<Simplification.GeneralizedSequence, Weight>> BuildAcceptedSequenceList(ArrayDictionary<bool> stateLabels)
-        {
-            var sequenceToWeight = new List<Pair<Simplification.GeneralizedSequence, Weight>>();
-            this.DoBuildAcceptedSequenceList(this.Start, stateLabels, sequenceToWeight, new List<Simplification.GeneralizedElement>(), Weight.One);
-            return sequenceToWeight;
-        }
-
-
-        private class StackItem
-        {
-        }
-
-        private class ElementItem : StackItem
-        {
-            public readonly Simplification.GeneralizedElement? Element;
-
-            public ElementItem(Simplification.GeneralizedElement? element)
-            {
-                this.Element = element;
-            }
-            public override string ToString()
-            {
-                return Element.ToString();
-            }
-        }
-
-        private class StateWeight : StackItem
-        {
-            public StateWeight(State state, Weight weight)
-            {
-                this.State = state;
-                this.Weight = weight;
-            }
-
-            public readonly State State;
-            public readonly Weight Weight;
-
-            public override string ToString()
-            {
-                return $"State: {State}, Weight: {Weight}";
-            }
-        }
-
-        /// <summary>
-        /// Recursively builds a complete list of generalized sequences accepted by the simplifiable part of the automaton.
-        /// </summary>
-        /// <param name="state">The currently traversed state.</param>
-        /// <param name="stateLabels">The state labels obtained from <see cref="LabelStatesForSimplification"/>.</param>
-        /// <param name="weightedSequences">The sequence list being built.</param>
-        /// <param name="currentSequenceElements">The list of elements of the sequence currently being built.</param>
-        /// <param name="currentWeight">The weight of the sequence currently being built.</param>
-        private void DoBuildAcceptedSequenceList(
-            State state,
-            ArrayDictionary<bool> stateLabels,
-            List<Pair<Simplification.GeneralizedSequence, Weight>> weightedSequences,
-            List<Simplification.GeneralizedElement> currentSequenceElements,
-            Weight currentWeight)
-        {
-            var stack = new Stack<StackItem>();
-            stack.Push(new StateWeight(state, currentWeight));
-
-            while (stack.Count > 0)
-            {
-                var stackItem = stack.Pop();
-                var elementItem = stackItem as ElementItem;
-
-                if (elementItem != null)
-                {
-                    if (elementItem.Element != null)
-                        currentSequenceElements.Add(elementItem.Element.Value);
-                    else
-                        currentSequenceElements.RemoveAt(currentSequenceElements.Count - 1);
-                    continue;
-                }
-
-                var stateAndWeight = stackItem as StateWeight;
-
-                state = stateAndWeight.State;
-                currentWeight = stateAndWeight.Weight;
-
-                // Find a non-epsilon self-loop if there is one
-                var selfLoopIndex = -1;
-                for (var i = 0; i < state.TransitionCount; ++i)
-                {
-                    var transition = state.GetTransition(i);
-                    if (transition.DestinationStateIndex != state.Index) continue;
-                    if (selfLoopIndex == -1)
-                    {
-                        selfLoopIndex = i;
-                    }
-                    else
-                    {
-                        Debug.Fail("Multiple self-loops should have been merged by MergeParallelTransitions()");
-                    }
-                }
-
-                // Push the found self-loop to the end of the current sequence
-                if (selfLoopIndex != -1)
-                {
-                    var transition = state.GetTransition(selfLoopIndex);
-                    currentSequenceElements.Add(new Simplification.GeneralizedElement(
-                        transition.ElementDistribution, transition.Group, transition.Weight));
-                    stack.Push(new ElementItem(null));
-                }
-
-                // Can this state produce a sequence?
-                if (state.CanEnd && stateLabels[state.Index])
-                {
-                    var sequence = new Simplification.GeneralizedSequence(currentSequenceElements);
-                        // TODO: use immutable data structure instead of copying sequences
-                    weightedSequences.Add(Pair.Create(sequence, Weight.Product(currentWeight, state.EndWeight)));
-                }
-
-                // Traverse the outgoing transitions
-                for (var i = 0; i < state.TransitionCount; ++i)
-                {
-                    var transition = state.GetTransition(i);
-
-                    // Skip self-loops & disallowed states
-                    if (transition.DestinationStateIndex == state.Index ||
-                        !stateLabels[transition.DestinationStateIndex])
-                    {
-                        continue;
-                    }
-
-                    if (!transition.IsEpsilon)
-                    {
-                        // Non-epsilon transitions contribute to the sequence
-                        stack.Push(new ElementItem(null));
-                    }
-
-                    stack.Push(
-                        new StateWeight(
-                            states[transition.DestinationStateIndex],
-                            Weight.Product(currentWeight, transition.Weight)));
-
-                    if (!transition.IsEpsilon)
-                    {
-                        stack.Push(
-                            new ElementItem(new Simplification.GeneralizedElement(transition.ElementDistribution,
-                                transition.Group, null)));
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Increases the value of this automaton on <paramref name="sequence"/> by <paramref name="weight"/>.
-        /// </summary>
-        /// <param name="firstAllowedStateIndex">The minimum index of an existing state that can be used for the sequence.</param>
-        /// <param name="sequence">The generalized sequence.</param>
-        /// <param name="weight">The weight of the sequence.</param>
-        /// <remarks>
-        /// This function attempts to add as few new states and transitions as possible.
-        /// Its implementation is conceptually similar to adding string to a trie.
-        /// </remarks>
-        private void AddGeneralizedSequence(int firstAllowedStateIndex, Simplification.GeneralizedSequence sequence, Weight weight)
-        {
-            // First, try to add at start state
-            bool isFreshStartState = this.IsCanonicZero();
-            if (this.DoAddGeneralizedSequence(this.Start, isFreshStartState, false, firstAllowedStateIndex, 0, sequence, weight))
-            {
-                return;
-            }
-
-            // Branch the start state
-            State oldStart = this.Start;
-            this.Start = this.AddState();
-            State otherBranch = this.AddState();
-            this.Start.AddEpsilonTransition(Weight.One, oldStart);
-            this.Start.AddEpsilonTransition(Weight.One, otherBranch);
-
-            // This should always work
-            bool success = this.DoAddGeneralizedSequence(otherBranch, true, false, firstAllowedStateIndex, 0, sequence, weight);
-            Debug.Assert(success, "This call must always succeed.");
-        }
-
-        /// <summary>
-        /// Recursively increases the value of this automaton on <paramref name="sequence"/> by <paramref name="weight"/>.
-        /// </summary>
-        /// <param name="state">The currently traversed state.</param>
-        /// <param name="isNewState">Indicates whether <paramref name="state"/> was just created.</param>
-        /// <param name="selfLoopAlreadyMatched">Indicates whether self-loop on <paramref name="state"/> was just matched.</param>
-        /// <param name="firstAllowedStateIndex">The minimum index of an existing state that can be used for the sequence.</param>
-        /// <param name="currentSequencePos">The current position in the generalized sequence.</param>
-        /// <param name="sequence">The generalized sequence.</param>
-        /// <param name="weight">The weight of the sequence.</param>
-        /// <returns>
-        /// <see langword="true"/> if the subsequence starting at <paramref name="currentSequencePos"/> has been successfully merged in,
-        /// <see langword="false"/> otherwise.
-        /// </returns>
-        /// <remarks>
-        /// This function attempts to add as few new states and transitions as possible.
-        /// Its implementation is conceptually similar to adding string to a trie.
-        /// </remarks>
-        private bool DoAddGeneralizedSequence(
-            State state,
-            bool isNewState,
-            bool selfLoopAlreadyMatched,
-            int firstAllowedStateIndex,
-            int currentSequencePos,
-            Simplification.GeneralizedSequence sequence,
-            Weight weight)
-        {
-            bool success;
-
-            if (currentSequencePos == sequence.Count)
-            {
-                if (!selfLoopAlreadyMatched)
-                {
-                    // We can't finish in a state with a self-loop
-                    for (int i = 0; i < state.TransitionCount; ++i)
-                    {
-                        Transition transition = state.GetTransition(i);
-                        if (transition.DestinationStateIndex == state.Index)
-                        {
-                            return false;
-                        }
-                    }
-                }
-
-                state.EndWeight = Weight.Sum(state.EndWeight, weight);
-                return true;
-            }
-
-            Simplification.GeneralizedElement element = sequence[currentSequencePos];
-
-            // Treat self-loops elements separately
-            if (element.LoopWeight.HasValue)
-            {
-                if (selfLoopAlreadyMatched)
-                {
-                    // Previous element was also a self-loop, we should try to find an espilon transition
-                    for (int i = 0; i < state.TransitionCount; ++i)
-                    {
-                        Transition transition = state.GetTransition(i);
-                        if (transition.DestinationStateIndex != state.Index && transition.IsEpsilon && transition.DestinationStateIndex >= firstAllowedStateIndex)
-                        {
-                            if (this.DoAddGeneralizedSequence(
-                                this.states[transition.DestinationStateIndex],
-                                false,
-                                false,
-                                firstAllowedStateIndex,
-                                currentSequencePos,
-                                sequence,
-                                Weight.Product(weight, Weight.Inverse(transition.Weight))))
-                            {
-                                return true;
-                            }
-                        }
-                    }
-
-                    // Epsilon transition not found, let's create a new one
-                    State destination = state.AddEpsilonTransition(Weight.One);
-                    success = this.DoAddGeneralizedSequence(destination, true, false, firstAllowedStateIndex, currentSequencePos, sequence, weight);
-                    Debug.Assert(success, "This call must always succeed.");
-                    return true;
-                }
-
-                // Find a matching self-loop
-                for (int i = 0; i < state.TransitionCount; ++i)
-                {
-                    Transition transition = state.GetTransition(i);
-
-                    if (transition.IsEpsilon && transition.DestinationStateIndex != state.Index && transition.DestinationStateIndex >= firstAllowedStateIndex)
-                    {
-                        // Try this epsilon transition
-                        if (this.DoAddGeneralizedSequence(
-                            this.states[transition.DestinationStateIndex], false, false, firstAllowedStateIndex, currentSequencePos, sequence, weight))
-                        {
-                            return true;
-                        }
-                    }
-
-                    // Is it a self-loop?
-                    if (transition.DestinationStateIndex == state.Index)
-                    {
-                        // Do self-loops match?
-                        if ((transition.Weight == element.LoopWeight.Value) &&
-                            (element.Group == transition.Group) &&
-                            ((transition.IsEpsilon && element.IsEpsilonSelfLoop) || (!transition.IsEpsilon && !element.IsEpsilonSelfLoop && transition.ElementDistribution.Equals(element.ElementDistribution))))
-                        {
-                            // Skip the element in the sequence, remain in the same state
-                            success = this.DoAddGeneralizedSequence(state, false, true, firstAllowedStateIndex, currentSequencePos + 1, sequence, weight);
-                            Debug.Assert(success, "This call must always succeed.");
-                            return true;
-                        }
-
-                        // State also has a self-loop, but the two doesn't match
-                        return false;
-                    }
-                }
-
-                if (!isNewState)
-                {
-                    // Can't add self-loop to an existing state, it will change the language accepted by the state
-                    return false;
-                }
-
-                // Add a new self-loop
-                state.AddTransition(element.ElementDistribution, element.LoopWeight.Value, state, element.Group);
-                success = this.DoAddGeneralizedSequence(state, false, true, firstAllowedStateIndex, currentSequencePos + 1, sequence, weight);
-                Debug.Assert(success, "This call must always succeed.");
-                return true;
-            }
-
-            // Try to find a transition for the element
-            for (int i = 0; i < state.TransitionCount; ++i)
-            {
-                Transition transition = state.GetTransition(i);
-
-                if (transition.IsEpsilon && transition.DestinationStateIndex != state.Index && transition.DestinationStateIndex >= firstAllowedStateIndex)
-                {
-                    // Try this epsilon transition
-                    if (this.DoAddGeneralizedSequence(
-                        this.states[transition.DestinationStateIndex], false, false, firstAllowedStateIndex, currentSequencePos, sequence, weight))
-                    {
-                        return true;
-                    }
-                }
-
-                // Is it a self-loop?
-                if (transition.DestinationStateIndex == state.Index)
-                {
-                    if (selfLoopAlreadyMatched)
-                    {
-                        // The self-loop was checked or added by the caller
-                        continue;
-                    }
-
-                    // Can't go through an existing self-loop, it will allow undesired sequences to be accepted
-                    return false;
-                }
-
-                if (transition.DestinationStateIndex < firstAllowedStateIndex ||
-                    element.Group != transition.Group ||
-                    !element.ElementDistribution.Equals(transition.ElementDistribution))
-                {
-                    continue;
-                }
-
-                // Skip the element in the sequence, move to the destination state
-                // Weight of the existing transition must be taken into account
-                // This case can fail if the next element is a self-loop and the destination state already has a different one
-                if (this.DoAddGeneralizedSequence(
-                    this.states[transition.DestinationStateIndex],
-                    false,
-                    false,
-                    firstAllowedStateIndex,
-                    currentSequencePos + 1,
-                    sequence,
-                    Weight.Product(weight, Weight.Inverse(transition.Weight))))
-                {
-                    return true;
-                }
-            }
-
-            // Add a new transition
-            State newChild = state.AddTransition(element.ElementDistribution, Weight.One, null, element.Group);
-            success = this.DoAddGeneralizedSequence(newChild, true, false, firstAllowedStateIndex, currentSequencePos + 1, sequence, weight);
-            Debug.Assert(success, "This call must always succeed.");
-            return true;
-        }
-
-        /// <summary>
-        /// Groups together helper classes used for automata determinization.
-        /// </summary>
-        protected static class Determinization
-        {
             /// <summary>
-            /// Represents a state of the resulting automaton in the power set construction.
-            /// It is essentially a set of (stateId, weight) pairs of the source automaton, where each state id is unique.
-            /// Supports a quick lookup of the weight by state id.
+            /// Attempts to simplify the structure of the automaton, reducing the number of states and transitions.
             /// </summary>
-            public class WeightedStateSet : IEnumerable<KeyValuePair<int, Weight>>
+            /// <remarks>
+            /// Only generalized tree part of automaton is simplified. Generalized tree is a tree with self-loops
+            /// allowed. Any non-trivial loops (consisting of more than 1 state) are left untouched.
+            /// 
+            /// The simplification procedure works as follows:
+            ///   * If a pair of states has more than one transition between them, the transitions get merged.
+            ///   * A part of the automaton that is a tree is found.
+            ///     For example in this automaton:
+            ///       a--->b--->c--->d---\
+            ///       v              ^   |
+            ///       e--->f--->g     \--/
+            ///       |          
+            ///       v
+            ///       h--->i--->j-->k
+            ///            ^    |
+            ///             \--/
+            ///     Nodes "a" to "h" form the tree. Nodes "i" to "k" are not part of the tree.
+            ///     Note 1: h has child nodes which form loop (i, j) but is still considered a part of tree.
+            ///     Because path leading to it from root has no loops.
+            ///     Note 2: d is also considered to be a part of tree. Self-loops are allowed.
+            ///   * After that, states in the tree part of automaton are recursively merged if they are compatible.
+            ///     Two states are considered compatible if path from root to them has exactly same element
+            ///     distributions and groups on transitions, and they have compatible self-loops. Weights in
+            ///     transitions from root can be different - weights will be adjusted as necessary.
+            ///     For example if in previous automaton transitions (a-b) and (a-e) have the same
+            ///     element distribution then result will look like this:
+            ///
+            ///            a--->b--->c--->d---\
+            ///            | \            ^   |
+            ///       e    |   f--->g      \--/
+            ///            |          
+            ///            v
+            ///            h--->i--->j-->k
+            ///                 ^    |
+            ///                  \--/
+            ///   * If pruneStatesWithLogEndWeightLessThan is not null then log normalizer and graph
+            ///     condensation computed. All states which do not have high enough end probability are deleted
+            /// </remarks>
+            public bool Simplify()
             {
-                /// <summary>
-                /// A mapping from state ids to weights.
-                /// </summary>
-                private readonly Dictionary<int, Weight> stateIdToWeight;
+                var initialStatesCount = builder.StatesCount;
+                var initialTransitionsCount = builder.TransitionsCount;
 
-                /// <summary>
-                /// Initializes a new instance of the <see cref="WeightedStateSet"/> class.
-                /// </summary>
-                public WeightedStateSet()
+                this.MergeParallelTransitions();
+                this.MergeTrees();
+
+                if (this.pruneStatesWithLogEndWeightLessThan != null)
                 {
-                    this.stateIdToWeight = new Dictionary<int, Weight>();
+                    this.RemoveLowWeightEndStates();
                 }
 
-                /// <summary>
-                /// Initializes a new instance of the <see cref="WeightedStateSet"/> class.
-                /// </summary>
-                /// <param name="stateIdToWeight">A collection of (stateId, weight) pairs.
-                /// </param>
-                public WeightedStateSet(IEnumerable<KeyValuePair<int, Weight>> stateIdToWeight)
-                {
-                    this.stateIdToWeight = stateIdToWeight.ToDictionary(kv => kv.Key, kv => kv.Value);
-                }
+                return builder.StatesCount != initialStatesCount ||
+                       builder.TransitionsCount != initialTransitionsCount;
+            }
 
-                /// <summary>
-                /// Gets or sets the weight for a given state id.
-                /// </summary>
-                /// <param name="stateId">The state id.</param>
-                /// <returns>The weight.</returns>
-                public Weight this[int stateId]
+            /// <summary>
+            /// Merges outgoing transitions with the same destination state.
+            /// </summary>
+            public void MergeParallelTransitions()
+            {
+                for (var stateIndex = 0; stateIndex < this.builder.StatesCount; ++stateIndex)
                 {
-                    get { return this.stateIdToWeight[stateId]; }
-                    set { this.stateIdToWeight[stateId] = value; }
-                }
-
-                /// <summary>
-                /// Adds a given state id and a weight to the set.
-                /// </summary>
-                /// <param name="stateId">The state id.</param>
-                /// <param name="weight">The weight.</param>
-                public void Add(int stateId, Weight weight)
-                {
-                    this.stateIdToWeight.Add(stateId, weight);
-                }
-
-                /// <summary>
-                /// Attempts to retrieve the weight corresponding to a given state id from the set.
-                /// </summary>
-                /// <param name="stateId">The state id.</param>
-                /// <param name="weight">When the method returns, contains the retrieved weight.</param>
-                /// <returns>
-                /// <see langword="true"/> if the given state id was present in the set,
-                /// <see langword="false"/> otherwise.
-                /// </returns>
-                public bool TryGetWeight(int stateId, out Weight weight)
-                {
-                    return this.stateIdToWeight.TryGetValue(stateId, out weight);
-                }
-
-                /// <summary>
-                /// Checks whether the state with a given id is present in the set.
-                /// </summary>
-                /// <param name="stateId">The state id,</param>
-                /// <returns>
-                /// <see langword="true"/> if the given state id was present in the set,
-                /// <see langword="false"/> otherwise.
-                /// </returns>
-                public bool ContainsState(int stateId)
-                {
-                    return this.stateIdToWeight.ContainsKey(stateId);
-                }
-
-                /// <summary>
-                /// Checks whether this object is equal to a given one.
-                /// </summary>
-                /// <param name="obj">The object to compare this object with.</param>
-                /// <returns>
-                /// <see langword="true"/> if the objects are equal,
-                /// <see langword="false"/> otherwise.
-                /// </returns>
-                public override bool Equals(object obj)
-                {
-                    if (obj == null || obj.GetType() != typeof(WeightedStateSet))
+                    var state = this.builder[stateIndex];
+                    for (var iterator1 = state.TransitionIterator; iterator1.Ok; iterator1.Next())
                     {
-                        return false;
-                    }
-
-                    var other = (WeightedStateSet)obj;
-
-                    if (this.stateIdToWeight.Count != other.stateIdToWeight.Count)
-                    {
-                        return false;
-                    }
-
-                    foreach (KeyValuePair<int, Weight> pair in this.stateIdToWeight)
-                    {
-                        // TODO: Should we allow for some tolerance? But what about hashing then?
-                        Weight otherWeight;
-                        if (!other.stateIdToWeight.TryGetValue(pair.Key, out otherWeight) || otherWeight != pair.Value)
+                        var transition1 = iterator1.Value;
+                        var iterator2 = iterator1;
+                        iterator2.Next();
+                        for (; iterator2.Ok; iterator2.Next())
                         {
-                            return false;
+                            var transition2 = iterator2.Value;
+                            var mergedTransition = TryMergeTransitions(transition1, transition2);
+                            if (mergedTransition != null)
+                            {
+                                iterator1.Value = mergedTransition.Value;
+                                transition1 = mergedTransition.Value;
+                                iterator2.Remove();
+                            }
+
+                        }
+                    }
+                }
+
+                Transition? TryMergeTransitions(Transition transition1, Transition transition2)
+                {
+                    if (transition1.DestinationStateIndex != transition2.DestinationStateIndex ||
+                        transition1.Group != transition2.Group)
+                    {
+                        return null;
+                    }
+
+                    if (transition1.IsEpsilon && transition2.IsEpsilon)
+                    {
+                        transition1.Weight += transition2.Weight;
+                        return transition1;
+                    }
+                    
+                    if (!transition1.IsEpsilon && !transition2.IsEpsilon)
+                    {
+                        var newElementDistribution = new TElementDistribution();
+                        if (transition1.Weight.IsInfinity && transition2.Weight.IsInfinity)
+                        {
+                            newElementDistribution.SetToSum(
+                                1.0,
+                                transition1.ElementDistribution.Value,
+                                1.0,
+                                transition2.ElementDistribution.Value);
+                        }
+                        else if (transition1.Weight > transition2.Weight)
+                        {
+                            newElementDistribution.SetToSum(
+                                1,
+                                transition1.ElementDistribution.Value,
+                                (transition2.Weight / transition1.Weight).Value,
+                                transition2.ElementDistribution.Value);
+                        }
+                        else
+                        {
+                            newElementDistribution.SetToSum(
+                                (transition1.Weight / transition2.Weight).Value,
+                                transition1.ElementDistribution.Value,
+                                1,
+                                transition2.ElementDistribution.Value);
+                        }
+
+                        return new Transition(
+                            newElementDistribution,
+                            transition1.Weight + transition2.Weight,
+                            transition1.DestinationStateIndex,
+                            transition1.Group);
+                    }
+
+                    return null;
+                }
+            }
+
+            public void MergeTrees()
+            {
+                var builder = this.builder;
+                var isRemovedNode = new bool[builder.StatesCount];
+                var isTreeNode = FindTreeNodes();
+
+                var stack = new Stack<int>();
+                stack.Push(builder.StartStateIndex);
+
+                while (stack.Count > 0)
+                {
+                    var stateIndex = stack.Pop();
+                    var state = builder[stateIndex];
+
+                    // Transitions to non-tree nodes and self-loops should be ignored
+                    bool IsMergeableTransition(Transition t) =>
+                        isTreeNode[t.DestinationStateIndex] && t.DestinationStateIndex != stateIndex;
+
+                    for (var iterator1 = state.TransitionIterator; iterator1.Ok; iterator1.Next())
+                    {
+                        var transition1 = iterator1.Value;
+
+                        // ignore non-tree nodes and self-loops
+                        if (!IsMergeableTransition(transition1))
+                        {
+                            continue;
+                        }
+
+                        // If it is an epsilon transition then try to merge with current state first
+                        // Note: group doesn't matter for epsilon transitions (in generalized trees)
+                        if (transition1.IsEpsilon &&
+                            CanMergeStates(stateIndex, transition1.DestinationStateIndex))
+                        {
+                            // All transitions from transition1.DestinationStateIndex will be inserted
+                            // into current state. And will be iterated by iterator1 without special treatment.
+                            MergeStates(stateIndex, transition1.DestinationStateIndex, transition1.Weight);
+                            isRemovedNode[transition1.DestinationStateIndex] = true;
+                            iterator1.Remove();
+                            continue;
+                        }
+
+                        // Try to find transitions with which this one can be merged
+                        var iterator2 = iterator1;
+                        iterator2.Next();
+                        for (; iterator2.Ok; iterator2.Next())
+                        {
+                            var transition2 = iterator2.Value;
+
+                            Debug.Assert(
+                                transition1.DestinationStateIndex != transition2.DestinationStateIndex,
+                                "Parallel transitions must be merged earlier by MergeParallelTransitions()");
+
+                            // ignore non-tree nodes and self-loops
+                            if (IsMergeableTransition(transition2) &&
+                                CanMergeDestinations(transition1, transition2))
+                            {
+                                MergeStates(
+                                    transition1.DestinationStateIndex,
+                                    transition2.DestinationStateIndex,
+                                    transition2.Weight * Weight.Inverse(transition1.Weight));
+                                isRemovedNode[transition2.DestinationStateIndex] = true;
+                                iterator2.Remove();
+                            }
+                        }
+
+                        stack.Push(transition1.DestinationStateIndex);
+                    }
+                }
+
+                builder.RemoveStates(isRemovedNode, true);
+                return;
+
+                // Returns a boolean array in which for each automaton state a "isTree" flag is stored.
+                // State is considered to be tree node if its in degree = 1 and it's parent is also a tree node.
+                bool[] FindTreeNodes()
+                {
+                    var inDegree = new int[builder.StatesCount];
+                    for (var i = 0; i < builder.StatesCount; ++i)
+                    {
+                        for (var iterator = builder[i].TransitionIterator; iterator.Ok; iterator.Next())
+                        {
+                            var destinationIndex = iterator.Value.DestinationStateIndex;
+                            // Ignore self-loops
+                            if (destinationIndex != i)
+                            {
+                                ++inDegree[destinationIndex];
+                            }
                         }
                     }
 
-                    return true;
-                }
+                    var result = new bool[builder.StatesCount];
 
-                /// <summary>
-                /// Computes the hash code of this instance.
-                /// </summary>
-                /// <returns>The computed hash code.</returns>
-                public override int GetHashCode()
-                {
-                    int result = 0;
-                    foreach (KeyValuePair<int, Weight> pair in this.stateIdToWeight)
+                    var treeSearchStack = new Stack<int>();
+                    treeSearchStack.Push(builder.StartStateIndex);
+                    while (treeSearchStack.Count > 0)
                     {
-                        int pairHash = Hash.Start;
-                        pairHash = Hash.Combine(pairHash, pair.Key.GetHashCode());
-                        pairHash = Hash.Combine(pairHash, pair.Value.GetHashCode());
-
-                        // Use commutative hashing combination because dictionaries are not ordered
-                        result ^= pairHash;
+                        var stateIndex = treeSearchStack.Pop();
+                        result[stateIndex] = true;
+                        for (var iterator = builder[stateIndex].TransitionIterator; iterator.Ok; iterator.Next())
+                        {
+                            var destinationIndex = iterator.Value.DestinationStateIndex;
+                            if (destinationIndex != stateIndex && inDegree[destinationIndex] == 1)
+                            {
+                                treeSearchStack.Push(destinationIndex);
+                            }
+                        }
                     }
 
                     return result;
                 }
 
-                /// <summary>
-                /// Returns a string representation of the instance.
-                /// </summary>
-                /// <returns>A string representation of the instance.</returns>
-                public override string ToString()
+                bool CanMergeStates(int stateIndex1, int stateIndex2)
                 {
-                    StringBuilder builder = new StringBuilder();
-                    foreach (var kvp in this.stateIdToWeight)
+                    var selfLoop1 = TryFindSelfLoop(stateIndex1);
+                    var selfLoop2 = TryFindSelfLoop(stateIndex2);
+
+                    // Can merge only if both destination states don't have self-loops
+                    // or these loops are exactly the same.
+                    return
+                        (!selfLoop1.HasValue && !selfLoop2.HasValue)
+                        || (selfLoop1.HasValue &&
+                            selfLoop2.HasValue &&
+                            selfLoop1.Value.Group == selfLoop2.Value.Group &&
+                            selfLoop1.Value.Weight == selfLoop2.Value.Weight &&
+                            EqualDistributions(selfLoop1.Value.ElementDistribution, selfLoop2.Value.ElementDistribution));
+                }
+
+                bool CanMergeDestinations(Transition transition1, Transition transition2)
+                {
+                    // Check that group and element distribution match
+                    if (transition1.Group != transition2.Group ||
+                        !EqualDistributions(transition1.ElementDistribution, transition2.ElementDistribution))
                     {
-                        builder.AppendLine(kvp.ToString());
+                        return false;
                     }
 
-                    return builder.ToString();
+                    return CanMergeStates(transition1.DestinationStateIndex, transition2.DestinationStateIndex);
                 }
 
-                #region IEnumerable implementation
+                // Compares element distributions in transition. Epsilon transitions are considered equal.
+                bool EqualDistributions(Option<TElementDistribution> dist1, Option<TElementDistribution> dist2) =>
+                    dist1.HasValue == dist2.HasValue &&
+                    (!dist1.HasValue || dist1.Value.Equals(dist2.Value));
 
-                /// <summary>
-                /// Gets the enumerator.
-                /// </summary>
-                /// <returns>
-                /// The enumerator.
-                /// </returns>
-                public IEnumerator<KeyValuePair<int, Weight>> GetEnumerator()
+                // Finds transition which points to state itself
+                // It is assumed that there's only one such transition
+                Transition? TryFindSelfLoop(int stateIndex)
                 {
-                    return this.stateIdToWeight.GetEnumerator();
-                }
-
-                /// <summary>
-                /// Gets the enumerator.
-                /// </summary>
-                /// <returns>
-                /// The enumerator.
-                /// </returns>
-                IEnumerator IEnumerable.GetEnumerator()
-                {
-                    return this.GetEnumerator();
-                }
-
-                #endregion
-            }
-        }
-
-        /// <summary>
-        /// Groups together helper classes used for automata simplification.
-        /// </summary>
-        private static class Simplification
-        {
-            /// <summary>
-            /// Represents an element of a generalized sequence,
-            /// i.e. a distribution over a single symbol or a weighted self-loop.
-            /// </summary>
-            public struct GeneralizedElement
-            {
-                /// <summary>
-                /// Initializes a new instance of the <see cref="GeneralizedElement"/> struct.
-                /// </summary>
-                /// <param name="elementDistribution">The element distribution associated with the generalized element.</param>
-                /// <param name="group">The group associated with the generalized element.</param>
-                /// <param name="loopWeight">
-                /// The loop weight associated with the generalized element, <see langword="null"/> if the element does not represent a self-loop.
-                /// </param>
-                public GeneralizedElement(TElementDistribution elementDistribution, byte group, Weight? loopWeight)
-                    : this()
-                {
-                    Debug.Assert(
-                        elementDistribution != null || loopWeight.HasValue,
-                        "Epsilon elements are only allowed in combination with self-loops.");
-
-                    this.ElementDistribution = elementDistribution;
-                    this.Group = group;
-                    this.LoopWeight = loopWeight;
-                }
-
-                /// <summary>
-                /// Gets the element distribution associated with the generalized element.
-                /// </summary>
-                public TElementDistribution ElementDistribution { get; private set; }
-
-                /// <summary>
-                /// Gets a value indicating whether this element corresponds to an epsilon self-loop.
-                /// </summary>
-                public bool IsEpsilonSelfLoop
-                {
-                    get { return this.ElementDistribution == null && this.LoopWeight.HasValue; }
-                }
-
-                /// <summary>
-                /// Gets the group associated with the generalized element.
-                /// </summary>
-                public byte Group { get; private set; }
-
-                /// <summary>
-                /// Gets the loop weight associated with the generalized element,
-                /// <see langword="null"/> if the element does not represent a self-loop.
-                /// </summary>
-                public Weight? LoopWeight { get; private set; }
-
-                /// <summary>
-                /// Gets the string representation of the generalized element.
-                /// </summary>
-                /// <returns>The string representation of the generalized element.</returns>
-                public override string ToString()
-                {
-                    string elementDistributionAsString = this.ElementDistribution.IsPointMass ? this.ElementDistribution.Point.ToString() : this.ElementDistribution.ToString();
-                    string groupString = this.Group == 0 ? string.Empty : string.Format("#{0}", this.Group);
-                    if (this.LoopWeight.HasValue)
+                    for (var iterator = builder[stateIndex].TransitionIterator; iterator.Ok; iterator.Next())
                     {
-                        return string.Format("{0}{1}*({2})", groupString, elementDistributionAsString, this.LoopWeight.Value);
+                        if (iterator.Value.DestinationStateIndex == stateIndex)
+                        {
+                            return iterator.Value;
+                        }
                     }
 
-                    return string.Format("{0}{1}", groupString, elementDistributionAsString);
+                    return null;
+                }
+
+                // Adds EndWeight and all transitions from state2 into state1.
+                // All state2 weights are multiplied by state2WeightMultiplier
+                void MergeStates(int state1Index, int state2Index, Weight state2WeightMultiplier)
+                {
+                    var state1 = builder[state1Index];
+                    var state2 = builder[state2Index];
+
+                    // sum end weights
+                    if (!state2.EndWeight.IsZero)
+                    {
+                        var state2EndWeight = state2WeightMultiplier * state2.EndWeight;
+                        state1.SetEndWeight(state1.EndWeight + state2EndWeight);
+                    }
+
+                    // Copy all transitions
+                    for (var iterator = state2.TransitionIterator; iterator.Ok; iterator.Next())
+                    {
+                        var transition = iterator.Value;
+                        if (transition.DestinationStateIndex != state2Index)
+                        {
+                            // Self-loop is not copied: it is already present in state1 and is absolutely
+                            // compatible: it has the same distribution and weight
+                            transition.Weight *= state2WeightMultiplier;
+                            state1.AddTransition(transition);
+                        }
+                    }
+
                 }
             }
 
-            /// <summary>
-            /// Represents a sequence of generalized elements.
-            /// </summary>
-            public class GeneralizedSequence
+            public void RemoveLowWeightEndStates()
             {
-                /// <summary>
-                /// The sequence elements.
-                /// </summary>
-                private readonly List<GeneralizedElement> elements;
+                // Note: no production work-load currently uses PruneStatesWithLogEndWeightLessThan
+                // So having no implementation is not big deal
+                // TODO:
+                //   - set automaton to epsilon-closure
+                //   - compute Condensation & logNormalizer
+                //   - remove all end states with WeightFromRoot * EndWeight < PruneStatesWithLogEndWeightLessThan - LogNormalizer
+                //   - remove dead states
+                //   - write lots of unit-tests
+            }
 
-                /// <summary>
-                /// Initializes a new instance of the <see cref="GeneralizedSequence"/> class.
-                /// </summary>
-                /// <param name="elements">The sequence elements.</param>
-                public GeneralizedSequence(IEnumerable<GeneralizedElement> elements)
-                {
-                    this.elements = new List<GeneralizedElement>(elements);
-                }
+            /// <summary>
+            /// Optimizes the automaton by removing all states which can't reach end states.
+            /// </summary>
+            public bool RemoveDeadStates()
+            {
+                var builder = this.builder;
+                var (edgesStart, edges) = BuildReversedGraph();
 
-                /// <summary>
-                /// Gets the number of elements in the sequence.
-                /// </summary>
-                public int Count
+                //// Now run a depth-first search to label all reachable nodes
+                var stack = new Stack<int>();
+                var visited = new bool[builder.StatesCount];
+                for (var i = 0; i < builder.StatesCount; ++i)
                 {
-                    get { return this.elements.Count; }
-                }
-
-                /// <summary>
-                /// Gets the sequence element with the specified index.
-                /// </summary>
-                /// <param name="index">The element index.</param>
-                /// <returns>The element at the given index.</returns>
-                public GeneralizedElement this[int index]
-                {
-                    get { return this.elements[index]; }
-                }
-
-                /// <summary>
-                /// Gets the string representation of the sequence.
-                /// </summary>
-                /// <returns>The string representation of the sequence.</returns>
-                public override string ToString()
-                {
-                    var stringBuilder = new StringBuilder();
-                    foreach (GeneralizedElement element in this.elements)
+                    if (!visited[i] && builder[i].CanEnd)
                     {
-                        stringBuilder.Append(element);
+                        visited[i] = true;
+                        stack.Push(i);
+                        while (stack.Count != 0)
+                        {
+                            var stateIndex = stack.Pop();
+                            for (var j = edgesStart[stateIndex]; j < edgesStart[stateIndex + 1]; ++j)
+                            {
+                                var destinationIndex = edges[j];
+                                if (!visited[destinationIndex])
+                                {
+                                    visited[destinationIndex] = true;
+                                    stack.Push(destinationIndex);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (!visited[builder.StartStateIndex])
+                {
+                    builder.Clear();
+                    builder.StartStateIndex = builder.AddState().Index;
+                    return true;
+                }
+
+                return this.builder.RemoveStates(visited, false) > 0;
+
+                (int[] edgesStart, int[] edges) BuildReversedGraph()
+                {
+                    // [edgesStart[i]; edgesStart[i+1]) is a range `edges` array which corresponds to incoming edges for state `i`
+                    var edgesStart1 = new int[builder.StatesCount + 1];
+
+                    // incoming edges for state. Represented as index of source state
+                    var edges1 = new int[builder.TransitionsCount];
+
+                    // first populate edges
+                    for (var i = 0; i < builder.StatesCount; ++i)
+                    {
+                        for (var iterator = builder[i].TransitionIterator; iterator.Ok; iterator.Next())
+                        {
+                            ++edgesStart1[iterator.Value.DestinationStateIndex];
+                        }
                     }
 
-                    return stringBuilder.ToString();
+                    // calculate commutative sums. Now edgesStart[i] contains end of range
+                    for (var i = 0; i < builder.StatesCount; ++i)
+                    {
+                        edgesStart1[i + 1] += edgesStart1[i];
+                    }
+
+                    // Fill ranges and adjust start indices. Now edgesStart[i] contains begining of the range
+                    for (var i = 0; i < builder.StatesCount; ++i)
+                    {
+                        for (var iterator = builder[i].TransitionIterator; iterator.Ok; iterator.Next())
+                        {
+                            var index = --edgesStart1[iterator.Value.DestinationStateIndex];
+                            edges1[index] = i;
+                        }
+                    }
+
+                    return (edgesStart1, edges1);
                 }
             }
         }

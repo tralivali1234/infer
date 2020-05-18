@@ -13,6 +13,19 @@ namespace Microsoft.ML.Probabilistic.Distributions
     using Utilities;
     using Factors.Attributes;
 
+    /// <summary>
+    /// Base type for all distributions that doesn't specify over which domain distribution is defined.
+    /// </summary>
+    /// <remarks>
+    /// This interface is useful in generic code where distributions of different types have to be stored
+    /// in single container. Container of <see cref="IDistribution"/> is a more specific type than
+    /// container of <see cref="object"/> and adds some type-safety in these cases.
+    /// </remarks>
+    [Quality(QualityBand.Mature)]
+    public interface IDistribution : ICloneable, Diffable, SettableToUniform
+    {
+    }
+
     /// <summary>Distribution interface</summary>
     /// <typeparam name="T">The type of objects in the domain, e.g. Vector or Matrix.</typeparam>
     /// <remarks><para>
@@ -29,20 +42,24 @@ namespace Microsoft.ML.Probabilistic.Distributions
     /// CanGetLogAverageOf, CanGetAverageLog</c>
     /// </para></remarks>
     [Quality(QualityBand.Mature)]
-    public interface IDistribution<T> : ICloneable,
-                                        HasPoint<T>, Diffable, SettableToUniform, CanGetLogProb<T>
+    public interface IDistribution<T> : IDistribution, HasPoint<T>, CanGetLogProb<T>
     {
     }
 
     /// <summary>
     /// Interface to allow untyped access to collection distribution
     /// </summary>
-    public interface ICollectionDistribution
+    public interface ICollectionDistribution : IDistribution
     {
         /// <summary>
         /// Returns the count of known elements in collection distribution.
         /// </summary>
         int GetElementsCount();
+
+        /// <summary>
+        /// Returns the list of elements' distributions.
+        /// </summary>
+        List<IDistribution> GetElementsUntyped();
 
         /// <summary>
         /// Product of two collection distributions which also return element mapping information.
@@ -1104,7 +1121,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         public static T SetToProductOfAllExcept<T, U>(T result, IList<U> dists, int count, int index)
             where T : SettableToProduct<U>, SettableTo<U>, SettableToUniform, U
         {
-            if (index < 0 || index > count) throw new ArgumentOutOfRangeException("index");
+            if (index < 0 || index > count) throw new ArgumentOutOfRangeException(nameof(index));
             if ((object.ReferenceEquals(result, null) || result.Equals(default(T)))
                 && count > 0) result = (T)((ICloneable)dists[0]).Clone();
             if (count == 0)
@@ -1413,7 +1430,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// </returns>
         public static double GetLogAverageOf<T, TDistribution>(
             TDistribution distribution1, TDistribution distribution2, out TDistribution product)
-            where TDistribution : class, IDistribution<T>, SettableToProduct<TDistribution>, CanGetLogAverageOf<TDistribution>, new()
+            where TDistribution : IDistribution<T>, SettableToProduct<TDistribution>, CanGetLogAverageOf<TDistribution>, new()
         {
             if (distribution2.IsPointMass)
             {
@@ -1439,6 +1456,17 @@ namespace Microsoft.ML.Probabilistic.Distributions
             }
 
             return logNormalizer;
+        }
+
+        /// <summary>
+        /// Helper method that creates new distribution that is equal to product of 2 given distributions.
+        /// </summary>
+        public static TDistribution Product<T, TDistribution>(TDistribution distribution1, TDistribution distribution2)
+            where TDistribution : IDistribution<T>, SettableToProduct<TDistribution>, new()
+        {
+            var result = new TDistribution();
+            result.SetToProduct(distribution1, distribution2);
+            return result;
         }
 
         /// <summary>
@@ -1600,7 +1628,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// The log-probability that two distributions would draw the same sample.
         /// </returns>
         public static double GetLogAverageOf<TDistribution>(TDistribution distribution1, TDistribution distribution2, out TDistribution product)
-            where TDistribution : class, IDistribution<T>, SettableToProduct<TDistribution>, CanGetLogAverageOf<TDistribution>, new()
+            where TDistribution : IDistribution<T>, SettableToProduct<TDistribution>, CanGetLogAverageOf<TDistribution>, new()
         {
             return Distribution.GetLogAverageOf<T, TDistribution>(distribution1, distribution2, out product);
         }

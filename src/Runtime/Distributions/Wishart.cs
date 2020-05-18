@@ -19,14 +19,13 @@ namespace Microsoft.ML.Probabilistic.Distributions
     ///  In the matrix case, the distribution is
     ///   <c>p(X) = |X|^(a-(d+1)/2)*exp(-tr(X*B))*|B|^a/Gamma_d(a)</c>.
     /// In this code, the <c>a</c> parameter is called the "Shape" and the <c>B</c> parameter
-    /// is called the "Rate".  The
-    /// mean of the distribution is <c>a/B</c> and the diagonal variance is 
+    /// is called the "Rate".  The distribution is uniform when B=0 and a=(d+1)/2.
+    /// The mean of the distribution is <c>a/B</c> and the diagonal variance is 
     /// <c>var(X_ii) = a*C_ii^2</c> where <c>C=inv(B)</c>.  The non-diagonal variances are
     /// <c>var(X_ij) = a*0.5*(C_ij^2 + C_ii*C_jj)</c> where <c>C=inv(B)</c>.
     /// </para><para>
-    /// The distribution is represented by a one-dimensional Vector for <c>a</c> and 
-    /// a PositiveDefiniteMatrix for <c>B</c>.  Because both are Cursors, any Wishart instance
-    /// can be used as a cursor.
+    /// The distribution is represented by a double for <c>a</c> and 
+    /// a PositiveDefiniteMatrix for <c>B</c>.  
     /// </para></remarks>
     [Serializable]
     [DataContract]
@@ -45,23 +44,23 @@ namespace Microsoft.ML.Probabilistic.Distributions
         [DataMember]
         private double shape;
 
-    /// <summary>
-    /// Sets/gets the rate matrix
-    /// </summary>
-    public PositiveDefiniteMatrix Rate
-    {
-      get
-      {
-        return rate;
-      }
-      set
-      {
-        if (rate == null)
-          rate = value;
-        else
-          rate.SetTo(value);
-      }
-    }
+        /// <summary>
+        /// Sets/gets the rate matrix
+        /// </summary>
+        public PositiveDefiniteMatrix Rate
+        {
+            get
+            {
+                return rate;
+            }
+            set
+            {
+                if (rate == null)
+                    rate = value;
+                else
+                    rate.SetTo(value);
+            }
+        }
 
         /// <summary>
         /// Sets/gets the shape value
@@ -302,7 +301,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// <summary>
         /// Asks whether the instance is a point mass
         /// </summary>
-        [NonSerializedProperty, System.Xml.Serialization.XmlIgnore]
+        [IgnoreDataMember, System.Xml.Serialization.XmlIgnore]
         public bool IsPointMass
         {
             get
@@ -323,7 +322,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// <summary>
         /// Sets/gets this instance as a point-mass
         /// </summary>
-        [NonSerializedProperty, System.Xml.Serialization.XmlIgnore]
+        [IgnoreDataMember, System.Xml.Serialization.XmlIgnore]
         public PositiveDefiniteMatrix Point
         {
             get
@@ -342,7 +341,7 @@ namespace Microsoft.ML.Probabilistic.Distributions
         /// <summary>
         /// Dimension of this distribution
         /// </summary>
-        [NonSerializedProperty, System.Xml.Serialization.XmlIgnore]
+        [IgnoreDataMember, System.Xml.Serialization.XmlIgnore]
         public int Dimension
         {
             get
@@ -350,19 +349,6 @@ namespace Microsoft.ML.Probabilistic.Distributions
                 return rate.Rows;
             }
         }
-
-        //public bool IsCompatibleWith(IDistribution<PositiveDefiniteMatrix> thatd)
-        //{
-        //  Wishart that = thatd as Wishart;
-        //  if (that == null) return false;
-        //  return (that.Dimension == Dimension);
-        //}
-        //bool IDistribution<ICursor>.IsCompatibleWith(IDistribution<ICursor> thatd)
-        //{
-        //  Gamma that = thatd as Gamma;
-        //  if (that == null) return false;
-        //  return (that.Dimension == Dimension);
-        //}
 
         /// <summary>
         /// Sets this instance to have uniform distribution
@@ -1051,24 +1037,6 @@ namespace Microsoft.ML.Probabilistic.Distributions
         public override int GetHashCode()
         {
             return Hash.Combine(rate.GetHashCode(), shape.GetHashCode());
-        }
-
-        /// <summary>
-        /// Gets/sets the source array for the Wishart parameters. These are stored
-        /// contiguously in the SourceArray as Rate matrix followed by shape
-        /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
-        [NonSerializedProperty, System.Xml.Serialization.XmlIgnore]
-        public double[] SourceArray
-        {
-            get
-            {
-                return rate.SourceArray;
-            }
-            set
-            {
-                /*rate.SourceArray = value; shape.SourceArray = value;*/
-            }
         }
 
         /// <summary>

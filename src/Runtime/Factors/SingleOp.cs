@@ -41,22 +41,21 @@ namespace Microsoft.ML.Probabilistic.Factors
 
             Vector resultLogProb = PiecewiseVector.Constant(char.MaxValue + 1, double.NegativeInfinity);
             StringAutomaton probFunc = str.GetWorkspaceOrPoint();
-            StringAutomaton.EpsilonClosure startEpsilonClosure = probFunc.Start.GetEpsilonClosure();
+            StringAutomaton.EpsilonClosure startEpsilonClosure = new Automaton<string, char, DiscreteChar, StringManipulator, StringAutomaton>.EpsilonClosure(probFunc, probFunc.Start);
             for (int stateIndex = 0; stateIndex < startEpsilonClosure.Size; ++stateIndex)
             {
                 StringAutomaton.State state = startEpsilonClosure.GetStateByIndex(stateIndex);
                 Weight stateLogWeight = startEpsilonClosure.GetStateWeightByIndex(stateIndex);
-                for (int transitionIndex = 0; transitionIndex < state.TransitionCount; ++transitionIndex)
+                foreach (var transition in state.Transitions)
                 {
-                    StringAutomaton.Transition transition = state.GetTransition(transitionIndex);
                     if (!transition.IsEpsilon)
                     {
                         StringAutomaton.State destState = probFunc.States[transition.DestinationStateIndex];
-                        StringAutomaton.EpsilonClosure destStateClosure = destState.GetEpsilonClosure();
+                        StringAutomaton.EpsilonClosure destStateClosure = new Automaton<string, char, DiscreteChar, StringManipulator, StringAutomaton>.EpsilonClosure(probFunc, destState);
                         if (!destStateClosure.EndWeight.IsZero)
                         {
                             Weight weight = Weight.Product(stateLogWeight, transition.Weight, destStateClosure.EndWeight);
-                            var logProbs = transition.ElementDistribution.GetProbs();
+                            var logProbs = transition.ElementDistribution.Value.GetProbs();
                             logProbs.SetToFunction(logProbs, Math.Log);
                             resultLogProb = LogSumExp(resultLogProb, logProbs, weight);
                         }
@@ -87,7 +86,7 @@ namespace Microsoft.ML.Probabilistic.Factors
             logValues1.SetToFunction(
                 logValues1,
                 logValues2,
-                (x, y) => Weight.Sum(Weight.FromLogValue(x), Weight.Product(values2Scale, Weight.FromLogValue(y))).LogValue);
+                (x, y) => (Weight.FromLogValue(x) + values2Scale * Weight.FromLogValue(y)).LogValue);
             return logValues1;
         }
     }
